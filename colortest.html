@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="container">
+		<div id="title"><h1>Question 1</h1></div>
+		
+		<div id="testqestion">
+		</div>
+		
+		<div class="buttons_container">
+			<table class="buttons">
+				<tr>
+					<td><button class="btn btn-default" type="button" onclick="checkColor('RED')">RED</button></td>
+					<td><button class="btn btn-default" type="button" onclick="checkColor('GREEN')">GREEN</button></td>
+					<td><button class="btn btn-default" type="button" onclick="checkColor('BLUE')">BLUE</button></td>
+				</tr>
+				<tr>
+					<td><button class="btn btn-default" type="button" onclick="checkColor('YELLOW')">YELLOW</button></td>
+					<td><button class="btn btn-default" type="button" onclick="checkColor('ORANGE')">ORANGE</button></td>
+					<td><button class="btn btn-default" type="button" onclick="checkColor('WHITE')">WHITE</button></td>
+				</tr>
+			</table>
+			
+			<div id="score">
+				<h2>Score: 0/0</h2>
+			</div>
+			<div id="timer"></div>
+			</div>
+
+		<script>
+			var colors = ["RED", "GREEN", "BLUE", "YELLOW", "ORANGE", "WHITE"];
+			
+			var totalAnswers = 0;
+			var correctAnswers = 0;
+
+			var randomNumber = Math.floor(Math.random()*colors.length);
+			var randomColor = Math.floor(Math.random()*colors.length);
+			
+			var score = document.getElementById("score");
+			var title = document.getElementById("title");
+			var container = document.getElementById("container");
+			
+			var testquestion = document.getElementById("testqestion");
+			testquestion.innerHTML += "<h3 id='quest' style='color:" + colors[randomColor] + "'>" 
+										+ colors[randomNumber] + "</h3>";
+										
+			var grabColor = document.getElementById("quest").style.color;
+			
+			var Timer;
+			var TotalSeconds;
+			var t;
+			
+			CreateTimer("timer", 3);
+			
+			function CreateTimer(TimerID, Time) {
+				Timer = document.getElementById(TimerID);
+				TotalSeconds = Time;
+
+				UpdateTimer()
+				t = setTimeout("Tick()", 1000);
+			}
+
+			function Tick() {
+				if (TotalSeconds <= 1) {
+					checkColor("null");
+					return;
+				}
+				TotalSeconds -= 1;
+				UpdateTimer()
+				t = setTimeout("Tick()", 1000);
+			}
+			
+			function ResetTimer() {
+				clearTimeout(t);
+			}
+
+			function UpdateTimer() {
+			var Seconds = TotalSeconds;
+
+			var Days = Math.floor(Seconds / 86400);
+			Seconds -= Days * 86400;
+			
+			var Hours = Math.floor(Seconds / 3600);
+			Seconds -= Hours * (3600);
+			
+			var Minutes = Math.floor(Seconds / 60);
+			Seconds -= Minutes * (60);
+			
+			
+			var TimeStr = Seconds;
+
+			Timer.innerHTML = TimeStr;
+			}
+			
+			
+			function LeadingZero(Time) {
+				return (Time < 10) ? "0" + Time : + Time;
+			}
+			
+			function getQuest() {		
+				var randomNumber = Math.floor(Math.random()*colors.length);
+				var randomColor = Math.floor(Math.random()*colors.length);
+				testquestion.innerHTML = "";
+				testquestion.innerHTML += "<h3 id='quest' style='color:" + colors[randomColor] + "'>" 
+										+ colors[randomNumber] + "</h3>";
+				grabColor = document.getElementById("quest").style.color;
+			}
+			
+			function updateTitle() {
+				title.innerHTML = "<h1>Question " + (totalAnswers+1) + "</h1>";
+			}
+			
+			function displayStats() {
+				score.innerHTML = "<h2>Score: " + correctAnswers+"/" + totalAnswers + "</h2>";
+			}
+			
+			function finish() {
+				if (totalAnswers == 30) {
+					container.innerHTML = "<h1>TOTAL SCORE: " + correctAnswers + "/" 
+											+ totalAnswers + "</h1>" + 
+											"<div align='center'>" + 
+											"<a class='btn btn-default' href='index.html?c=true'>Go Back</a>" +
+											"</div>";
+					colorTest = true;
+					localStorage.colorTest = true;
+				} else {
+					updateTitle();
+					displayStats();
+					CreateTimer("timer", 3);
+				}
+			}
+					
+			function checkColor(colorClicked){
+				if (grabColor == colorClicked)
+				{
+					correctAnswers++;
+					console.log(correctAnswers);
+				}				
+				ResetTimer();
+				totalAnswers++;
+				getQuest();
+				finish();
+
+			}
+		</script>
+	</body>
+</html>
