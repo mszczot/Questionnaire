@@ -1,0 +1,50 @@
+.container {
+	width: 60% !important;
+}
+
+#btnSubmit {
+	display: none;
+}
+
+#progress {
+	display: none;
+}
+
+.jumbotron {
+	text-align: center;
+	font-size: 20px;
+}
+
+.question {
+	display: none;
+}
+
+#prev {
+	display: none;
+}
+
+#q0 {
+	display: block;
+}
+
+#next {
+}
+
+#footer {
+	height: 100px;
+}
+
+.break {
+	width: 10px;
+}
+
+.desc {
+	width: 40%;
+}
+
+table {
+    border-collapse: collapse;
+}
+table td, table th {
+    border-bottom: 1px solid black;
+}
