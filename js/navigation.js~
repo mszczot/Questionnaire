@@ -135,7 +135,9 @@ var colorAttribute = ["Colour", "Meaning"];
 var colorView = document.getElementById("color_question");
 var advancedColorView = document.getElementById("p5color_question");
 var advancedAtrributeView = document.getElementById("p5color_attribute");
-var stroopAnswers = 0;
+var answers = 0;
+var stroopAnswers;
+var advancedStroopAnswers;
 var turn = 0;
 
 var TotalSeconds;
@@ -157,14 +159,13 @@ function advancedStroopTest(a) {
 	repeats = a;
 	view = advancedColorView;
 	getColor(view);
-	getColorAttribute();
 }
 
 function getColor(view) {
 	if (turn != repeats)
 	{
 		generateColors(view);
-		CreateTimer("timer", 2);
+		CreateTimer("timer", 5);
 		if (view.id == "p5color_question")
 		{
 			generateColorAttribute();
@@ -174,8 +175,16 @@ function getColor(view) {
 		document.getElementById("test_view").style.display = "none";	
 		document.getElementById("p5intro").style.display = "block";
 		document.getElementById("p5test_view").style.display = "none";
-		turn = 0;
+		turn = 0;	
 		timesColorShowed = [0,0,0,0];
+		if (view.id = "color_question")
+		{
+			stroopAnswers = answers;		
+		}
+		else {
+			advancedStroopAnswers = answers;
+		}
+		answers = 0;
 	}
 }
 
@@ -188,7 +197,11 @@ function generateColors(view) {
 	var randomNumber = Math.floor(Math.random()*colors.length);
 	var randomColor = Math.floor(Math.random()*colors.length);
 	if (randomNumber == randomColor) {
-		randomNumber++;	
+		if (randomNumber < 3) {
+			randomNumber++;	
+		} else {
+			randomNumber--;		
+		}
 	}
 	if (timesColorShowed[randomColor] == 25) 
 	{
@@ -203,17 +216,31 @@ function generateColors(view) {
 }
 
 function checkColor(clickedColor) {
-	console.log("clicked color: " + clickedColor);
-	console.log("correct color: " + colorView.style.color);
-	if (clickedColor == colorView.style.color)
+	if (clickedColor == view.style.color)
 	{
-		stroopAnswers++;
+		answers++;
+		console.log("Correct");
 	}
 	ResetTimer();
 	turn++;
 	getColor(view);
 }
 
+function checkColorAndAttribute(clickedColor) {
+	if (document.getElementById("p5color_attribute").innerHTML == "Colour")
+	{
+		checkColor(clickedColor);
+	} else if (document.getElementById("p5color_attribute").innerHTML == "Meaning") {
+			console.log("clicked: " + clickedColor + ", and answer: " + view.innerHTML);
+		if (clickedColor == view.innerHTML)	{
+			answers++;
+			console.log("Correct");
+		}
+		ResetTimer();
+		turn++;
+		getColor(view);
+	}
+}
 
 //Timer functions
 

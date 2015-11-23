@@ -342,6 +342,7 @@ I agree to participate in the research study. I understand the purpose and natur
 			<div id="p5test_view">
 				<br>
 				<div align="center" id="p5color_question"></div>
+				<div align="center" id="p5color_attribute"></div>
 				<div class="row">
   					<div class="col-md-3"></div>
  					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
