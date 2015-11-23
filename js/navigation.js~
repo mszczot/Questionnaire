@@ -136,9 +136,10 @@ var colorView = document.getElementById("color_question");
 var advancedColorView = document.getElementById("p5color_question");
 var advancedAtrributeView = document.getElementById("p5color_attribute");
 var answers = 0;
+var turn = 0;
+//answers for stroop and advanced stroop
 var stroopAnswers;
 var advancedStroopAnswers;
-var turn = 0;
 
 var TotalSeconds;
 var t;
@@ -165,7 +166,7 @@ function getColor(view) {
 	if (turn != repeats)
 	{
 		generateColors(view);
-		CreateTimer("timer", 5);
+		CreateTimer("timer", 2);
 		if (view.id == "p5color_question")
 		{
 			generateColorAttribute();
@@ -180,9 +181,11 @@ function getColor(view) {
 		if (view.id = "color_question")
 		{
 			stroopAnswers = answers;		
+			console.log("Correct Answers: " + stroopAnswers);
 		}
 		else {
 			advancedStroopAnswers = answers;
+			console.log("Correct Answers: " + advancedStroopAnswers);
 		}
 		answers = 0;
 	}
@@ -219,7 +222,6 @@ function checkColor(clickedColor) {
 	if (clickedColor == view.style.color)
 	{
 		answers++;
-		console.log("Correct");
 	}
 	ResetTimer();
 	turn++;
@@ -231,10 +233,8 @@ function checkColorAndAttribute(clickedColor) {
 	{
 		checkColor(clickedColor);
 	} else if (document.getElementById("p5color_attribute").innerHTML == "Meaning") {
-			console.log("clicked: " + clickedColor + ", and answer: " + view.innerHTML);
 		if (clickedColor == view.innerHTML)	{
 			answers++;
-			console.log("Correct");
 		}
 		ResetTimer();
 		turn++;

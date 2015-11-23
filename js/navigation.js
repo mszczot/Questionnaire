@@ -181,9 +181,11 @@ function getColor(view) {
 		if (view.id = "color_question")
 		{
 			stroopAnswers = answers;		
+			console.log("Correct Answers: " + stroopAnswers);
 		}
 		else {
 			advancedStroopAnswers = answers;
+			console.log("Correct Answers: " + advancedStroopAnswers);
 		}
 		answers = 0;
 	}
