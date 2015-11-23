@@ -29,11 +29,8 @@
 <!-- agreement -->		
 			<div class="question" id="q0">
 				<div>
-				Dear Participant,<br><br>
- 
-				This study is designed by two final year MA (Hons) Psychology and Business students at the University of Edinburgh.<br><br>
- 
-The aim of this project is to explore the magnitude of executive functions and eating habits.  This dissertation project is created in order to enhance further understanding of association between human cognition and eating choices.<br><br>
+				Dear Participant,<br><br>This study is designed by two final year MA (Hons) Psychology and Business students at the University of Edinburgh.<br><br>
+				The aim of this project is to explore the magnitude of executive functions and eating habits.  This dissertation project is created in order to enhance further understanding of association between human cognition and eating choices.<br><br>
  
 Your participation in this project will require approximately 40 minutes in which environmental distractions should be avoided in order to achieve reliable reflection of your choices and abilities.<br><br>
 
@@ -285,10 +282,31 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div class="question_body">I would expect here to be some sort of instruction for the test<br></div>
 				<div class="test_choice">
 				<div class="row">
-  					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" type="button">Practice</button></div>
+  					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="stroopTest(4);" type="button">Practice</button></div>
  					<div class="col-md-1"></div>
-  					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" type="button">Start Test</button></div>
+  					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="stroopTest(100);" type="button">Start Test</button></div>
 				</div>			
+			</div>
+			</div>
+			
+			<div id="test_view">
+				<br>
+				<div align="center" id="color_question"></div>
+				<div class="row">
+  					<div class="col-md-3"></div>
+ 					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
+  					<div class="col-md-2"></div> 					
+  					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE</button></div>
+  					<div class="col-md-4"></div>
+				</div>		
+				<div class="row"><br></div>
+				<div class="row">
+  					<div class="col-md-3"></div>
+ 					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN</button></div>
+  					<div class="col-md-2"></div> 					
+  					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW</button></div>
+  					<div class="col-md-4"></div>
+				</div>						
 			</div>
 			</div>
 			
@@ -308,10 +326,38 @@ I agree to participate in the research study. I understand the purpose and natur
 			<div class="question" id="p5">
 			
 <!-- question 15 -->
-				<div class="question_body">This will be another test!!
-				</div>
-				<div class="question_answers">But it will need to wait a bit....
+<!-- Advanced Stroop test: two options, practice and normal -->
+			<div id="p5intro">
+			<!--small intro to the test with two buttons -->
+				<div class="question_body">I would expect here to be some sort of instruction for the test<br></div>
+				<div class="test_choice">
+				<div class="row">
+  					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="advancedStroopTest(4);" type="button">Practice</button></div>
+ 					<div class="col-md-1"></div>
+  					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="advancedStroopTest(100);" type="button">Start Test</button></div>
 				</div>			
+			</div>
+			</div>
+			
+			<div id="p5test_view">
+				<br>
+				<div align="center" id="p5color_question"></div>
+				<div class="row">
+  					<div class="col-md-3"></div>
+ 					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
+  					<div class="col-md-2"></div> 					
+  					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE</button></div>
+  					<div class="col-md-4"></div>
+				</div>		
+				<div class="row"><br></div>
+				<div class="row">
+  					<div class="col-md-3"></div>
+ 					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN</button></div>
+  					<div class="col-md-2"></div> 					
+  					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW</button></div>
+  					<div class="col-md-4"></div>
+				</div>						
+			</div>		
 			</div>
 			
 <!-- page 6 -->

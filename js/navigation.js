@@ -7,14 +7,28 @@ var aria_valuenow = 1;
 var vegetarianQuestions = document.getElementById("vegetarians");
 var next = document.getElementById("next");
 
+//repeats for stroop: 4 for practice and 100 for normal test
+var repeats = 0;
+
 function nextPage(){
 	if (nextPosition < questions.length) {
 		if (questions[position].id == "p2")
 		{
 			showNextPage();
   				  		
+			document.getElementById("test_view").style.display = "none";
 			console.log("stroop test");
-			next.style.display = "none";
+//uncomment this line after finishing development
+//			next.style.display = "none";
+		}
+		else if (questions[position].id == "p4")
+		{
+			showNextPage();
+  				  		
+			document.getElementById("p5test_view").style.display = "none";
+			console.log("advanced stroop test");
+//uncomment this line after finishing development
+//			next.style.display = "none";
 		} else {
 			showNextPage();
   		}	
@@ -111,3 +125,135 @@ $(document).ready(function() {
    });
 });
 });
+
+/* This part is for the stroop test
+*
+*/
+var colors = ["RED", "YELLOW", "BLUE", "GREEN"];
+var timesColorShowed = [0,0,0,0];
+var colorAttribute = ["Colour", "Meaning"];
+var colorView = document.getElementById("color_question");
+var advancedColorView = document.getElementById("p5color_question");
+var advancedAtrributeView = document.getElementById("p5color_attribute");
+var stroopAnswers = 0;
+var turn = 0;
+
+var TotalSeconds;
+var t;
+var view;
+
+function stroopTest(a) {
+	document.getElementById("p3intro").style.display = "none";
+	document.getElementById("test_view").style.display = "block";
+	repeats = a;
+	view = colorView;
+	console.log(view);
+	getColor(view);
+}
+
+function advancedStroopTest(a) {
+	document.getElementById("p5intro").style.display = "none";
+	document.getElementById("p5test_view").style.display = "block";
+	repeats = a;
+	view = advancedColorView;
+	getColor(view);
+}
+
+function getColor(view) {
+	if (turn != repeats)
+	{
+		generateColors(view);
+		CreateTimer("timer", 2);
+		if (view.id == "p5color_question")
+		{
+			generateColorAttribute();
+		}
+	} else {		
+		document.getElementById("p3intro").style.display = "block";
+		document.getElementById("test_view").style.display = "none";	
+		document.getElementById("p5intro").style.display = "block";
+		document.getElementById("p5test_view").style.display = "none";
+		turn = 0;
+		timesColorShowed = [0,0,0,0];
+	}
+}
+
+function generateColorAttribute() {
+	var randomNumber = Math.floor(Math.random()*colorAttribute.length);
+	document.getElementById("p5color_attribute").innerHTML = colorAttribute[randomNumber];
+}
+
+function generateColors(view) {
+	var randomNumber = Math.floor(Math.random()*colors.length);
+	var randomColor = Math.floor(Math.random()*colors.length);
+	if (randomNumber == randomColor) {
+		randomNumber++;	
+	}
+	if (timesColorShowed[randomColor] == 25) 
+	{
+		randomColor = timesColorShowed.indexOf(Math.min.apply(null,timesColorShowed));
+	} 
+	if (Math.max.apply(null,timesColorShowed) - Math.min.apply(null,timesColorShowed) > 2){
+		randomColor = timesColorShowed.indexOf(Math.min.apply(null,timesColorShowed));
+	}
+	timesColorShowed[randomColor] = timesColorShowed[randomColor] + 1;
+	view.innerHTML = colors[randomNumber];
+	view.style.color = colors[randomColor];
+}
+
+function checkColor(clickedColor) {
+	console.log("clicked color: " + clickedColor);
+	console.log("correct color: " + colorView.style.color);
+	if (clickedColor == colorView.style.color)
+	{
+		stroopAnswers++;
+	}
+	ResetTimer();
+	turn++;
+	getColor(view);
+}
+
+
+//Timer functions
+
+function CreateTimer(TimerID, Time) {
+	TotalSeconds = Time;
+
+	UpdateTimer()
+	t = setTimeout("Tick()", 1000);
+}
+
+function Tick() {
+	if (TotalSeconds <= 1) {
+		checkColor("null");
+		return;
+	}
+	TotalSeconds -= 1;
+	UpdateTimer()
+	t = setTimeout("Tick()", 1000);
+}
+			
+function ResetTimer() {
+	clearTimeout(t);
+}
+
+function UpdateTimer() {
+	var Seconds = TotalSeconds;
+	var Days = Math.floor(Seconds / 86400);
+	Seconds -= Days * 86400;
+			
+	var Hours = Math.floor(Seconds / 3600);
+	Seconds -= Hours * (3600);
+		
+	var Minutes = Math.floor(Seconds / 60);
+	Seconds -= Minutes * (60);
+		
+	var TimeStr = Seconds;
+
+}
+						
+function LeadingZero(Time) {
+	return (Time < 10) ? "0" + Time : + Time;
+}
+
+//end of timer functions
