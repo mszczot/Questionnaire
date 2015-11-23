@@ -132,6 +132,7 @@ $(document).ready(function() {
 var colors = ["RED", "YELLOW", "BLUE", "GREEN"];
 var timesColorShowed = [0,0,0,0];
 var colorAttribute = ["Colour", "Meaning"];
+var timesAttributeShowed = [0,0];
 var colorView = document.getElementById("color_question");
 var advancedColorView = document.getElementById("p5color_question");
 var advancedAtrributeView = document.getElementById("p5color_attribute");
@@ -150,7 +151,6 @@ function stroopTest(a) {
 	document.getElementById("test_view").style.display = "block";
 	repeats = a;
 	view = colorView;
-	console.log(view);
 	getColor(view);
 }
 
@@ -192,8 +192,16 @@ function getColor(view) {
 }
 
 function generateColorAttribute() {
-	var randomNumber = Math.floor(Math.random()*colorAttribute.length);
+	var randomNumber = Math.floor(Math.random()*colorAttribute.length);	
+	if (timesColorShowed[randomNumber] == 30) 
+	{
+		randomNumber = timesAttributeShowed.indexOf(Math.min.apply(null,timesAttributeShowed));
+	} 	
+	if (Math.max.apply(null,timesAttributeShowed) - Math.min.apply(null,timesAttributeShowed) > 2){
+		randomNumber = timesAttributeShowed.indexOf(Math.min.apply(null,timesAttributeShowed));
+	}
 	document.getElementById("p5color_attribute").innerHTML = colorAttribute[randomNumber];
+	timesAttributeShowed[randomNumber] = timesAttributeShowed[randomNumber] +1;	
 }
 
 function generateColors(view) {

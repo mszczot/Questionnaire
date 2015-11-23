@@ -132,6 +132,7 @@ $(document).ready(function() {
 var colors = ["RED", "YELLOW", "BLUE", "GREEN"];
 var timesColorShowed = [0,0,0,0];
 var colorAttribute = ["Colour", "Meaning"];
+var timesAttributeShowed = [0,0];
 var colorView = document.getElementById("color_question");
 var advancedColorView = document.getElementById("p5color_question");
 var advancedAtrributeView = document.getElementById("p5color_attribute");
@@ -150,7 +151,6 @@ function stroopTest(a) {
 	document.getElementById("test_view").style.display = "block";
 	repeats = a;
 	view = colorView;
-	console.log(view);
 	getColor(view);
 }
 
