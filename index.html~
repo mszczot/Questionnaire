@@ -3,8 +3,10 @@
 	<head>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/nbacktest.css">
 		<script type= "text/javascript" src = "js/countries.js"></script>
 		<script type= "text/javascript" src = "js/industry.js"></script>
+		<script type= "text/javascript" src = "js/submission.js"></script>
  <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -308,17 +310,29 @@ I agree to participate in the research study. I understand the purpose and natur
   					<div class="col-md-4"></div>
 				</div>						
 			</div>
+			<div id="stroopTestResult"></div>
 			</div>
 			
-<!-- page 4 -->
+<!-- page 4 n-back test-->
 
 			<div class="question" id="p4">
 			
 <!-- question 14 -->
-				<div class="question_body">This will be another test!!
+				<div id="p4intro">
+					<div class="question_body">This is N-back test.<br></div>
+					<div class="question_answers">You can give the explanation on how to do it here</div>			
+					<div class="test_choice">
+						<div class="row">
+  							<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="nBackTest(2,4);" type="button">Practice</button></div>
+ 							<div class="col-md-1"></div>
+  							<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="nBackTest(2,60);" type="button">Start Test</button></div>
+  						</div>			
+					</div>				
 				</div>
-				<div class="question_answers">But it will need to wait a bit....
-				</div>			
+				<div id="p4test">
+					<div id="p4image"></div>
+				</div>
+				<div id="nbackresult"></div>
 			</div>
 			
 <!-- page 5 -->
@@ -334,7 +348,7 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div class="row">
   					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="advancedStroopTest(4);" type="button">Practice</button></div>
  					<div class="col-md-1"></div>
-  					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="advancedStroopTest(100);" type="button">Start Test</button></div>
+  					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="advancedStroopTest(60);" type="button">Start Test</button></div>
 				</div>			
 			</div>
 			</div>
@@ -2397,5 +2411,7 @@ PLEASE SELECT A CHOICE ON EVERY LINE <br>
 	
 
 	<script src="js/navigation.js"></script>
+		<script type= "text/javascript" src = "js/strooptest.js"></script>
+		<script type= "text/javascript" src = "js/nbacktest.js"></script>
 	</body>
 </html>

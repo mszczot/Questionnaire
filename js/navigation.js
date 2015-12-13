@@ -7,12 +7,11 @@ var aria_valuenow = 1;
 var vegetarianQuestions = document.getElementById("vegetarians");
 var next = document.getElementById("next");
 
-//repeats for stroop: 4 for practice and 100 for normal test
-var repeats = 0;
+
 
 function nextPage(){
 	if (nextPosition < questions.length) {
-		if (questions[position].id == "p2")
+		if (questions[position].id == "p2") //stroop test
 		{
 			showNextPage();
   				  		
@@ -21,7 +20,14 @@ function nextPage(){
 //uncomment this line after finishing development
 //			next.style.display = "none";
 		}
-		else if (questions[position].id == "p4")
+		else if (questions[position].id == "p3") //n-back test
+		{
+			showNextPage();
+			
+			document.getElementById("p4test").style.display = "none";
+			//next.style.display = "none";
+		}
+		else if (questions[position].id == "p4") //advanced stroop test
 		{
 			showNextPage();
   				  		
@@ -94,202 +100,5 @@ function showNextPage() {
   	window.scrollTo(0,0);
 }
 
-$(document).ready(function() {
-  $("#btnSubmit").click(function()  {
-  	console.log("clicking");
-	var p1q1 = $("input[type='radio'][name='p1q1']:checked").val();
-	var p1q2 = $("input[type='radio'][name='p1q2']:checked").val();
-	var p1q3 = $("input[type='radio'][name='p1q3']:checked").val();
-	var p1q4 = $("input[type='radio'][name='p1q4']:checked").val();
-	var p1q5 = $("#country2 option:selected").text();
-	var p1q6 = $("#industryDropdown option:selected").text();
-	var p1q7 = $("input[type='radio'][name='p1q7']:checked").val();
-	var p2q1 = $("input[type='radio'][name='p2q1']:checked").val();
-	var p2q2 = $("input[type='radio'][name='p2q2']:checked").val();
-	var p2q3 = $("input[type='radio'][name='p2q3']:checked").val();
-	var p2q4 = $("input[type='radio'][name='p2q4']:checked").val();
-	var p2q5 = $("input[type='radio'][name='p2q5']:checked").val();
-	console.log(p2q3);
-	console.log(p2q4);
-	console.log(p2q5);
-    $.ajax({
-      type: "POST",
-      url: "php/send.php",
-      data: {p1q1: p1q1, p1q2: p1q2, p1q3: p1q3, p1q4: p1q4, p1q5: p1q5, p1q6: p1q6, p1q7: p1q7, p2q1: p2q1, p2q2: p2q2},
-        success: function() {
-          alert("Thank you for completing the survey!");
-        },
-        error: function() {
-          alert("There was an error. Try submit again, please!");
-        }
-   });
-});
-});
 
-/* This part is for the stroop test
-*
-*/
-var colors = ["RED", "YELLOW", "BLUE", "GREEN"];
-var timesColorShowed = [0,0,0,0];
-var colorAttribute = ["Colour", "Meaning"];
-var timesAttributeShowed = [0,0];
-var colorView = document.getElementById("color_question");
-var advancedColorView = document.getElementById("p5color_question");
-var advancedAtrributeView = document.getElementById("p5color_attribute");
-var answers = 0;
-var turn = 0;
-//answers for stroop and advanced stroop
-var stroopAnswers;
-var advancedStroopAnswers;
 
-var TotalSeconds;
-var t;
-var view;
-
-function stroopTest(a) {
-	document.getElementById("p3intro").style.display = "none";
-	document.getElementById("test_view").style.display = "block";
-	repeats = a;
-	view = colorView;
-	getColor(view);
-}
-
-function advancedStroopTest(a) {
-	document.getElementById("p5intro").style.display = "none";
-	document.getElementById("p5test_view").style.display = "block";
-	repeats = a;
-	view = advancedColorView;
-	getColor(view);
-}
-
-function getColor(view) {
-	if (turn != repeats)
-	{
-		generateColors(view);
-		CreateTimer("timer", 2);
-		if (view.id == "p5color_question")
-		{
-			generateColorAttribute();
-		}
-	} else {		
-		document.getElementById("p3intro").style.display = "block";
-		document.getElementById("test_view").style.display = "none";	
-		document.getElementById("p5intro").style.display = "block";
-		document.getElementById("p5test_view").style.display = "none";
-		turn = 0;	
-		timesColorShowed = [0,0,0,0];
-		if (view.id = "color_question")
-		{
-			stroopAnswers = answers;		
-			console.log("Correct Answers: " + stroopAnswers);
-		}
-		else {
-			advancedStroopAnswers = answers;
-			console.log("Correct Answers: " + advancedStroopAnswers);
-		}
-		answers = 0;
-	}
-}
-
-function generateColorAttribute() {
-	var randomNumber = Math.floor(Math.random()*colorAttribute.length);	
-	if (timesColorShowed[randomNumber] == 30) 
-	{
-		randomNumber = timesAttributeShowed.indexOf(Math.min.apply(null,timesAttributeShowed));
-	} 	
-	if (Math.max.apply(null,timesAttributeShowed) - Math.min.apply(null,timesAttributeShowed) > 2){
-		randomNumber = timesAttributeShowed.indexOf(Math.min.apply(null,timesAttributeShowed));
-	}
-	document.getElementById("p5color_attribute").innerHTML = colorAttribute[randomNumber];
-	timesAttributeShowed[randomNumber] = timesAttributeShowed[randomNumber] +1;	
-}
-
-function generateColors(view) {
-	var randomNumber = Math.floor(Math.random()*colors.length);
-	var randomColor = Math.floor(Math.random()*colors.length);
-	if (randomNumber == randomColor) {
-		if (randomNumber < 3) {
-			randomNumber++;	
-		} else {
-			randomNumber--;		
-		}
-	}
-	if (timesColorShowed[randomColor] == 25) 
-	{
-		randomColor = timesColorShowed.indexOf(Math.min.apply(null,timesColorShowed));
-	} 
-	if (Math.max.apply(null,timesColorShowed) - Math.min.apply(null,timesColorShowed) > 2){
-		randomColor = timesColorShowed.indexOf(Math.min.apply(null,timesColorShowed));
-	}
-	timesColorShowed[randomColor] = timesColorShowed[randomColor] + 1;
-	view.innerHTML = colors[randomNumber];
-	view.style.color = colors[randomColor];
-}
-
-function checkColor(clickedColor) {
-	if (clickedColor == view.style.color)
-	{
-		answers++;
-	}
-	ResetTimer();
-	turn++;
-	getColor(view);
-}
-
-function checkColorAndAttribute(clickedColor) {
-	if (document.getElementById("p5color_attribute").innerHTML == "Colour")
-	{
-		checkColor(clickedColor);
-	} else if (document.getElementById("p5color_attribute").innerHTML == "Meaning") {
-		if (clickedColor == view.innerHTML)	{
-			answers++;
-		}
-		ResetTimer();
-		turn++;
-		getColor(view);
-	}
-}
-
-//Timer functions
-
-function CreateTimer(TimerID, Time) {
-	TotalSeconds = Time;
-
-	UpdateTimer()
-	t = setTimeout("Tick()", 1000);
-}
-
-function Tick() {
-	if (TotalSeconds <= 1) {
-		checkColor("null");
-		return;
-	}
-	TotalSeconds -= 1;
-	UpdateTimer()
-	t = setTimeout("Tick()", 1000);
-}
-			
-function ResetTimer() {
-	clearTimeout(t);
-}
-
-function UpdateTimer() {
-	var Seconds = TotalSeconds;
-	var Days = Math.floor(Seconds / 86400);
-	Seconds -= Days * 86400;
-			
-	var Hours = Math.floor(Seconds / 3600);
-	Seconds -= Hours * (3600);
-		
-	var Minutes = Math.floor(Seconds / 60);
-	Seconds -= Minutes * (60);
-		
-	var TimeStr = Seconds;
-
-}
-						
-function LeadingZero(Time) {
-	return (Time < 10) ? "0" + Time : + Time;
-}
-
-//end of timer functions
