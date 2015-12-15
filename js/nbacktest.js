@@ -12,15 +12,24 @@ var nback;
 var turns;
 
 var correctAnswers = 0;
+var wrongAnswers = 0;
+
+var nBackAnswers = "";
+var nBackReactionTime = "";
 
 var currentTurn = 0;
+
+var milliseconds = 0;
+var timeForPicture = 500;
+
+var timer;
 
 function showImage()
 {
 	if (currentTurn < turns)
 	{
 		//set timeout for 0.5s to call a method pause
-		setTimeout(pauseBetweenImages, 500);
+		timer = setTimeout(tickNBack, 10);
 		//get random number
 		//var randomNumber = Math.floor(Math.random()*image.length);
 		//display image 
@@ -65,9 +74,32 @@ function checkImage()
 {
 	if (displayedImages[currentTurn] == displayedImages[currentTurn - nback])
 	{
+		nBackAnswers += ",1";
+		nBackReactionTime += "," + milliseconds;
 		correctAnswers++;
-		console.log(correctAnswers);
 	}
-	
+	else 
+	{
+		nBackAnswers += ",0";
+		nBackReactionTime += "," + milliseconds;
+		wrongAnswers++;
+	}	
+	console.log(nBackAnswers);
+	console.log(nBackReactionTime);
+}
+
+function tickNBack()
+{
+	milliseconds = milliseconds + 10;
+	if (milliseconds > timeForPicture)
+	{		
+		milliseconds = 0;
+		clearTimeout(timer);
+		pauseBetweenImages();	
+	}
+	else
+	{
+		timer = setTimeout(tickNBack, 10);
+	}
 }
 

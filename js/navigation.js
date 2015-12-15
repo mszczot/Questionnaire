@@ -15,26 +15,25 @@ function nextPage(){
 		{
 			showNextPage();
   				  		
-			document.getElementById("test_view").style.display = "none";
-			console.log("stroop test");
+			document.getElementById("p3test").style.display = "none";
 //uncomment this line after finishing development
-//			next.style.display = "none";
+			next.style.display = "none";
 		}
 		else if (questions[position].id == "p3") //n-back test
 		{
 			showNextPage();
 			
 			document.getElementById("p4test").style.display = "none";
-			//next.style.display = "none";
+			next.style.display = "none";
 		}
 		else if (questions[position].id == "p4") //advanced stroop test
 		{
 			showNextPage();
   				  		
-			document.getElementById("p5test_view").style.display = "none";
+			document.getElementById("p5test").style.display = "none";
 			console.log("advanced stroop test");
 //uncomment this line after finishing development
-//			next.style.display = "none";
+			next.style.display = "none";
 		} else {
 			showNextPage();
   		}	

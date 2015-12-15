@@ -4,9 +4,9 @@
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/nbacktest.css">
+		<link rel="stylesheet" type="text/css" href="css/simplestroop.css">
 		<script type= "text/javascript" src = "js/countries.js"></script>
 		<script type= "text/javascript" src = "js/industry.js"></script>
-		<script type= "text/javascript" src = "js/submission.js"></script>
  <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -15,6 +15,7 @@
 
 <!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+		<script type= "text/javascript" src = "js/submission.js"></script>
 	</head>
 	<body>
 	<div class="jumbotron">Questionnaire
@@ -47,8 +48,8 @@ By completing this survey you indicate that you understand the following:<br>
 Thank you for your time and cooperation
 Yours sincerely,
 Nyssa Gaba and Alicja Janowska
-
-
+<br>
+<br>
 I agree to participate in the research study. I understand the purpose and nature of this study and I am participating voluntarily. I understand that I can withdraw from the study at any time, without any penalty or consequences.				
 				</div>
 				<div class="answer">
@@ -281,17 +282,29 @@ I agree to participate in the research study. I understand the purpose and natur
 <!-- Stroop test: two options, practice and normal -->
 			<div id="p3intro">
 			<!--small intro to the test with two buttons -->
-				<div class="question_body">I would expect here to be some sort of instruction for the test<br></div>
+				<div class="question_body">The next section will consist of a task.<br><br>
+				In this task, you will be presented with a series of colour words (blue, yellow, green, red). These words will appear in different colors, 
+				sometimes matching the word (e.g., BLUE), and sometimes not matching 
+				the word (e.g., BLUE). Your job is to indicate, as quickly and accurately as 
+				possible, the colour in which the word is written, whether or not that 
+				matches the word itself. Click the button that matches the colour of the 
+				word. Try not to pay attention to the word, but just the colour.<br><br>
+				For example, if you are presented with the following BLUE, you should
+				select red.<br><br>
+				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br><br>
+				</div>
 				<div class="test_choice">
 				<div class="row">
   					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="stroopTest(4);" type="button">Practice</button></div>
  					<div class="col-md-1"></div>
-  					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="stroopTest(100);" type="button">Start Test</button></div>
+  					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="stroopTest(60);" type="button">Start Test</button></div>
 				</div>			
 			</div>
 			</div>
 			
-			<div id="test_view">
+			<div id="p3test">
+				<br>
+				<div align="center" id="p3color_attribute"></div>
 				<br>
 				<div align="center" id="color_question"></div>
 				<div class="row">
@@ -310,8 +323,11 @@ I agree to participate in the research study. I understand the purpose and natur
   					<div class="col-md-4"></div>
 				</div>						
 			</div>
-			<div id="stroopTestResult"></div>
+			<div id="stroopTestResult">
+				<div id="simpleStroopCorrectAnswers"></div>
+				<div id="simpleStroopWrongAnswers"></div>			
 			</div>
+		</div>
 			
 <!-- page 4 n-back test-->
 
@@ -319,8 +335,15 @@ I agree to participate in the research study. I understand the purpose and natur
 			
 <!-- question 14 -->
 				<div id="p4intro">
-					<div class="question_body">This is N-back test.<br></div>
-					<div class="question_answers">You can give the explanation on how to do it here</div>			
+					<div class="question_body">The next section will consist of a task.<br></div>
+					<div class="question_answers">In this task, you will be asked to remember two images. Then you will be
+					presented with a series of images. Whenever the two images appear in 
+					the series of images, click on the image.<br>
+					Click on the image when the item you see repeats what you saw two
+					items ago.<br>
+					If there is no repeat do nothing, and wait for the next item to appear.<br>
+					Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br>
+					</div>			
 					<div class="test_choice">
 						<div class="row">
   							<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="nBackTest(2,4);" type="button">Practice</button></div>
@@ -334,6 +357,8 @@ I agree to participate in the research study. I understand the purpose and natur
 				</div>
 				<div id="nbackresult"></div>
 			</div>
+			</div>
+			
 			
 <!-- page 5 -->
 
@@ -343,7 +368,14 @@ I agree to participate in the research study. I understand the purpose and natur
 <!-- Advanced Stroop test: two options, practice and normal -->
 			<div id="p5intro">
 			<!--small intro to the test with two buttons -->
-				<div class="question_body">I would expect here to be some sort of instruction for the test<br></div>
+				<div class="question_body">The next section will consist of a task.<br>
+				In this task, you will be presented with a series of color words (blue,
+				yellow, green, red). These words will appear in different colors. The 
+				words will either ask for you to select the meaning or the colour of the 
+				word. You’re job is to indicate as quickly and accurately as possible the 
+				correct meaning or colour of the word.<br>
+				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br>
+				</div>
 				<div class="test_choice">
 				<div class="row">
   					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="advancedStroopTest(4);" type="button">Practice</button></div>
@@ -353,26 +385,27 @@ I agree to participate in the research study. I understand the purpose and natur
 			</div>
 			</div>
 			
-			<div id="p5test_view">
+			<div id="p5test">
 				<br>
 				<div align="center" id="p5color_question"></div>
 				<div align="center" id="p5color_attribute"></div>
 				<div class="row">
   					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColorAndAttribute('RED')" type="button">RED</button></div>
+ 					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED</button></div>
   					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColorAndAttribute('BLUE')" type="button">BLUE</button></div>
+  					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColorA('BLUE')" type="button">BLUE</button></div>
   					<div class="col-md-4"></div>
 				</div>		
 				<div class="row"><br></div>
 				<div class="row">
   					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColorAndAttribute('GREEN')" type="button">GREEN</button></div>
+ 					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColorA('GREEN')" type="button">GREEN</button></div>
   					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColorAndAttribute('YELLOW')" type="button">YELLOW</button></div>
+  					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColorA('YELLOW')" type="button">YELLOW</button></div>
   					<div class="col-md-4"></div>
 				</div>						
-			</div>		
+			</div>
+					
 			</div>
 			
 <!-- page 6 -->
@@ -2410,8 +2443,9 @@ PLEASE SELECT A CHOICE ON EVERY LINE <br>
 	</div>
 	
 
-	<script src="js/navigation.js"></script>
-		<script type= "text/javascript" src = "js/strooptest.js"></script>
+		<script type= "text/javascript" src = "js/navigation.js"></script>
+		<script type= "text/javascript" src = "js/simplestrooptest.js"></script>
+		<script type= "text/javascript" src = "js/advancedStroopTest.js"></script>
 		<script type= "text/javascript" src = "js/nbacktest.js"></script>
 	</body>
 </html>
