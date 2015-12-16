@@ -29,7 +29,7 @@ function showImage()
 	if (currentTurn < turns)
 	{
 		//set timeout for 0.5s to call a method pause
-		timer = setTimeout(tick, 10);
+		timer = setTimeout(tickNBack, 10);
 		//get random number
 		//var randomNumber = Math.floor(Math.random()*image.length);
 		//display image 

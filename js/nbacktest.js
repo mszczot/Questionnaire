@@ -20,7 +20,7 @@ var nBackReactionTime = "";
 var currentTurn = 0;
 
 var milliseconds = 0;
-var timeForPicture = 500;
+var timeForPicture = 1000;
 
 var timer;
 
@@ -43,6 +43,7 @@ function showImage()
 		currentTurn = 0;
 		document.getElementById("p4intro").style.display = "block";
 		document.getElementById("p4test").style.display = "none";
+		nextPage();
 	}
 }
 
@@ -50,7 +51,7 @@ function pauseBetweenImages()
 {
 	currentTurn++;
 	imageHolder.innerHTML = "";
-	setTimeout(showImage, 2750);
+	setTimeout(showImage, 1000);
 }
 
 //function to start the test. 
