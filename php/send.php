@@ -26,6 +26,7 @@ if  ($_POST)
 	$p2q3	=	json_decode($_POST['p2q3']);
 	$p2q4	=	json_decode($_POST['p2q4']);
 	$p2q5	=	json_decode($_POST['p2q5']);
+	$p2q6	=	json_decode($_POST['p2q6']);
 	$reactionTimeStringSimpleStroop = ($_POST['reactionTimeStringSimpleStroop']);
 	$SimpleStroop = ($_POST['SimpleStroop']);
 	$NBackAns = ($_POST['NBackAns']);
@@ -163,15 +164,12 @@ $p6q128	=	($_POST['p6q128']);
 $p6q129	=	($_POST['p6q129']);
 $p6q130	=	($_POST['p6q130']);
 $p6q131	=	($_POST['p6q131']);
-<<<<<<< HEAD
 $excercise1 = 	($_POST['excercise1']);
 $excercise2 = 	($_POST['excercise2']);
 $excercise3 = 	($_POST['excercise3']);
 $excercise4 = 	($_POST['excercise4']);
-=======
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 
-	$sql = "INSERT INTO answers (p1q1, p1q2, p1q3, p1q4, p1q5, p1q6, p1q7, p2q1, p2q2, p2q3, p2q4, p2q5, reactionTimeSimpleStroop,
+	$sql = "INSERT INTO answers (p1q1, p1q2, p1q3, p1q4, p1q5, p1q6, p1q7, p2q1, p2q2, p2q3, p2q4, p2q5, p2q6, reactionTimeSimpleStroop,
 				simpleStroopAnswers, nBackAnswers, nBackReaction, reactionTimeAdvancedStroop, advancedStroopAnswers,
 				p6q1,	p6q2,	p6q3,	p6q4,	p6q5,	p6q6,	p6q7,	p6q8,	p6q9,	p6q10,
 p6q11,	p6q12,	p6q13,	p6q14,	p6q15,	p6q16,	p6q17,	p6q18,	p6q19,	p6q20,
@@ -186,14 +184,10 @@ p6q91,	p6q92,	p6q93,	p6q94,	p6q95,	p6q96,	p6q97,	p6q98,	p6q99,	p6q100,
 p6q101,	p6q102,	p6q103,	p6q104,	p6q105,	p6q106,	p6q107,	p6q108,	p6q109,	p6q110,
 p6q111,	p6q112,	p6q113,	p6q114,	p6q115,	p6q116,	p6q117,	p6q118,	p6q119,	p6q120,
 p6q121,	p6q122,	p6q123,	p6q124,	p6q125,	p6q126,	p6q127,	p6q128,	p6q129,	p6q130,
-<<<<<<< HEAD
-p6q131, excercise1, excercise2, excercise3, excercise4									
-=======
-p6q131									
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
+p6q131, excercise1, excercise2, excercise3, excercise4		
 )
 				VALUES ('$p1q1', '$p1q2', '$p1q3', '$p1q4', '$p1q5', '$p1q6', '$p1q7',
-				'$p2q1', '$p2q2', '$p2q3', '$p2q4', '$p2q5',
+				'$p2q1', '$p2q2', '$p2q3', '$p2q4', '$p2q5', '$p2q6',
 				'$reactionTimeStringSimpleStroop', 	'$SimpleStroop',
 				'$NBackAns', '$NBackReaction',
 				'$reactionTimeStringAdvancedStroop', '$AdvancedStroop',
@@ -327,15 +321,11 @@ p6q131
 '$p6q128',
 '$p6q129',
 '$p6q130',
-<<<<<<< HEAD
 '$p6q131',
 '$excercise1',
 '$excercise2',
 '$excercise3',
 '$excercise4'				
-=======
-'$p6q131'				
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 				)";
 
 
@@ -349,8 +339,4 @@ p6q131
 	$conn->close();
 }
 
-<<<<<<< HEAD
 ?> 
-=======
-?> 
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c

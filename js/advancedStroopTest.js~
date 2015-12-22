@@ -41,9 +41,26 @@ function advancedStroopTest(repeat)
 	turn = 0;
 	//sets the number of repeats and show the test view
 	repeats = repeat;
+<<<<<<< HEAD
+	document.getElementById("green2").className = "btn btn-default ans";
+	document.getElementById("blue2").className = "btn btn-default ans";
+	document.getElementById("red2").className = "btn btn-default ans";
+	document.getElementById("yellow2").className = "btn btn-default ans";
+	document.getElementById("p5intro").style.display = "none";
+	document.getElementById("p5test").style.display = "block";
+	if (repeats === 4)
+	{
+		timeForText = 10000;
+	}
+	else 
+	{
+		timeForText = 3000;
+	}
+=======
 	document.getElementById("p5intro").style.display = "none";
 	document.getElementById("p5test").style.display = "block";
 	
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	showWordA();
 }
 
@@ -91,18 +108,73 @@ function showWordA()
 		//if the repeats was only four then go back to previous screen
 		if (repeats == 4)
 		{
+<<<<<<< HEAD
+			document.getElementById("p5intro").style.display = "block";
+			document.getElementById("p5test").style.display = "none";
+=======
 			showStartOfTest();
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 		}	
 		//else show next page
 		else 
 		{
-			console.log(reactionTimeAdvancedStroop);
-			console.log(advancedStroopTestAnswersString);
 			getAdvanceReactionTimeToString();			
 			nextPage();
 			
 		}
 	}
+<<<<<<< HEAD
+	if (repeats === 4)
+	{
+	document.getElementById("green2").className = "btn btn-default ans";
+	document.getElementById("blue2").className = "btn btn-default ans";
+	document.getElementById("red2").className = "btn btn-default ans";
+	document.getElementById("yellow2").className = "btn btn-default ans";
+	var color;
+	if (p5atrributeView.innerHTML == "Meaning")
+	{
+		color = p5colorView.innerHTML;
+		switch (color) {
+			case "RED": 
+				document.getElementById("red2").className = "btn btn-success ans";
+				break;
+			case "GREEN": 
+				document.getElementById("green2").className = "btn btn-success ans";
+				break;
+			case "BLUE": 
+				document.getElementById("blue2").className = "btn btn-success ans";
+				break;
+			case "YELLOW": 
+				document.getElementById("yellow2").className = "btn btn-success ans";
+				break;
+		}
+	}
+	else
+	{		
+		color = p5colorView.style.color;
+		switch (color.toUpperCase()) {
+			case "RED": 
+				document.getElementById("red2").className = "btn btn-success ans";
+				break;
+			case "GREEN": 
+				document.getElementById("green2").className = "btn btn-success ans";
+				break;
+			case "BLUE": 
+				document.getElementById("blue2").className = "btn btn-success ans";
+				break;
+			case "YELLOW": 
+				document.getElementById("yellow2").className = "btn btn-success ans";
+				break;
+		}
+	}
+	}	
+}
+
+function showHint()
+{
+
+=======
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 }
 
 function getAdvanceReactionTimeToString()
@@ -139,7 +211,11 @@ function checkColorA(clickedColor)
 	{
 		if (clickedColor.toLowerCase() == colorView.style.color)
 		{
+<<<<<<< HEAD
+			advancedStroopTestAnswersString += ",1";
+=======
 			advancedStroopTestAnswersString += ",0";
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 			correctAnswersAdvanced++;	
 			clearTimeout(timer);
 			showWordA();

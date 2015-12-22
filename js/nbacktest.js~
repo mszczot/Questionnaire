@@ -20,7 +20,9 @@ var nBackReactionTime = "";
 var currentTurn = 0;
 
 var milliseconds = 0;
-var timeForPicture = 500;
+var timeForPicture = 1000;
+
+var correct = "";
 
 var timer;
 
@@ -43,14 +45,28 @@ function showImage()
 		currentTurn = 0;
 		document.getElementById("p4intro").style.display = "block";
 		document.getElementById("p4test").style.display = "none";
+		nextPage();
 	}
 }
 
 function pauseBetweenImages()
 {
 	currentTurn++;
-	imageHolder.innerHTML = "";
-	setTimeout(showImage, 2750);
+	if (correct === "")
+	{
+		imageHolder.innerHTML = "";
+	} else {
+		if (correct)
+		{
+			imageHolder.innerHTML = "<img src=./images/tick.png>";
+		}
+		if (!correct)
+		{
+			imageHolder.innerHTML = "<img src=./images/wrong.jpg>";
+		}
+	}
+	setTimeout(showImage, 1000);
+	correct = "";
 }
 
 //function to start the test. 
@@ -77,15 +93,21 @@ function checkImage()
 		nBackAnswers += ",1";
 		nBackReactionTime += "," + milliseconds;
 		correctAnswers++;
+		correct = true;
+		milliseconds = 0;
+		clearTimeout(timer);
+		pauseBetweenImages();
 	}
 	else 
 	{
 		nBackAnswers += ",0";
 		nBackReactionTime += "," + milliseconds;
 		wrongAnswers++;
+		correct = false;
+		milliseconds = 0;
+		clearTimeout(timer);
+		pauseBetweenImages();
 	}	
-	console.log(nBackAnswers);
-	console.log(nBackReactionTime);
 }
 
 function tickNBack()

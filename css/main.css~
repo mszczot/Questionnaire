@@ -2,7 +2,11 @@
 	width: 60% !important;
 }
 
+<<<<<<< HEAD
+#submit_button {
+=======
 #btnSubmit {
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	display: none;
 }
 
@@ -57,6 +61,20 @@ table td, table th {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+#p5color_question {
+	font-size: 30px;
+	font-weight: bold;	
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#p5color_attribute {
+	font-size: 30px;
 }
 
 .ans {

@@ -16,6 +16,8 @@
 <!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
 		<script type= "text/javascript" src = "js/submission.js"></script>
+
+		<title>Questionnaire</title>
 	</head>
 	<body>
 	<div class="jumbotron">Questionnaire
@@ -32,12 +34,10 @@
 <!-- agreement -->		
 			<div class="question" id="q0">
 				<div>
-				Dear Participant,<br><br>This study is designed by two final year MA (Hons) Psychology and Business students at the University of Edinburgh.<br><br>
-				The aim of this project is to explore the magnitude of executive functions and eating habits.  This dissertation project is created in order to enhance further understanding of association between human cognition and eating choices.<br><br>
- 
-Your participation in this project will require approximately 40 minutes in which environmental distractions should be avoided in order to achieve reliable reflection of your choices and abilities.<br><br>
-
-By completing this survey you indicate that you understand the following:<br>
+				Dear Participant,<br><br>Nyssa Gaba and Alicja Janowska, two final year MA (Hons) Psychology and Business students at the University of Edinburgh, designed this study.
+				<br><br>We hope to study the links between executive functions and healthy choices. In particular, we’re trying to understand the relationship between human cognition and eating habits.
+				<br><br>Please allow approximately 40 minutes to complete this study. We also ask that you avoid environmental distractions to make sure your results are the best of your ability.
+				<br><br>By completing this survey you indicate that you understand the following:<br>
 <ul>
 <li>It is not anticipated that you will experience any discomfort from answering the questions</li>
 <li>Any information you provide during the study will be treated with strict confidence and it will not be possible to identify individuals. The data will be collected and stored in accordance with the Data Protection Act (1998)</li>
@@ -46,10 +46,10 @@ By completing this survey you indicate that you understand the following:<br>
 <li>This survey should be completed individually</li>
 </ul>
 Thank you for your time and cooperation
-Yours sincerely,
-Nyssa Gaba and Alicja Janowska
+<br><br>Yours sincerely,
+<br><br>Nyssa Gaba and Alicja Janowska
 <br>
-<br>
+<br><br>
 I agree to participate in the research study. I understand the purpose and nature of this study and I am participating voluntarily. I understand that I can withdraw from the study at any time, without any penalty or consequences.				
 				</div>
 				<div class="answer">
@@ -192,15 +192,15 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div class="question_body">In which diet category would you place yourself?</div>
 				<div class="question_answers" id="p2q1">
 					<form>
-						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="1"/> Omnivorous - consume animal products, except those excluded for taste preference, medical (e.g., allergy intolerance), and/or religious reasons.
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="1"/> <b>Omnivorous</b> - consume animal products, except those excluded for taste preference, medical (e.g., allergy intolerance), and/or religious reasons.
 						<br>
-						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="2" /> Semi - or Partial Vegetarian - consume some, but not all, of the following: red meat (beef, veal, etc.), pork, poultry, fish, and/or seafood. Consume eggs and dairy products.
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="2" /> <b>Semi - or Partial Vegetarian</b> - consume some, but not all, of the following: red meat (beef, veal, etc.), pork, poultry, fish, and/or seafood. Consume eggs and dairy products.
 						<br>
-						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="3" /> Vegetarian - never consume red meat (beef, veal, etc.), pork, poultry, fish or seafood, but may consume eggs and/or dairy products.
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="3" /> <b>Vegetarian</b> - never consume red meat (beef, veal, etc.), pork, poultry, fish or seafood, but may consume eggs and/or dairy products.
 						<br>
-						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="4" /> Strict vegetarian or dietary vegan - never consume any animal products, including red meat (beef, veal, etc.), pork, poultry, fish, seafood, eggs, dairy products, or other animal products (e.g. gelatin, casein, etc.).
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="4" /> <b>Strict vegetarian or dietary vegan</b> - never consume any animal products, including red meat (beef, veal, etc.), pork, poultry, fish, seafood, eggs, dairy products, or other animal products (e.g. gelatin, casein, etc.).
 						<br>
-						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="5" /> Lifestyle vegan - never consume any animal products, and avoid some or all non-food animal products (e.g., leather, silk, cosmetics containing animal ingredients, etc.), and/or products tested on animals.			
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="5" /> <b>Lifestyle vegan</b> - never consume any animal products, and avoid some or all non-food animal products (e.g., leather, silk, cosmetics containing animal ingredients, etc.), and/or products tested on animals.			
 					</form>	
 				</div>		
 				<br>		
@@ -283,13 +283,14 @@ I agree to participate in the research study. I understand the purpose and natur
 			<div id="p3intro">
 			<!--small intro to the test with two buttons -->
 				<div class="question_body">The next section will consist of a task.<br><br>
-				In this task, you will be presented with a series of colour words (blue, yellow, green, red). These words will appear in different colors, 
-				sometimes matching the word (e.g., BLUE), and sometimes not matching 
-				the word (e.g., BLUE). Your job is to indicate, as quickly and accurately as 
+
+				In this task, you will be presented with a series of colour words (<span style="color:blue">blue</span>,<span style="color:#e5e600"> yellow</span>, <span style="color:green">green</span>, <span style="color:red">red</span>). These words will appear in different colors, 
+				sometimes matching the word (e.g., <span style="color:blue">BLUE</span>), and sometimes not matching 
+				the word (e.g., <span style="color:red">BLUE</span>). Your job is to indicate, as quickly and accurately as 
 				possible, the colour in which the word is written, whether or not that 
 				matches the word itself. Click the button that matches the colour of the 
 				word. Try not to pay attention to the word, but just the colour.<br><br>
-				For example, if you are presented with the following BLUE, you should
+				For example, if you are presented with the following <span style="color:red">BLUE</span>, you should
 				select red.<br><br>
 				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br><br>
 				</div>
@@ -309,17 +310,20 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div align="center" id="color_question"></div>
 				<div class="row">
   					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
+
+ 					<div class="col-md-1"><button id="red1" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
   					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE</button></div>
+  					<div class="col-md-1"><button id="blue1" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE</button></div>
+
   					<div class="col-md-4"></div>
 				</div>		
 				<div class="row"><br></div>
 				<div class="row">
   					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN</button></div>
+ 					<div class="col-md-1"><button id="green1" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN</button></div>
   					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW</button></div>
+  					<div class="col-md-1"><button id="yellow1" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW</button></div>
+
   					<div class="col-md-4"></div>
 				</div>						
 			</div>
@@ -335,14 +339,14 @@ I agree to participate in the research study. I understand the purpose and natur
 			
 <!-- question 14 -->
 				<div id="p4intro">
-					<div class="question_body">The next section will consist of a task.<br></div>
+					<div class="question_body">The next section will consist of a task.<br><br></div>
 					<div class="question_answers">In this task, you will be asked to remember two images. Then you will be
 					presented with a series of images. Whenever the two images appear in 
-					the series of images, click on the image.<br>
+					the series of images, click on the image.<br><br>
 					Click on the image when the item you see repeats what you saw two
-					items ago.<br>
-					If there is no repeat do nothing, and wait for the next item to appear.<br>
-					Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br>
+					items ago.<br><br>
+					If there is no repeat do nothing, and wait for the next item to appear.<br><br>
+					Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br><br>
 					</div>			
 					<div class="test_choice">
 						<div class="row">
@@ -368,13 +372,13 @@ I agree to participate in the research study. I understand the purpose and natur
 <!-- Advanced Stroop test: two options, practice and normal -->
 			<div id="p5intro">
 			<!--small intro to the test with two buttons -->
-				<div class="question_body">The next section will consist of a task.<br>
-				In this task, you will be presented with a series of color words (blue,
-				yellow, green, red). These words will appear in different colors. The 
+				<div class="question_body">The next section will consist of a task.<br><br>
+
+				In this task, you will be presented with a series of color words (<span style="color:blue">blue</span>,<span style="color:#e5e600"> yellow</span>, <span style="color:green">green</span>, <span style="color:red">red</span>). These words will appear in different colors. The 
 				words will either ask for you to select the meaning or the colour of the 
 				word. You’re job is to indicate as quickly and accurately as possible the 
-				correct meaning or colour of the word.<br>
-				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br>
+				correct meaning or colour of the word.<br><br>
+				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br><br>
 				</div>
 				<div class="test_choice">
 				<div class="row">
@@ -391,17 +395,21 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div align="center" id="p5color_attribute"></div>
 				<div class="row">
   					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED</button></div>
+
+ 					<div class="col-md-1"><button id="red2" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED</button></div>
   					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColorA('BLUE')" type="button">BLUE</button></div>
+  					<div class="col-md-1"><button id="blue2" class="btn btn-default ans" onclick="checkColorA('BLUE')" type="button">BLUE</button></div>
+
   					<div class="col-md-4"></div>
 				</div>		
 				<div class="row"><br></div>
 				<div class="row">
   					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColorA('GREEN')" type="button">GREEN</button></div>
+
+ 					<div class="col-md-1"><button id="green2" class="btn btn-default ans" onclick="checkColorA('GREEN')" type="button">GREEN</button></div>
   					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColorA('YELLOW')" type="button">YELLOW</button></div>
+  					<div class="col-md-1"><button id="yellow2" class="btn btn-default ans" onclick="checkColorA('YELLOW')" type="button">YELLOW</button></div>
+
   					<div class="col-md-4"></div>
 				</div>						
 			</div>
@@ -2427,7 +2435,51 @@ PLEASE SELECT A CHOICE ON EVERY LINE <br>
 				<br>				
 			</div>			
 
+			<div class="question" id="p7">
+<!-- excercise questions -->
+				<div class="question_body">Excercise<br><br>
+In this section you will be required to complete a series of questions relating to your usual leisure-time exercise habits <br><br>
+<b>Question 1</b><br>
+1. During a typical 7 day period (a week), how many times on the average do you do the following kinds of excercise 
+for more than 15 minutes during your free time?
+				</div>
+				<div class="question_answers">
+					<div>
+						<p>a) STRENUOUS EXERCISE (HEART BEATS RAPIDLY)<br>
+(e.g., running, jogging, hockey, football, soccer, squash, basketball, cross country, skiing, judo, 
+roller skating, vigorous swimming, vigorous long distance bicyclying)	<br>
+<input type="text" class="textfield" value="" id="excercise1" name="excercise1" onkeypress="return isNumber(event)" />	<br>	<br>		
+					</div>
+					<div>
+						<p>b) MODERATE EXERCISE (NOT EXHAUSTING)<br>
+(e.g., fast walking, baseball, tennis, easy bicycling, volleyball, badminton, easy swimming, apline 
 
+skiing, popular and folk dancing)	<br>
+<input type="text" class="textfield" value="" id="excercise2" name="excercise2" onkeypress="return isNumber(event)" />	<br>	<br>		
+					</div>
+					<div>
+						<p>c) MILD EXERCISE (MINIMAL EFFORT)<br>
+(e.g. yoga, archery, fishing from river bank, bowling, horseshoes, gold, snow-moiling, easy
+
+walking)<br>
+<input type="text" class="textfield" value="" id="excercise3" name="excercise3" onkeypress="return isNumber(event)" />	<br>	<br>		
+					</div>
+					<div><b>Question 2</b><br>
+						<p>During a typical 7 day period (a week), in your leisure time, how often do you engage in any regular activity long 
+
+enough to work up a sweat (heart beats rapidly)?<br>
+
+Choose one of the following answers<br><br>
+						<input type="radio" name="excercise4" value="1"/> Often
+						<br>
+						<input type="radio" name="excercise4" value="2"/> Sometimes
+						<br>
+						<input type="radio" name="excercise4" value="3"/> Never
+						<br>
+						<input type="radio" name="excercise4" value="4"/> No answer<br><br>
+					</div>
+				</div>
+			</div>
 					
 <!-- footer with buttons -->
 			<div id="footer">
@@ -2436,12 +2488,22 @@ PLEASE SELECT A CHOICE ON EVERY LINE <br>
 					<button type="button" class="btn btn-primary" id="next" onclick="start();" >Next</button>
 				</div>
 				<div id="submit_button">
+					<p>Please click submit button to submit your answers.</p><br><br>
 					<button id="btnSubmit" class="btn btn-primary" type="button">Submit</button>		
 				</div>
 			</div>
 		</div>
 	</div>
-	
+		<script>
+			function isNumber(evt) {
+				evt = (evt) ? evt : window.event;
+    				var charCode = (evt.which) ? evt.which : evt.keyCode;
+    				if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        				return false;
+    				}
+    				return true;
+			}
+		</script>
 
 		<script type= "text/javascript" src = "js/navigation.js"></script>
 		<script type= "text/javascript" src = "js/simplestrooptest.js"></script>
