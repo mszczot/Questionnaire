@@ -1,0 +1,78 @@
+.container {
+	width: 60% !important;
+}
+
+#submit_button {
+	display: none;
+}
+
+#progress {
+	display: none;
+}
+
+.jumbotron {
+	text-align: center;
+	font-size: 20px;
+}
+
+.question {
+	display: none;
+}
+
+#prev {
+	display: none;
+}
+
+#q0 {
+	display: block;
+}
+
+#next {
+}
+
+#footer {
+	height: 100px;
+}
+
+.break {
+	width: 10px;
+}
+
+.desc {
+	width: 40%;
+}
+
+table {
+    border-collapse: collapse;
+}
+table td, table th {
+    border-bottom: 1px solid black;
+}
+
+#color_question {
+	font-size: 30px;
+	font-weight: bold;	
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#p5color_question {
+	font-size: 30px;
+	font-weight: bold;	
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#p5color_attribute {
+	font-size: 30px;
+}
+
+.ans {
+	width: 150px;
+}
