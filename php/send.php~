@@ -187,7 +187,7 @@ p6q121,	p6q122,	p6q123,	p6q124,	p6q125,	p6q126,	p6q127,	p6q128,	p6q129,	p6q130,
 p6q131, excercise1, excercise2, excercise3, excercise4		
 )
 				VALUES ('$p1q1', '$p1q2', '$p1q3', '$p1q4', '$p1q5', '$p1q6', '$p1q7',
-				'$p2q1', '$p2q2', '$p2q3', '$p2q4', '$p2q5',
+				'$p2q1', '$p2q2', '$p2q3', '$p2q4', '$p2q5', '$p2q6',
 				'$reactionTimeStringSimpleStroop', 	'$SimpleStroop',
 				'$NBackAns', '$NBackReaction',
 				'$reactionTimeStringAdvancedStroop', '$AdvancedStroop',

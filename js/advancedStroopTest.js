@@ -41,7 +41,6 @@ function advancedStroopTest(repeat)
 	turn = 0;
 	//sets the number of repeats and show the test view
 	repeats = repeat;
-<<<<<<< HEAD
 	document.getElementById("green2").className = "btn btn-default ans";
 	document.getElementById("blue2").className = "btn btn-default ans";
 	document.getElementById("red2").className = "btn btn-default ans";

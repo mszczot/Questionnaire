@@ -2,11 +2,7 @@ var questions = document.getElementsByClassName("question");
 var position = 0;
 var nextPosition = position + 1;
 var progress_bar = document.getElementById("progress_bar");
-<<<<<<< HEAD
 var progress_bar_width = 14;
-=======
-var progress_bar_width = 17;
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 var aria_valuenow = 1;
 var vegetarianQuestions = document.getElementById("vegetarians");
 var next = document.getElementById("next");
@@ -39,21 +35,14 @@ function nextPage(){
 //uncomment this line after finishing development
 			next.style.display = "none";
 		} else {
-<<<<<<< HEAD
 			next.style.display = "block";
-=======
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 			showNextPage();
   		}	
   	} else {
   		progress_bar.setAttribute("style", "width:100%");
 		questions[position].style.display="none";		
 		next.style.display = "none";
-<<<<<<< HEAD
 		document.getElementById("submit_button").style.display = "block";
-=======
-		document.getElementById("btnSubmit").style.display = "block";
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
   	}
 }
 

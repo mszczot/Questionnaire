@@ -2,11 +2,7 @@
 	width: 60% !important;
 }
 
-<<<<<<< HEAD
 #submit_button {
-=======
-#btnSubmit {
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	display: none;
 }
 
@@ -43,7 +39,26 @@
 }
 
 .desc {
-	width: 40%;
+	width: 35%;
+}
+
+.selection {
+	text-align: center;
+	align-content: center;
+	width: 7%;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.sel {
+	text-align: center;
+	align-content: center;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.border {
+	border-left: 1px solid black;
 }
 
 table {

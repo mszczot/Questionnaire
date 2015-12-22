@@ -154,7 +154,7 @@ var	excercise1 = document.getElementById("excercise1").value;
 var 	excercise2 = document.getElementById("excercise2").value;
 var 	excercise3 = document.getElementById("excercise3").value;
 var	excercise4 = $("input[type='radio'][name='excercise4']:checked").val();
-
+console.log(p2q6);
     $.ajax({
       type: "POST",
       url: "php/send.php",
@@ -308,6 +308,7 @@ excercise4: excercise4
           window.location.replace("http://szczocik.ddns.net/thankyou.html");
         },
         error: function() {
+        	console.log(error);
           alert("There was an error. Try submit again, please!");
         }
    });

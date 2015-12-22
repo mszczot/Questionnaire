@@ -39,7 +39,30 @@
 }
 
 .desc {
-	width: 40%;
+	width: 35%;
+}
+
+.desc2 {
+	width: 60%;
+}
+
+.selection {
+	text-align: center;
+	align-content: center;
+	width: 7%;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.sel {
+	text-align: center;
+	align-content: center;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.border {
+	border-left: 1px solid black;
 }
 
 table {
