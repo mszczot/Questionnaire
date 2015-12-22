@@ -41,6 +41,7 @@ function advancedStroopTest(repeat)
 	turn = 0;
 	//sets the number of repeats and show the test view
 	repeats = repeat;
+<<<<<<< HEAD
 	document.getElementById("green2").className = "btn btn-default ans";
 	document.getElementById("blue2").className = "btn btn-default ans";
 	document.getElementById("red2").className = "btn btn-default ans";
@@ -55,6 +56,11 @@ function advancedStroopTest(repeat)
 	{
 		timeForText = 3000;
 	}
+=======
+	document.getElementById("p5intro").style.display = "none";
+	document.getElementById("p5test").style.display = "block";
+	
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	showWordA();
 }
 
@@ -102,8 +108,12 @@ function showWordA()
 		//if the repeats was only four then go back to previous screen
 		if (repeats == 4)
 		{
+<<<<<<< HEAD
 			document.getElementById("p5intro").style.display = "block";
 			document.getElementById("p5test").style.display = "none";
+=======
+			showStartOfTest();
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 		}	
 		//else show next page
 		else 
@@ -113,6 +123,7 @@ function showWordA()
 			
 		}
 	}
+<<<<<<< HEAD
 	if (repeats === 4)
 	{
 	document.getElementById("green2").className = "btn btn-default ans";
@@ -162,6 +173,8 @@ function showWordA()
 function showHint()
 {
 
+=======
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 }
 
 function getAdvanceReactionTimeToString()
@@ -198,7 +211,11 @@ function checkColorA(clickedColor)
 	{
 		if (clickedColor.toLowerCase() == colorView.style.color)
 		{
+<<<<<<< HEAD
 			advancedStroopTestAnswersString += ",1";
+=======
+			advancedStroopTestAnswersString += ",0";
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 			correctAnswersAdvanced++;	
 			clearTimeout(timer);
 			showWordA();

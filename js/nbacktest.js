@@ -22,8 +22,11 @@ var currentTurn = 0;
 var milliseconds = 0;
 var timeForPicture = 1000;
 
+<<<<<<< HEAD
 var correct = "";
 
+=======
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 var timer;
 
 function showImage()
@@ -52,6 +55,7 @@ function showImage()
 function pauseBetweenImages()
 {
 	currentTurn++;
+<<<<<<< HEAD
 	if (correct === "")
 	{
 		imageHolder.innerHTML = "";
@@ -67,6 +71,10 @@ function pauseBetweenImages()
 	}
 	setTimeout(showImage, 1000);
 	correct = "";
+=======
+	imageHolder.innerHTML = "";
+	setTimeout(showImage, 1000);
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 }
 
 //function to start the test. 
@@ -93,21 +101,30 @@ function checkImage()
 		nBackAnswers += ",1";
 		nBackReactionTime += "," + milliseconds;
 		correctAnswers++;
+<<<<<<< HEAD
 		correct = true;
 		milliseconds = 0;
 		clearTimeout(timer);
 		pauseBetweenImages();
+=======
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	}
 	else 
 	{
 		nBackAnswers += ",0";
 		nBackReactionTime += "," + milliseconds;
 		wrongAnswers++;
+<<<<<<< HEAD
 		correct = false;
 		milliseconds = 0;
 		clearTimeout(timer);
 		pauseBetweenImages();
 	}	
+=======
+	}	
+	console.log(nBackAnswers);
+	console.log(nBackReactionTime);
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 }
 
 function tickNBack()

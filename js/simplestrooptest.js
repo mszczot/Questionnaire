@@ -32,6 +32,7 @@ var timeForText = 3000;
 var milliseconds = 0;
 
 
+<<<<<<< HEAD
 function showHint()
 {
 
@@ -59,6 +60,16 @@ function stroopTest(repeat)
 	}
 	showWord();
 	
+=======
+//method to start the test
+function stroopTest(repeat)
+{
+	//sets the number of repeats and show the test view
+	repeats = repeat;
+	document.getElementById("p3intro").style.display = "none";
+	document.getElementById("p3test").style.display = "block";
+	showWord();
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 }
 
 function showWord()
@@ -77,11 +88,17 @@ function showWord()
 	else 
 	{
 		//if the repeats was only four then go back to previous screen
+<<<<<<< HEAD
 		if (repeats === 4)
 		{
 			turn = 0;
 			document.getElementById("p3intro").style.display = "block";
 			document.getElementById("p3test").style.display = "none";
+=======
+		if (repeats == 4)
+		{
+			showStartOfTest();
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 		}	
 		//else show next page
 		else 
@@ -90,6 +107,7 @@ function showWord()
 			document.getElementById("simpleStroopWrongAnswers").innerHTML = wrongAnswers;
 			nextPage();
 			getReactionTimeToString();
+<<<<<<< HEAD
 		}
 	}
 	if (repeats === 4)
@@ -141,6 +159,14 @@ function showWord()
 }
 
 
+=======
+			console.log(reactionTimeString);
+			console.log(simpleStroopTestAnswersString);
+		}
+	}
+}
+
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 function getReactionTimeToString()
 {
 	for (i=0; i<reactionTime.length;i++)
@@ -175,7 +201,11 @@ function checkColor(clickedColor)
 	{
 		if (clickedColor.toLowerCase() == colorView.style.color)
 		{
+<<<<<<< HEAD
 			simpleStroopTestAnswersString += ",1";
+=======
+			simpleStroopTestAnswersString += ",0";
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 			correctAnswers++;	
 			clearTimeout(timer);
 			showWord();
@@ -195,7 +225,10 @@ function checkColor(clickedColor)
 
 function showStartOfTest() 
 {
+<<<<<<< HEAD
 	console.log("Showing start of test");
+=======
+>>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	document.getElementById("p3intro").style.display = "block";
 	document.getElementById("p3test").style.display = "none";
 }

@@ -16,10 +16,6 @@
 <!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
 		<script type= "text/javascript" src = "js/submission.js"></script>
-<<<<<<< HEAD
-		<title>Questionnaire</title>
-=======
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	</head>
 	<body>
 	<div class="jumbotron">Questionnaire
@@ -287,15 +283,6 @@ I agree to participate in the research study. I understand the purpose and natur
 			<div id="p3intro">
 			<!--small intro to the test with two buttons -->
 				<div class="question_body">The next section will consist of a task.<br><br>
-<<<<<<< HEAD
-				In this task, you will be presented with a series of colour words (<span style="color:blue">blue</span>,<span style="color:#e5e600"> yellow</span>, <span style="color:green">green</span>, <span style="color:red">red</span>). These words will appear in different colors, 
-				sometimes matching the word (e.g., <span style="color:blue">BLUE</span>), and sometimes not matching 
-				the word (e.g., <span style="color:red">BLUE</span>). Your job is to indicate, as quickly and accurately as 
-				possible, the colour in which the word is written, whether or not that 
-				matches the word itself. Click the button that matches the colour of the 
-				word. Try not to pay attention to the word, but just the colour.<br><br>
-				For example, if you are presented with the following <span style="color:red">BLUE</span>, you should
-=======
 				In this task, you will be presented with a series of colour words (blue, yellow, green, red). These words will appear in different colors, 
 				sometimes matching the word (e.g., BLUE), and sometimes not matching 
 				the word (e.g., BLUE). Your job is to indicate, as quickly and accurately as 
@@ -303,7 +290,6 @@ I agree to participate in the research study. I understand the purpose and natur
 				matches the word itself. Click the button that matches the colour of the 
 				word. Try not to pay attention to the word, but just the colour.<br><br>
 				For example, if you are presented with the following BLUE, you should
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 				select red.<br><br>
 				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br><br>
 				</div>
@@ -323,29 +309,17 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div align="center" id="color_question"></div>
 				<div class="row">
   					<div class="col-md-3"></div>
-<<<<<<< HEAD
- 					<div class="col-md-1"><button id="red1" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="blue1" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE</button></div>
-=======
  					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
   					<div class="col-md-2"></div> 					
   					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE</button></div>
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
   					<div class="col-md-4"></div>
 				</div>		
 				<div class="row"><br></div>
 				<div class="row">
   					<div class="col-md-3"></div>
-<<<<<<< HEAD
- 					<div class="col-md-1"><button id="green1" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="yellow1" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW</button></div>
-=======
  					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN</button></div>
   					<div class="col-md-2"></div> 					
   					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW</button></div>
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
   					<div class="col-md-4"></div>
 				</div>						
 			</div>
@@ -361,14 +335,14 @@ I agree to participate in the research study. I understand the purpose and natur
 			
 <!-- question 14 -->
 				<div id="p4intro">
-					<div class="question_body">The next section will consist of a task.<br><br></div>
+					<div class="question_body">The next section will consist of a task.<br></div>
 					<div class="question_answers">In this task, you will be asked to remember two images. Then you will be
 					presented with a series of images. Whenever the two images appear in 
-					the series of images, click on the image.<br><br>
+					the series of images, click on the image.<br>
 					Click on the image when the item you see repeats what you saw two
-					items ago.<br><br>
-					If there is no repeat do nothing, and wait for the next item to appear.<br><br>
-					Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br><br>
+					items ago.<br>
+					If there is no repeat do nothing, and wait for the next item to appear.<br>
+					Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br>
 					</div>			
 					<div class="test_choice">
 						<div class="row">
@@ -394,17 +368,13 @@ I agree to participate in the research study. I understand the purpose and natur
 <!-- Advanced Stroop test: two options, practice and normal -->
 			<div id="p5intro">
 			<!--small intro to the test with two buttons -->
-				<div class="question_body">The next section will consist of a task.<br><br>
-<<<<<<< HEAD
-				In this task, you will be presented with a series of color words (<span style="color:blue">blue</span>,<span style="color:#e5e600"> yellow</span>, <span style="color:green">green</span>, <span style="color:red">red</span>). These words will appear in different colors. The 
-=======
+				<div class="question_body">The next section will consist of a task.<br>
 				In this task, you will be presented with a series of color words (blue,
 				yellow, green, red). These words will appear in different colors. The 
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 				words will either ask for you to select the meaning or the colour of the 
 				word. You’re job is to indicate as quickly and accurately as possible the 
-				correct meaning or colour of the word.<br><br>
-				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br><br>
+				correct meaning or colour of the word.<br>
+				Click “Practice” to have a few practice sessions, otherwise click "Start Test" to begin<br>
 				</div>
 				<div class="test_choice">
 				<div class="row">
@@ -421,29 +391,17 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div align="center" id="p5color_attribute"></div>
 				<div class="row">
   					<div class="col-md-3"></div>
-<<<<<<< HEAD
- 					<div class="col-md-1"><button id="red2" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="blue2" class="btn btn-default ans" onclick="checkColorA('BLUE')" type="button">BLUE</button></div>
-=======
  					<div class="col-md-1"><button id="red" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED</button></div>
   					<div class="col-md-2"></div> 					
   					<div class="col-md-1"><button id="blue" class="btn btn-default ans" onclick="checkColorA('BLUE')" type="button">BLUE</button></div>
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
   					<div class="col-md-4"></div>
 				</div>		
 				<div class="row"><br></div>
 				<div class="row">
   					<div class="col-md-3"></div>
-<<<<<<< HEAD
- 					<div class="col-md-1"><button id="green2" class="btn btn-default ans" onclick="checkColorA('GREEN')" type="button">GREEN</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="yellow2" class="btn btn-default ans" onclick="checkColorA('YELLOW')" type="button">YELLOW</button></div>
-=======
  					<div class="col-md-1"><button id="green" class="btn btn-default ans" onclick="checkColorA('GREEN')" type="button">GREEN</button></div>
   					<div class="col-md-2"></div> 					
   					<div class="col-md-1"><button id="yellow" class="btn btn-default ans" onclick="checkColorA('YELLOW')" type="button">YELLOW</button></div>
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
   					<div class="col-md-4"></div>
 				</div>						
 			</div>
@@ -2469,55 +2427,7 @@ PLEASE SELECT A CHOICE ON EVERY LINE <br>
 				<br>				
 			</div>			
 
-<<<<<<< HEAD
-			<div class="question" id="p7">
-<!-- excercise questions -->
-				<div class="question_body">Excercise<br><br>
-In this section you will be required to complete a series of questions relating to your usual leisure-time exercise habits <br><br>
-<b>Question 1</b><br>
-1. During a typical 7 day period (a week), how many times on the average do you do the following kinds of excercise 
-for more than 15 minutes during your free time?
-				</div>
-				<div class="question_answers">
-					<div>
-						<p>a) STRENUOUS EXERCISE (HEART BEATS RAPIDLY)<br>
-(e.g., running, jogging, hockey, football, soccer, squash, basketball, cross country, skiing, judo, 
-roller skating, vigorous swimming, vigorous long distance bicyclying)	<br>
-<input type="text" class="textfield" value="" id="excercise1" name="excercise1" onkeypress="return isNumber(event)" />	<br>	<br>		
-					</div>
-					<div>
-						<p>b) MODERATE EXERCISE (NOT EXHAUSTING)<br>
-(e.g., fast walking, baseball, tennis, easy bicycling, volleyball, badminton, easy swimming, apline 
 
-skiing, popular and folk dancing)	<br>
-<input type="text" class="textfield" value="" id="excercise2" name="excercise2" onkeypress="return isNumber(event)" />	<br>	<br>		
-					</div>
-					<div>
-						<p>c) MILD EXERCISE (MINIMAL EFFORT)<br>
-(e.g. yoga, archery, fishing from river bank, bowling, horseshoes, gold, snow-moiling, easy
-
-walking)<br>
-<input type="text" class="textfield" value="" id="excercise3" name="excercise3" onkeypress="return isNumber(event)" />	<br>	<br>		
-					</div>
-					<div><b>Question 2</b><br>
-						<p>During a typical 7 day period (a week), in your leisure time, how often do you engage in any regular activity long 
-
-enough to work up a sweat (heart beats rapidly)?<br>
-
-Choose one of the following answers<br><br>
-						<input type="radio" name="excercise4" value="1"/> Often
-						<br>
-						<input type="radio" name="excercise4" value="2"/> Sometimes
-						<br>
-						<input type="radio" name="excercise4" value="3"/> Never
-						<br>
-						<input type="radio" name="excercise4" value="4"/> No answer<br><br>
-					</div>
-				</div>
-			</div>
-=======
-
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 					
 <!-- footer with buttons -->
 			<div id="footer">
@@ -2526,29 +2436,12 @@ Choose one of the following answers<br><br>
 					<button type="button" class="btn btn-primary" id="next" onclick="start();" >Next</button>
 				</div>
 				<div id="submit_button">
-<<<<<<< HEAD
-					<p>Please click submit button to submit your answers.</p><br><br>
-=======
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 					<button id="btnSubmit" class="btn btn-primary" type="button">Submit</button>		
 				</div>
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-		<script>
-			function isNumber(evt) {
-				evt = (evt) ? evt : window.event;
-    				var charCode = (evt.which) ? evt.which : evt.keyCode;
-    				if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        				return false;
-    				}
-    				return true;
-			}
-		</script>
-=======
 	
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 
 		<script type= "text/javascript" src = "js/navigation.js"></script>
 		<script type= "text/javascript" src = "js/simplestrooptest.js"></script>

@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script type= "text/javascript" src = "js/countries.js"></script>
+		<script type= "text/javascript" src = "js/industry.js"></script>
+ <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+	</head>
+	<body>
+	<div class="jumbotron">Questionnaire
+	</div>
+	
+	<div class="container" id="container">
+		<div class="progress" id="progress">
+			<div class="progress">
+  				<div class="progress-bar" id="progress_bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="6" style='width/:15%'>
+  				</div>
+			</div>
+		</div>	
+		<div class="frame">
+		
+			<div class="question" id="q0">
+				<div>
+				Dear Participant,<br><br>
+ 
+				This study is designed by two final year MA (Hons) Psychology and Business students at the University of Edinburgh.<br><br>
+ 
+The aim of this project is to explore the magnitude of executive functions and eating habits.  This dissertation project is created in order to enhance further understanding of association between human cognition and eating choices.<br><br>
+ 
+Your participation in this project will require approximately 40 minutes in which environmental distractions should be avoided in order to achieve reliable reflection of your choices and abilities.<br><br>
+
+By completing this survey you indicate that you understand the following:<br>
+<ul>
+<li>It is not anticipated that you will experience any discomfort from answering the questions</li>
+<li>Any information you provide during the study will be treated with strict confidence and it will not be possible to identify individuals. The data will be collected and stored in accordance with the Data Protection Act (1998)</li>
+<li>You may refuse to participate or withdraw from participation without evaluation or consequence at any time</li>
+<li>This survey is for people of 18 years and above</li>
+<li>This survey should be completed individually</li>
+</ul>
+Thank you for your time and cooperation
+Yours sincerely,
+Nyssa Gaba and Alicja Janowska
+
+
+I agree to participate in the research study. I understand the purpose and nature of this study and I am participating voluntarily. I understand that I can withdraw from the study at any time, without any penalty or consequences.				
+				</div>
+				<div class="answer">
+					<div class="radio" id="startOrNo">
+					<form>
+						<label><input type="radio" id="start1" name="survey" value="yes"> Yes</label>
+						<br>
+						<label><input type="radio" id="start2" name="survey" value="no" /> No</label>
+					</form>
+					</div>
+				</div>			
+			</div>
+		
+<!-- Page 1 -->		
+			<div class="question" id="q1">
+
+<!-- Question 1-->
+				<div class="question_body">What is your gender?</div>
+				<div class="question_answers" id="p1q1">
+					<form>
+						<input type="radio" name="p1q1" value="male"/> Male
+						<br>
+						<input type="radio" name="p1q1" value="female" /> Female					
+					</form>	
+				</div>
+				<br>
+<!-- Question 2-->
+				<div class="question_body">How old are you?</div>
+				<div class="question_answers" id="p1q2">
+					<form>
+						<input type="radio" name="p1q2" value="1"/> 18 - 25
+						<br>
+						<input type="radio" name="p1q2" value="2" /> 26 - 34
+						<br>
+						<input type="radio" name="p1q2" value="3" /> 35 - 54
+						<br>
+						<input type="radio" name="p1q2" value="4" /> 55 - 64
+						<br>
+						<input type="radio" name="p1q2" value="5" /> Over 64					
+					</form>	
+				</div>
+				<br>
+<!-- Question 3-->
+				<div class="question_body">What is your race?</div>
+				<div class="question_answers" id="p1q3">
+					<form>
+						<input type="radio" name="p1q3" value="1"/> White/Caucasian
+						<br>
+						<input type="radio" name="p1q3" value="2" /> African American	
+						<br>
+						<input type="radio" name="p1q3" value="3" /> Hispanic	
+						<br>
+						<input type="radio" name="p1q3" value="4" /> Asian	
+						<br>
+						<input type="radio" name="p1q3" value="5" /> Native American	
+						<br>
+						<input type="radio" name="p1q3" value="6" /> Pacific Islander	
+						<br>
+						<input type="radio" name="p1q3" value="7" /> Other					
+					</form>	
+				</div>
+				<br>
+<!-- Question 4-->
+				<div class="question_body">What is the highest level of education you have completed?</div>
+				<div class="question_answers" id="p1q4">
+					<form>
+						<input type="radio" name="p1q4" value="1"/> Less than High School
+						<br>
+						<input type="radio" name="p1q4" value="2" /> 	High School/GED
+						<br>
+						<input type="radio" name="p1q4" value="3" /> 	Some College
+						<br>
+						<input type="radio" name="p1q4" value="4" /> 	2-year College Degree
+						<br>
+						<input type="radio" name="p1q4" value="5" /> 	4-year College Degree
+						<br>
+						<input type="radio" name="p1q4" value="6" /> 	Masters Degree
+						<br>
+						<input type="radio" name="p1q4" value="7" /> 	Doctoral Degree	
+						<br>
+						<input type="radio" name="p1q4" value="8" /> 	Professional Degree (JD, MD)						
+					</form>	
+				</div>
+				<br>
+				
+<!-- Question 5-->
+				<div class="question_body">In which country do you reside?</div>
+				<div class="question_answers" id="p1q5">
+					<form>		
+						<select id="country2" name ="country2"></select>
+						<script language="javascript">
+						populateCountries("country2");
+ 						</script>
+					</form>	
+				</div>
+				<br>
+				
+<!-- Question 6-->
+				<div class="question_body">In which industry are you currently employed?</div>
+				<div class="question_answers" id="p1q6">
+					<form>		
+						<select id="industryDropdown" name ="industry"></select>
+						<script language="javascript">
+						populateIndustry("industryDropdown");
+ 						</script>
+					</form>	
+				<br>
+				</div>
+				
+<!-- Question 7-->
+				<div class="question_body">What is your combined annual household income in British Pound Sterling (£)?</div>
+				<div class="question_answers" id="p1q7">
+					<form>
+						<input type="radio" name="p1q7" value="1"/> Less than 30,000
+						<br>
+						<input type="radio" name="p1q7" value="2" /> 30,000-39,999
+						<br>
+						<input type="radio" name="p1q7" value="3" /> 40,000-49,999
+						<br>
+						<input type="radio" name="p1q7" value="4" /> 50,000-59,999
+						<br>
+						<input type="radio" name="p1q7" value="5" /> 60,000-69,999
+						<br>
+						<input type="radio" name="p1q7" value="6" /> 70,000-79,999
+						<br>
+						<input type="radio" name="p1q7" value="7" /> 80,000-89,999
+						<br>
+						<input type="radio" name="p1q7" value="8" /> 90,000-99,999	
+						<br>
+						<input type="radio" name="p1q7" value="9" /> 100,000 or more						
+					</form>	
+				</div>
+				<br>
+			</div>	
+			
+<!-- page 2 -->
+<!-- question 8 -->
+			<div class="question" id="p2">
+				<div class="question_body">In which diet category would you place yourself?</div>
+				<div class="question_answers" id="p2q1">
+					<form>
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="1"/> Omnivorous - consume animal products, except those excluded for taste preference, medical (e.g., allergy intolerance), and/or religious reasons.
+						<br>
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="2" /> Semi - or Partial Vegetarian - consume some, but not all, of the following: red meat (beef, veal, etc.), pork, poultry, fish, and/or seafood. Consume eggs and dairy products.
+						<br>
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="3" /> Vegetarian - never consume red meat (beef, veal, etc.), pork, poultry, fish or seafood, but may consume eggs and/or dairy products.
+						<br>
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="4" /> Strict vegetarian or dietary vegan - never consume any animal products, including red meat (beef, veal, etc.), pork, poultry, fish, seafood, eggs, dairy products, or other animal products (e.g. gelatin, casein, etc.).
+						<br>
+						<input onchange="vegetarianOption();" type="radio" name="p2q1" value="5" /> Lifestyle vegan - never consume any animal products, and avoid some or all non-food animal products (e.g., leather, silk, cosmetics containing animal ingredients, etc.), and/or products tested on animals.			
+					</form>	
+				</div>		
+				<br>		
+				
+				<!-- options for vegetarians -->
+				<div id="vegetarians">
+				
+<!-- question 9 -->
+					<div class="question_body">How long have you been vegetarian?</div>
+					<div class="question_answers" id="p2q2">
+						<form>
+							<input type="radio" name="p2q2" value="1"/> 0-3 months
+							<br>
+							<input type="radio" name="p2q2" value="2" /> 3-6 months
+							<br>
+							<input type="radio" name="p2q2" value="3" /> 6 months – 1year
+							<br>
+							<input type="radio" name="p2q2" value="4" /> 1-2 years
+							<br>
+							<input type="radio" name="p2q2" value="5" /> 5-10 years	
+							<br>
+							<input type="radio" name="p2q2" value="6" /> 10+ years
+							<br>
+							<input type="radio" name="p2q2" value="7" /> Lifetime				
+						</form>	
+					</div>		
+					<br>			
+					
+<!-- question 10-->
+					<div class="question_body">Please indicate how strongly each statement reflects your beliefs and/ or behavior.</div>
+					<div class="question_answers" id="p2q3">
+						
+							<table>
+								<tr>
+	<td></td>
+	<td style="width:10px"></td>
+	<td>Disagree</td>
+	<td>Neutral</td>
+	<td>Agree</td>
+</tr>
+<tr>
+	<td style="width:50%">I resist eating 'meat' because it increases pain and suffering in animals</td>
+	<td style="width:10px"></td>
+	<td><input type="radio" name="p2q3" value="1"/></td>
+	<td><input type="radio" name="p2q3" value="2"/></td>
+	<td><input type="radio" name="p2q3" value="3"/></td>
+</tr>
+<!-- question 11 -->
+<tr>
+	<td>I resist eating 'meat' because a diet containing 'meat' is not as healthy as a vegetarian diet</td>
+	<td style="width:10px"></td>
+	<td><input type="radio" name="p2q4" value="1"/></td>
+	<td><input type="radio" name="p2q4" value="2"/></td>
+	<td><input type="radio" name="p2q4" value="3"/></td>
+</tr>
+<!-- question 12 -->
+<tr>
+	<td>I resist eating 'meat' because it is wasteful of resources to eat animal rather than vegetable products, especially in a world where people are starving</td>
+	<td style="width:10px"></td>
+	<td><input type="radio" name="p2q5" value="1"/></td>
+	<td><input type="radio" name="p2q5" value="2"/></td>
+	<td><input type="radio" name="p2q5" value="3"/></td>
+</tr>
+</table>
+
+					</div>		
+					<br>	
+					
+					
+				</div>
+			</div>
+			
+			
+<!-- page 3 -->
+
+			<div class="question" id="p3">
+			
+<!-- question 13 -->
+				<div class="question_body">This will be awesome stroop test!!
+				</div>
+				<div class="question_answers">But it will need to wait a bit....
+				</div>			
+			</div>
+			
+<!-- page 4 -->
+
+			<div class="question" id="p4">
+			
+<!-- question 14 -->
+				<div class="question_body">This will be another test!!
+				</div>
+				<div class="question_answers">But it will need to wait a bit....
+				</div>			
+			</div>
+			
+<!-- page 5 -->
+
+			<div class="question" id="p5">
+			
+<!-- question 15 -->
+				<div class="question_body">This will be another test!!
+				</div>
+				<div class="question_answers">But it will need to wait a bit....
+				</div>			
+			</div>
+			
+<!-- page 6 -->
+
+			<div class="question" id="p6">
+			
+<!-- question 16 -->
+				<div class="question_body">Your diet last year<br><br>
+Please select the choice to indicate how often, on average, you have eaten the specified amount of each food during the past year. Please estimate your average food use as best you can, and please answer every question - do not leave any lines blank. <br><br>
+<b>Question 1</b><br>
+Meat and Fish (medium serving)<br>
+PLEASE SELECT A CHOICE ON EVERY LINE
+				</div>
+				<div class="question_answers">
+				</div>			
+			</div>			
+
+<!-- page 7 -->
+
+			<div class="question" id="p7">
+			
+				<div class="question_body">More questions coming soon...
+				</div>
+				<div class="question_answers">
+				</div>			
+			</div>	
+
+<!-- page 8 -->
+
+			<div class="question" id="p8">
+			
+				<div class="question_body">More questions coming soon...
+				</div>
+				<div class="question_answers">
+				</div>			
+			</div>	
+					
+<!-- footer with buttons -->
+			<div id="footer">
+				<div class="navigation_buttons">
+					<button id="prev">Previous</button>
+					<button type="button" class="btn btn-primary" id="next" onclick="start();" >Next</button>
+				</div>
+				<div id="submit_button">
+					<button id="btnSubmit" class="btn btn-primary" type="button">Submit</button>		
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="js/navigation.js"></script>
+	</body>
+</html>
