@@ -38,11 +38,12 @@ function showHint()
 }
 
 //method to start the test
-function stroopTest(repeat)
+function stroopTest(repeat, meaning)
 {
 	console.log(repeat);
 	//sets the number of repeats and show the test view
 	repeats = repeat;
+	boolOption = meaning;
 	document.getElementById("green1").className = "btn btn-default ans";
 	document.getElementById("blue1").className = "btn btn-default ans";
 	document.getElementById("red1").className = "btn btn-default ans";
@@ -63,15 +64,11 @@ function stroopTest(repeat)
 
 function showWord()
 {
+	console.log(boolOption); 
 	//first half of the items shown will be meaning
-	if (turn < repeats/2)
+	if (turn < repeats)
 	{
-		displayDetails(true);
-	}
-	//second half will be color
-	else if (turn >= repeats/2 && turn < repeats)
-	{
-		displayDetails(false);
+		displayDetails(boolOption);
 	}
 	//else get out of the test
 	else 
@@ -202,6 +199,7 @@ function showStartOfTest()
 //function to display the test and whether its color or meaning. 
 function displayDetails(isMeaning)
 {
+	
 	boolOption = isMeaning;
 	if (isMeaning)
 	{

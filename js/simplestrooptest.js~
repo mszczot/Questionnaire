@@ -32,18 +32,18 @@ var timeForText = 3000;
 var milliseconds = 0;
 
 
-<<<<<<< HEAD
 function showHint()
 {
 
 }
 
 //method to start the test
-function stroopTest(repeat)
+function stroopTest(repeat, meaning)
 {
 	console.log(repeat);
 	//sets the number of repeats and show the test view
 	repeats = repeat;
+	boolOption = meaning;
 	document.getElementById("green1").className = "btn btn-default ans";
 	document.getElementById("blue1").className = "btn btn-default ans";
 	document.getElementById("red1").className = "btn btn-default ans";
@@ -60,45 +60,25 @@ function stroopTest(repeat)
 	}
 	showWord();
 	
-=======
-//method to start the test
-function stroopTest(repeat)
-{
-	//sets the number of repeats and show the test view
-	repeats = repeat;
-	document.getElementById("p3intro").style.display = "none";
-	document.getElementById("p3test").style.display = "block";
-	showWord();
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 }
 
 function showWord()
 {
+	console.log(boolOption);
 	//first half of the items shown will be meaning
-	if (turn < repeats/2)
+	if (turn < repeats)
 	{
-		displayDetails(true);
-	}
-	//second half will be color
-	else if (turn >= repeats/2 && turn < repeats)
-	{
-		displayDetails(false);
+		displayDetails(boolOption);
 	}
 	//else get out of the test
 	else 
 	{
 		//if the repeats was only four then go back to previous screen
-<<<<<<< HEAD
 		if (repeats === 4)
 		{
 			turn = 0;
 			document.getElementById("p3intro").style.display = "block";
 			document.getElementById("p3test").style.display = "none";
-=======
-		if (repeats == 4)
-		{
-			showStartOfTest();
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 		}	
 		//else show next page
 		else 
@@ -107,7 +87,6 @@ function showWord()
 			document.getElementById("simpleStroopWrongAnswers").innerHTML = wrongAnswers;
 			nextPage();
 			getReactionTimeToString();
-<<<<<<< HEAD
 		}
 	}
 	if (repeats === 4)
@@ -159,14 +138,6 @@ function showWord()
 }
 
 
-=======
-			console.log(reactionTimeString);
-			console.log(simpleStroopTestAnswersString);
-		}
-	}
-}
-
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 function getReactionTimeToString()
 {
 	for (i=0; i<reactionTime.length;i++)
@@ -201,11 +172,7 @@ function checkColor(clickedColor)
 	{
 		if (clickedColor.toLowerCase() == colorView.style.color)
 		{
-<<<<<<< HEAD
 			simpleStroopTestAnswersString += ",1";
-=======
-			simpleStroopTestAnswersString += ",0";
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 			correctAnswers++;	
 			clearTimeout(timer);
 			showWord();
@@ -225,10 +192,6 @@ function checkColor(clickedColor)
 
 function showStartOfTest() 
 {
-<<<<<<< HEAD
-	console.log("Showing start of test");
-=======
->>>>>>> 18aa03699ed0acae9b6b5f8bc9152714708f550c
 	document.getElementById("p3intro").style.display = "block";
 	document.getElementById("p3test").style.display = "none";
 }
@@ -236,6 +199,7 @@ function showStartOfTest()
 //function to display the test and whether its color or meaning. 
 function displayDetails(isMeaning)
 {
+	
 	boolOption = isMeaning;
 	if (isMeaning)
 	{
