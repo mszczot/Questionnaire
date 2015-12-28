@@ -15,6 +15,8 @@ $(document).ready(function() {
 	var p2q6 = $("input[type='radio'][name='p2q6']:checked").val();
 	var reactionTimeStringSimpleStroop = reactionTimeString;
 	var SimpleStroop = simpleStroopTestAnswersString;
+	var reactionTimeStringSimpleStroopa = reactionTimeaString;
+	var SimpleStroopa = simpleStroopTestAnswersStringa;
 	var NBackAns = nBackAnswers;
 	var NBackReaction = nBackReactionTime;
 	var reactionTimeStringAdvancedStroop = reactionTimeAdvancedString;
@@ -162,6 +164,8 @@ console.log(p2q6);
       		p2q3: p2q3, p2q4: p2q4, p2q5: p2q5, p2q6: p2q6,
       		reactionTimeStringSimpleStroop: reactionTimeStringSimpleStroop, 
       		SimpleStroop: SimpleStroop,
+      		reactionTimeStringSimpleStroopa: reactionTimeStringSimpleStroop, 
+      		SimpleStroopa: SimpleStroop,
       		NBackAns: NBackAns,
       		NBackReaction: NBackReaction,
       		reactionTimeStringAdvancedStroop: reactionTimeStringAdvancedStroop,

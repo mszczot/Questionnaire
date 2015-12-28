@@ -308,6 +308,7 @@ excercise4: excercise4
           window.location.replace("http://szczocik.ddns.net/thankyou.html");
         },
         error: function() {
+        	console.log(error);
           alert("There was an error. Try submit again, please!");
         }
    });

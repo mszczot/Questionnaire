@@ -29,6 +29,8 @@ if  ($_POST)
 	$p2q6	=	json_decode($_POST['p2q6']);
 	$reactionTimeStringSimpleStroop = ($_POST['reactionTimeStringSimpleStroop']);
 	$SimpleStroop = ($_POST['SimpleStroop']);
+	$reactionTimeStringSimpleStroopa = ($_POST['reactionTimeStringSimpleStroopa']);
+	$SimpleStroopa = ($_POST['SimpleStroopa']);
 	$NBackAns = ($_POST['NBackAns']);
 	$NBackReaction = ($_POST['NBackReaction']);
 	$reactionTimeStringAdvancedStroop = ($_POST['reactionTimeStringAdvancedStroop']);
@@ -170,7 +172,8 @@ $excercise3 = 	($_POST['excercise3']);
 $excercise4 = 	($_POST['excercise4']);
 
 	$sql = "INSERT INTO answers (p1q1, p1q2, p1q3, p1q4, p1q5, p1q6, p1q7, p2q1, p2q2, p2q3, p2q4, p2q5, p2q6, reactionTimeSimpleStroop,
-				simpleStroopAnswers, nBackAnswers, nBackReaction, reactionTimeAdvancedStroop, advancedStroopAnswers,
+				simpleStroopAnswers, reactionTimeSimpleStroopa,
+				simpleStroopAnswersa, nBackAnswers, nBackReaction, reactionTimeAdvancedStroop, advancedStroopAnswers,
 				p6q1,	p6q2,	p6q3,	p6q4,	p6q5,	p6q6,	p6q7,	p6q8,	p6q9,	p6q10,
 p6q11,	p6q12,	p6q13,	p6q14,	p6q15,	p6q16,	p6q17,	p6q18,	p6q19,	p6q20,
 p6q21,	p6q22,	p6q23,	p6q24,	p6q25,	p6q26,	p6q27,	p6q28,	p6q29,	p6q30,
@@ -189,6 +192,7 @@ p6q131, excercise1, excercise2, excercise3, excercise4
 				VALUES ('$p1q1', '$p1q2', '$p1q3', '$p1q4', '$p1q5', '$p1q6', '$p1q7',
 				'$p2q1', '$p2q2', '$p2q3', '$p2q4', '$p2q5', '$p2q6',
 				'$reactionTimeStringSimpleStroop', 	'$SimpleStroop',
+				'$reactionTimeStringSimpleStroopa', 	'$SimpleStroopa',
 				'$NBackAns', '$NBackReaction',
 				'$reactionTimeStringAdvancedStroop', '$AdvancedStroop',
 '$p6q1',
