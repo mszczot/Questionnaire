@@ -35,6 +35,8 @@ var milliseconds = 0;
 //method to start the test
 function advancedStroopTest(repeat)
 {
+	window.addEventListener("keydown", checkKeyPressed, true);
+
 	timesColorShowed = [0,0,0,0];
 	timesAttributeShowed = [0,0];
 	timesTextShowed = [0,0,0,0];
@@ -56,6 +58,46 @@ function advancedStroopTest(repeat)
 		timeForText = 3000;
 	}
 	showWordA();
+}
+
+ 
+function checkKeyPressed(e) {
+	
+
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		checkColorA("YELLOW");    		
+		document.getElementById("yellow2").className = "btn btn-default.focus ans";
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		checkColorA("RED");    
+		document.getElementById("red2").className = "btn btn-default.focus ans";
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		checkColorA("GREEN");    
+		document.getElementById("green2").className = "btn btn-default.focus ans";
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+		checkColorA("BLUE");    
+		document.getElementById("blue2").className = "btn btn-default.focus ans";
+    }
+    setTimeout(reset, 100);
+}
+
+function reset()
+{
+	document.getElementById("keys").focus();
+	document.getElementById("green2").className = "btn btn-default ans";
+	document.getElementById("blue2").className = "btn btn-default ans";
+	document.getElementById("red2").className = "btn btn-default ans";
+	document.getElementById("yellow2").className = "btn btn-default ans";
 }
 
 function setBoolOption()
@@ -175,6 +217,8 @@ function getAdvanceReactionTimeToString()
 //function to check if the clicked button is the correct one
 function checkColorA(clickedColor) 
 {
+	
+	console.log(clickedColor);
 	//depending on the boolean if true then check meaning if false then check color
 	if (boolOption)
 	{
@@ -214,6 +258,7 @@ function checkColorA(clickedColor)
 	reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 	milliseconds = 0;
 	reactionTimeIndexAdvanced++;
+	reset();
 }
 
 function showStartOfTest() 

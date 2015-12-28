@@ -454,27 +454,21 @@ I agree to participate in the research study. I understand the purpose and natur
 			
 			<div id="p5test">
 				<br>
-				<div align="center" id="p5color_question"></div>
 				<div align="center" id="p5color_attribute"></div>
-				<div class="row">
-  					<div class="col-md-3"></div>
-
- 					<div class="col-md-1"><button id="red2" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="blue2" class="btn btn-default ans" onclick="checkColorA('BLUE')" type="button">BLUE</button></div>
-
-  					<div class="col-md-4"></div>
-				</div>		
-				<div class="row"><br></div>
-				<div class="row">
-  					<div class="col-md-3"></div>
-
- 					<div class="col-md-1"><button id="green2" class="btn btn-default ans" onclick="checkColorA('GREEN')" type="button">GREEN</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="yellow2" class="btn btn-default ans" onclick="checkColorA('YELLOW')" type="button">YELLOW</button></div>
-
-  					<div class="col-md-4"></div>
-				</div>						
+				<div align="center" id="p5color_question"></div>
+				<table id="keys">
+					<tr>
+						<td></td>
+						<td><button id="red2" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED<br>&#x25B2</button></td>
+						<td></td>					
+					</tr>				
+					<tr>
+						<td><button id="yellow2" class="btn btn-default ans" onclick="checkColorA('YELLOW')" type="button">YELLOW<br>&#x25C0</button></td>
+						<td><button id="blue2" class="btn btn-default ans" onclick="checkColorA('BLUE')" type="button">BLUE<br>&#x25BC</button></td>
+						<td><button id="green2" class="btn btn-default ans" onclick="checkColorA('GREEN')" type="button">GREEN<br>&#x25B6</button></td>					
+					</tr>			
+				</table>
+						
 			</div>
 					
 			</div>
@@ -2566,10 +2560,10 @@ Choose one of the following answers<br><br>
     				}
     				return true;
 			}
-			
+		 $('#p6').find('table th:nth-child(3), table th:nth-child(4), table th:nth-child(5), table th:nth-child(6), table th:nth-child(7), table th:nth-child(8), table th:nth-child(9), table th:nth-child(10), table th:nth-child(11)').addClass('borderselection');		
 			 $('#p6').find('table td:nth-child(3), table td:nth-child(4), table td:nth-child(5), table td:nth-child(6), table td:nth-child(7), table td:nth-child(8), table td:nth-child(9), table td:nth-child(10), table td:nth-child(11)').addClass('selection');
 			 $('#p6').find('table th:nth-child(3), table th:nth-child(4), table th:nth-child(5), table th:nth-child(6), table th:nth-child(7), table th:nth-child(8), table th:nth-child(9), table th:nth-child(10), table th:nth-child(11)').addClass('selection');
-				$('#p2').find('table td:nth-child(3),	table td:nth-child(4), table td:nth-child(5)').addClass('sel');
+			 $('#p2').find('table td:nth-child(3),	table td:nth-child(4), table td:nth-child(5)').addClass('sel');
 		</script>
 
 		<script type= "text/javascript" src = "js/navigation.js"></script>

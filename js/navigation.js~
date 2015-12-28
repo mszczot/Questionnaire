@@ -2,7 +2,7 @@ var questions = document.getElementsByClassName("question");
 var position = 0;
 var nextPosition = position + 1;
 var progress_bar = document.getElementById("progress_bar");
-var progress_bar_width = 14;
+var progress_bar_width = 12.5;
 var aria_valuenow = 1;
 var vegetarianQuestions = document.getElementById("vegetarians");
 var next = document.getElementById("next");
@@ -19,15 +19,7 @@ function nextPage(){
 //uncomment this line after finishing development
 			//next.style.display = "none";
 		}
-		if (questions[position].id == "p3") //stroop test
-		{
-			showNextPage();
-  				  		
-			document.getElementById("p3atest").style.display = "none";
-//uncomment this line after finishing development
-			//next.style.display = "none";
-		}
-		else if (questions[position].id == "p3a") //n-back test
+		else if (questions[position].id == "p3") //n-back test
 		{
 			showNextPage();
 			
@@ -103,7 +95,7 @@ function showNextPage() {
  	progress_bar.setAttribute("style", "width:"+progress_bar_width+"%");
 	progress_bar.setAttribute("aria-valuenow", aria_valuenow);
   	aria_valuenow++;
-  	progress_bar_width += 17;
+  	progress_bar_width += progress_bar_width;
   		
   	window.scrollTo(0,0);
 }

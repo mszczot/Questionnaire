@@ -61,6 +61,12 @@
 	margin-right: 2px;
 }
 
+.borderselection {
+
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
 .border {
 	border-left: 1px solid black;
 }
@@ -73,6 +79,16 @@ table td, table th {
 }
 
 #color_question {
+	font-size: 30px;
+	font-weight: bold;	
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#p3acolor_question {
 	font-size: 30px;
 	font-weight: bold;	
 	    text-shadow:
@@ -98,4 +114,15 @@ table td, table th {
 
 .ans {
 	width: 150px;
+}
+
+table#keys {
+	border-collapse: collapse; 
+	margin-left: auto; 
+	margin-right: auto;
+	border-bottom: 1px solid white !important;
+}
+
+table#keys td{
+	border:none;
 }
