@@ -43,9 +43,14 @@ function showImage()
 	{
 		document.getElementById("nbackresult").innerHTML = correctAnswers;
 		currentTurn = 0;
-		document.getElementById("p4intro").style.display = "block";
-		document.getElementById("p4test").style.display = "none";
-		nextPage();
+		if (turns === 4)
+		{
+			document.getElementById("p4intro").style.display = "block";
+			document.getElementById("p4test").style.display = "none";
+		} 
+		else {		
+			nextPage();
+		}
 	}
 }
 

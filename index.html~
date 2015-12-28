@@ -266,7 +266,7 @@ I agree to participate in the research study. I understand the purpose and natur
 </tr>
 </tr><!-- question 12b -->
 <tr>
-	<td>I resist eating ‘meat’ because my family doesn't eat meat</td>
+	<td>I resist eating ‘meat’ because of my culture i.e. family, religion </td>
 	<td></td>
 	<td><input type="radio" name="p2q6" value="1"/></td>
 	<td><input type="radio" name="p2q6" value="2"/></td>
@@ -349,9 +349,8 @@ I agree to participate in the research study. I understand the purpose and natur
 <!-- question 14 -->
 				<div id="p4intro">
 					<div class="question_body">The next section will consist of a task.<br><br></div>
-					<div class="question_answers">In this task, you will be asked to remember two images. Then you will be
-					presented with a series of images. Whenever the two images appear in 
-					the series of images, click on the image.<br><br>
+					<div class="question_answers">You will be presented with a series of images. 
+					If the image is the <u>same image</u> you saw <u>two images</u> ago, click on the image.<br><br>
 					Click on the image when the item you see repeats what you saw two
 					items ago.<br><br>
 					If there is no repeat do nothing, and wait for the next item to appear.<br><br>
