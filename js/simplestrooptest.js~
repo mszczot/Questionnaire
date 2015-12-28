@@ -64,7 +64,7 @@ function stroopTest(repeat, meaning)
 
 function showWord()
 {
-	console.log(boolOption);
+	console.log(boolOption); 
 	//first half of the items shown will be meaning
 	if (turn < repeats)
 	{

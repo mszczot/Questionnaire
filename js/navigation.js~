@@ -17,14 +17,22 @@ function nextPage(){
   				  		
 			document.getElementById("p3test").style.display = "none";
 //uncomment this line after finishing development
-			next.style.display = "none";
+			//next.style.display = "none";
 		}
-		else if (questions[position].id == "p3") //n-back test
+		if (questions[position].id == "p3") //stroop test
+		{
+			showNextPage();
+  				  		
+			document.getElementById("p3atest").style.display = "none";
+//uncomment this line after finishing development
+			//next.style.display = "none";
+		}
+		else if (questions[position].id == "p3a") //n-back test
 		{
 			showNextPage();
 			
 			document.getElementById("p4test").style.display = "none";
-			next.style.display = "none";
+			//next.style.display = "none";
 		}
 		else if (questions[position].id == "p4") //advanced stroop test
 		{
@@ -33,7 +41,7 @@ function nextPage(){
 			document.getElementById("p5test").style.display = "none";
 			console.log("advanced stroop test");
 //uncomment this line after finishing development
-			next.style.display = "none";
+			//next.style.display = "none";
 		} else {
 			next.style.display = "block";
 			showNextPage();

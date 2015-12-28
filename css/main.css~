@@ -42,6 +42,10 @@
 	width: 35%;
 }
 
+.desc2 {
+	width: 60%;
+}
+
 .selection {
 	text-align: center;
 	align-content: center;

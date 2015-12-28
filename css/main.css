@@ -82,6 +82,16 @@ table td, table th {
     1px 1px 0 #000;
 }
 
+#p3acolor_question {
+	font-size: 30px;
+	font-weight: bold;	
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
 #p5color_question {
 	font-size: 30px;
 	font-weight: bold;	

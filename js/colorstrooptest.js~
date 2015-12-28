@@ -9,8 +9,8 @@ var timesTextShowed = [0,0,0,0]; //array to hold how many times each color text 
 var colorAttribute = ["Meaning", "Colour"]; //array to choose between colour and meaning of the word
 var timesAttributeShowed = [0,0]; //array to hold number of times colour and meaning was shown
 
-var colorView = document.getElementById("color_question"); //stroop test colour word
-var atrributeView = document.getElementById("p3color_attribute"); //advanced stroop test option
+var colorView = document.getElementById("p3acolor_question"); //stroop test colour word
+var atrributeView = document.getElementById("p3acolor_attribute"); //advanced stroop test option
 
 var reactionTimeIndex = 0;
 
@@ -32,23 +32,21 @@ var timeForText = 3000;
 var milliseconds = 0;
 
 
-function showHint()
-{
 
-}
 
 //method to start the test
-function stroopTest(repeat, meaning)
+function colorStroopTest(repeat, meaning)
 {
+	console.log(repeat);
 	//sets the number of repeats and show the test view
 	repeats = repeat;
 	boolOption = meaning;
-	document.getElementById("green1").className = "btn btn-default ans";
-	document.getElementById("blue1").className = "btn btn-default ans";
-	document.getElementById("red1").className = "btn btn-default ans";
-	document.getElementById("yellow1").className = "btn btn-default ans";
-	document.getElementById("p3intro").style.display = "none";
-	document.getElementById("p3test").style.display = "block";
+	document.getElementById("p3agreen1").className = "btn btn-default ans";
+	document.getElementById("p3ablue1").className = "btn btn-default ans";
+	document.getElementById("p3ared1").className = "btn btn-default ans";
+	document.getElementById("p3ayellow1").className = "btn btn-default ans";
+	document.getElementById("p3aintro").style.display = "none";
+	document.getElementById("p3atest").style.display = "block";
 	if (repeats === 4)
 	{
 		timeForText = 10000;
@@ -57,16 +55,17 @@ function stroopTest(repeat, meaning)
 	{
 		timeForText = 3000;
 	}
-	showWord();
+	showWorda();
 	
 }
 
-function showWord()
+function showWorda()
 {
+	console.log(boolOption); 
 	//first half of the items shown will be meaning
 	if (turn < repeats)
 	{
-		displayDetails(boolOption);
+		displayDetailsa(boolOption);
 	}
 	//else get out of the test
 	else 
@@ -75,14 +74,12 @@ function showWord()
 		if (repeats === 4)
 		{
 			turn = 0;
-			document.getElementById("p3intro").style.display = "block";
-			document.getElementById("p3test").style.display = "none";
+			document.getElementById("p3aintro").style.display = "block";
+			document.getElementById("p3atest").style.display = "none";
 		}	
 		//else show next page
 		else 
 		{
-			document.getElementById("simpleStroopCorrectAnswers").innerHTML = correctAnswers;
-			document.getElementById("simpleStroopWrongAnswers").innerHTML = wrongAnswers;
 			nextPage();
 			getReactionTimeToString();
 		}
@@ -90,26 +87,26 @@ function showWord()
 	if (repeats === 4)
 	{
 
-	document.getElementById("green1").className = "btn btn-default ans";
-	document.getElementById("blue1").className = "btn btn-default ans";
-	document.getElementById("red1").className = "btn btn-default ans";
-	document.getElementById("yellow1").className = "btn btn-default ans";
+	document.getElementById("p3agreen1").className = "btn btn-default ans";
+	document.getElementById("p3ablue1").className = "btn btn-default ans";
+	document.getElementById("p3ared1").className = "btn btn-default ans";
+	document.getElementById("p3ayellow1").className = "btn btn-default ans";
 	var color;
 	if (atrributeView.innerHTML == "Meaning")
 	{
 		color = colorView.innerHTML;
 		switch (color) {
 			case "RED": 
-				document.getElementById("red1").className = "btn btn-success ans";
+				document.getElementById("p3ared1").className = "btn btn-success ans";
 				break;
 			case "GREEN": 
-				document.getElementById("green1").className = "btn btn-success ans";
+				document.getElementById("p3agreen1").className = "btn btn-success ans";
 				break;
 			case "BLUE": 
-				document.getElementById("blue1").className = "btn btn-success ans";
+				document.getElementById("p3ablue1").className = "btn btn-success ans";
 				break;
 			case "YELLOW": 
-				document.getElementById("yellow1").className = "btn btn-success ans";
+				document.getElementById("p3ayellow1").className = "btn btn-success ans";
 				break;
 		}
 	}
@@ -119,16 +116,16 @@ function showWord()
 		
 		switch (color.toUpperCase()) {
 			case "RED": 
-				document.getElementById("red1").className = "btn btn-success ans";
+				document.getElementById("p3ared1").className = "btn btn-success ans";
 				break;
 			case "GREEN": 
-				document.getElementById("green1").className = "btn btn-success ans";
+				document.getElementById("p3agreen1").className = "btn btn-success ans";
 				break;
 			case "BLUE": 
-				document.getElementById("blue1").className = "btn btn-success ans";
+				document.getElementById("p3ablue1").className = "btn btn-success ans";
 				break;
 			case "YELLOW": 
-				document.getElementById("yellow1").className = "btn btn-success ans";
+				document.getElementById("p3ayellow1").className = "btn btn-success ans";
 				break;
 		}
 	}
@@ -136,7 +133,7 @@ function showWord()
 }
 
 
-function getReactionTimeToString()
+function getReactionTimeToStringa()
 {
 	for (i=0; i<reactionTime.length;i++)
 	{
@@ -145,7 +142,7 @@ function getReactionTimeToString()
 }
 
 //function to check if the clicked button is the correct one
-function checkColor(clickedColor) 
+function checkColora(clickedColor) 
 {
 	//depending on the boolean if true then check meaning if false then check color
 	if (boolOption)
@@ -155,7 +152,7 @@ function checkColor(clickedColor)
 			simpleStroopTestAnswersString += ",1";
 			correctAnswers++;
 			clearTimeout(timer);
-			showWord();		
+			showWorda();		
 			
 		}
 		else
@@ -163,7 +160,7 @@ function checkColor(clickedColor)
 			simpleStroopTestAnswersString += ",0";
 			wrongAnswers++;
 			clearTimeout(timer);
-			showWord();
+			showWorda();
 		}		
 	}
 	else 
@@ -173,14 +170,14 @@ function checkColor(clickedColor)
 			simpleStroopTestAnswersString += ",1";
 			correctAnswers++;	
 			clearTimeout(timer);
-			showWord();
+			showWorda();
 		}
 		else 
 		{
 			simpleStroopTestAnswersString += ",0";
 			wrongAnswers++;
 			clearTimeout(timer);
-			showWord();
+			showWorda();
 		}
 	}
 	reactionTime[reactionTimeIndex] = milliseconds;
@@ -188,24 +185,24 @@ function checkColor(clickedColor)
 	reactionTimeIndex++;
 }
 
-function showStartOfTest() 
+function showStartOfTesta() 
 {
-	document.getElementById("p3intro").style.display = "block";
-	document.getElementById("p3test").style.display = "none";
+	document.getElementById("p3aintro").style.display = "block";
+	document.getElementById("p3atest").style.display = "none";
 }
 
 //function to display the test and whether its color or meaning. 
-function displayDetails(isMeaning)
+function displayDetailsa(isMeaning)
 {
 	
 	boolOption = isMeaning;
 	if (isMeaning)
 	{
-		document.getElementById("p3color_attribute").innerHTML = "Meaning";
+		document.getElementById("p3acolor_attribute").innerHTML = "Meaning";
 	}
 	else 
 	{
-		document.getElementById("p3color_attribute").innerHTML = "Colour";
+		document.getElementById("p3acolor_attribute").innerHTML = "Colour";
 	}
 	//generate two random number: one for text, one for color
 	var randomNumber = Math.floor(Math.random()*colors.length);
@@ -252,10 +249,10 @@ function displayDetails(isMeaning)
 		
 	//increment turn and create timeout to change the color in 3 seconds
 	turn++;
-	timer = setTimeout(tick, 10);
+	timer = setTimeout(ticka, 10);
 }
 
-function tick()
+function ticka()
 {	
 	milliseconds = milliseconds + 10;
 	if (milliseconds > timeForText)
@@ -265,10 +262,10 @@ function tick()
 		reactionTimeIndex++;
 		milliseconds = 0;
 		clearTimeout(timer);
-		showWord();	
+		showWorda();	
 	}
 	else
 	{
-		timer = setTimeout(tick, 10);
+		timer = setTimeout(ticka, 10);
 	}
 }

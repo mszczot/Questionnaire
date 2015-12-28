@@ -342,6 +342,61 @@ I agree to participate in the research study. I understand the purpose and natur
 			</div>
 		</div>
 			
+<!-- page 3a extra test -->
+
+			<div class="question" id="p3a">
+			
+<!-- question 13 -->
+<!-- Stroop test: two options, practice and normal -->
+			<div id="p3aintro">
+			<!--small intro to the test with two buttons -->
+				<div class="question_body">The next section will consist of a task.<br><br>
+
+				In this task, you will be presented with a series of colour words (<span style="color:blue">blue</span>,<span style="color:#e5e600"> yellow</span>, <span style="color:green">green</span>, <span style="color:red">red</span>). These words will appear in different colors, 
+				sometimes matching the word (e.g., <span style="color:blue">BLUE</span>), and sometimes not matching 
+				the word (e.g., <span style="color:red">BLUE</span>). <br><br>
+				Your job is would be to indicate, as quickly and accurately as possible, 
+				the colour in which the word is <b>written</b>, whether or not that matches the word itself. 
+				Click the button that matches the colour of the word. Try not to pay attention to the word, 
+				but just the colour.<br><br>
+				For example, if you are presented with the following <span style="color:red">BLUE</span>, you should
+				select <u><b>red</b></u>.<br><br>
+				Click “Practice” to have a few practice sessions (where the correct answer is highlighted in green), otherwise click "Start Test" to begin<br><br>
+				</div>
+				<div class="test_choice">
+				<div class="row">
+  					<div class="col-md-1"><button id="p3abtnPractice" class="btn btn-primary" onclick="colorStroopTest(4, false);" type="button">Practice</button></div>
+ 					<div class="col-md-1"></div>
+  					<div class="col-md-1"><button id="p3abtnStartTest" class="btn btn-primary" onclick="colorStroopTest(30, false);" type="button">Start Test</button></div>
+				</div>			
+			</div>
+			</div>
+			
+			<div id="p3atest" style="display:none">
+				<br>
+				<div align="center" id="p3acolor_attribute"></div>
+				<br>
+				<div align="center" id="p3acolor_question"></div>
+				<div class="row">
+  					<div class="col-md-3"></div>
+
+ 					<div class="col-md-1"><button id="p3ared1" class="btn btn-default ans" onclick="checkColora('RED')" type="button">RED</button></div>
+  					<div class="col-md-2"></div> 					
+  					<div class="col-md-1"><button id="p3ablue1" class="btn btn-default ans" onclick="checkColora('BLUE')" type="button">BLUE</button></div>
+
+  					<div class="col-md-4"></div>
+				</div>		
+				<div class="row"><br></div>
+				<div class="row">
+  					<div class="col-md-3"></div>
+ 					<div class="col-md-1"><button id="p3agreen1" class="btn btn-default ans" onclick="checkColora('GREEN')" type="button">GREEN</button></div>
+  					<div class="col-md-2"></div> 					
+  					<div class="col-md-1"><button id="p3ayellow1" class="btn btn-default ans" onclick="checkColora('YELLOW')" type="button">YELLOW</button></div>
+
+  					<div class="col-md-4"></div>
+				</div>						
+			</div>
+		</div>
 <!-- page 4 n-back test-->
 
 			<div class="question" id="p4">
@@ -2519,6 +2574,7 @@ Choose one of the following answers<br><br>
 
 		<script type= "text/javascript" src = "js/navigation.js"></script>
 		<script type= "text/javascript" src = "js/simplestrooptest.js"></script>
+		<script type= "text/javascript" src = "js/colorstrooptest.js"></script>
 		<script type= "text/javascript" src = "js/advancedStroopTest.js"></script>
 		<script type= "text/javascript" src = "js/nbacktest.js"></script>
 	</body>
