@@ -88,7 +88,7 @@ function checkKeyPressed(e) {
 		checkColorA("BLUE");    
 		document.getElementById("blue2").className = "btn btn-default.focus ans";
     }
-    setTimeout(reset, 100);
+    setTimeout(reset, 50);
 }
 
 function reset()
@@ -258,7 +258,6 @@ function checkColorA(clickedColor)
 	reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 	milliseconds = 0;
 	reactionTimeIndexAdvanced++;
-	reset();
 }
 
 function showStartOfTest() 

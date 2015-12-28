@@ -93,7 +93,7 @@ function checkKeyPressed(e) {
 
 function reset()
 {
-	document.getElementById("keys").toggleClass = "focus";
+	document.getElementById("keys").focus();
 	document.getElementById("green2").className = "btn btn-default ans";
 	document.getElementById("blue2").className = "btn btn-default ans";
 	document.getElementById("red2").className = "btn btn-default ans";
@@ -258,7 +258,6 @@ function checkColorA(clickedColor)
 	reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 	milliseconds = 0;
 	reactionTimeIndexAdvanced++;
-	reset();
 }
 
 function showStartOfTest() 
