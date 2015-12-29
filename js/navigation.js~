@@ -97,6 +97,22 @@ function nextPage(){
         		alert("Please answer all questions");
    		 }				
 		}
+		else if (question[position].id == "p7")
+		{
+			var checked = $("#p7 :radio:checked");
+   	 	var groups = [];
+  		  $("#p7 :radio").each(function() {
+        	if (groups.indexOf(this.name) < 0) {
+            	groups.push(this.name);
+        		}
+    		});
+  			  if (groups.length == checked.length) {
+        			showNextPage();
+    			}
+    		else {
+        		alert("Please answer all questions");
+   		 }				
+		}
   	} else {
   		progress_bar.setAttribute("style", "width:100%");
 		questions[position].style.display="none";		

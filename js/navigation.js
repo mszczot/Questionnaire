@@ -77,11 +77,11 @@ function nextPage(){
 //uncomment this line after finishing development
 			next.style.display = "none";
 		}
-		else if (question[position].id == "p5")
+		else if (questions[position].id == "p5")
 		{
 			next.style.display = "block";		
 		}
-		else if (question[position].id == "p6")
+		else if (questions[position].id == "p6")
 		{
 			var checked = $("#p6 :radio:checked");
    	 	var groups = [];
@@ -97,7 +97,7 @@ function nextPage(){
         		alert("Please answer all questions");
    		 }				
 		}
-		else if (question[position].id == "p7")
+		else if (questions[position].id == "p7")
 		{
 			var checked = $("#p7 :radio:checked");
    	 	var groups = [];
