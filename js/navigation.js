@@ -66,9 +66,15 @@ function nextPage(){
 		{
 			showNextPage();
 			
-			document.getElementById("p4test").style.display = "none";
+			document.getElementById("p3atest").style.display = "none";
 			next.style.display = "none";
 		}
+		else if (questions[position].id == "p3a") //n-back test
+		{
+			showNextPage();
+			
+			document.getElementById("p4test").style.display = "none";
+			next.style.display = "none";
 		else if (questions[position].id == "p4") //advanced stroop test
 		{
 			showNextPage();
@@ -79,6 +85,7 @@ function nextPage(){
 		}
 		else if (questions[position].id == "p5")
 		{
+			showNextPage();
 			next.style.display = "block";		
 		}
 		else if (questions[position].id == "p6")

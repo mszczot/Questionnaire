@@ -66,9 +66,15 @@ function nextPage(){
 		{
 			showNextPage();
 			
-			document.getElementById("p4test").style.display = "none";
+			document.getElementById("p3atest").style.display = "none";
 			next.style.display = "none";
 		}
+		else if (questions[position].id == "p3a") //n-back test
+		{
+			showNextPage();
+			
+			document.getElementById("p4test").style.display = "none";
+			next.style.display = "none";
 		else if (questions[position].id == "p4") //advanced stroop test
 		{
 			showNextPage();
@@ -77,11 +83,11 @@ function nextPage(){
 //uncomment this line after finishing development
 			next.style.display = "none";
 		}
-		else if (question[position].id == "p5")
+		else if (questions[position].id == "p5")
 		{
 			next.style.display = "block";		
 		}
-		else if (question[position].id == "p6")
+		else if (questions[position].id == "p6")
 		{
 			var checked = $("#p6 :radio:checked");
    	 	var groups = [];
@@ -97,7 +103,7 @@ function nextPage(){
         		alert("Please answer all questions");
    		 }				
 		}
-		else if (question[position].id == "p7")
+		else if (questions[position].id == "p7")
 		{
 			var checked = $("#p7 :radio:checked");
    	 	var groups = [];
