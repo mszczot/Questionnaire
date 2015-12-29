@@ -85,19 +85,19 @@ function checkKeyPressed(e) {
     if (e.keyCode == 40)
     { 
     	e.preventDefault();
-		checkColorA("BLUE");    
-		document.getElementById("blue2").className = "btn btn-default.focus ans";
+		document.getElementById("blue2").className = "btn btn-default.focus ans"; 
+   	checkColorA("BLUE");
     }
-    setTimeout(reset, 50);
+    reset();
 }
 
 function reset()
 {
 	document.getElementById("keys").focus();
-	document.getElementById("green2").className = "btn btn-default ans";
-	document.getElementById("blue2").className = "btn btn-default ans";
-	document.getElementById("red2").className = "btn btn-default ans";
-	document.getElementById("yellow2").className = "btn btn-default ans";
+	document.getElementById("green2").removeClass("active");
+	document.getElementById("blue2").removeClass("active");
+	document.getElementById("red2").removeClass("active");
+	document.getElementById("yellow2").removeClass("active");
 }
 
 function setBoolOption()
@@ -150,6 +150,7 @@ function showWordA()
 		//else show next page
 		else 
 		{
+			console.log(correctAnswersAdvanced);
 			getAdvanceReactionTimeToString();			
 			nextPage();
 			
@@ -258,6 +259,7 @@ function checkColorA(clickedColor)
 	reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 	milliseconds = 0;
 	reactionTimeIndexAdvanced++;
+	console.log(correctAnswersAdvanced);
 }
 
 function showStartOfTest() 

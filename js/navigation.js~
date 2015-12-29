@@ -86,6 +86,9 @@ function vegetarianOption() {
 }
 
 function showNextPage() {
+	
+	if ()
+	
   	questions[position].style.display="none";
 	questions[nextPosition].style.display="block";
   			
@@ -95,7 +98,7 @@ function showNextPage() {
  	progress_bar.setAttribute("style", "width:"+progress_bar_width+"%");
 	progress_bar.setAttribute("aria-valuenow", aria_valuenow);
   	aria_valuenow++;
-  	progress_bar_width += progress_bar_width;
+  	progress_bar_width += 12.5;
   		
   	window.scrollTo(0,0);
 }

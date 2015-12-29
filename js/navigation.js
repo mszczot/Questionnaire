@@ -86,6 +86,7 @@ function vegetarianOption() {
 }
 
 function showNextPage() {
+	
   	questions[position].style.display="none";
 	questions[nextPosition].style.display="block";
   			

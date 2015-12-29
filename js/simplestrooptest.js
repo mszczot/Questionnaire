@@ -21,6 +21,8 @@ var simpleStroopTestAnswersString = "";
 var correctAnswers = 0;
 var wrongAnswers = 0;
 
+var trial = 6;
+
 var boolOption;
 
 var turn = 0; //number of turns
@@ -31,11 +33,6 @@ var timeForText = 3000;
 
 var milliseconds = 0;
 
-
-function showHint()
-{
-
-}
 
 //method to start the test
 function stroopTest(repeat, meaning)
@@ -49,16 +46,31 @@ function stroopTest(repeat, meaning)
 	document.getElementById("yellow1").className = "btn btn-default ans";
 	document.getElementById("p3intro").style.display = "none";
 	document.getElementById("p3test").style.display = "block";
-	if (repeats === 4)
+	if (repeats === trial)
 	{
-		timeForText = 10000;
+		timeForText = 1000000;
 	}
 	else 
 	{
 		timeForText = 3000;
 	}
 	showWord();
-	
+	console.log(timeForText);
+}
+
+function trialOnClick(clickedColor)
+{
+	console.log("Trialonclick");
+		if (clickedColor == colorView.innerHTML)
+		{
+			document.getElementById(clickedColor.toLowerCase() + 1).className = "btn btn-success ans"; 
+			clearTimeout(timer);
+			setTimeout(showWord, 100);			
+		}
+		else
+		{
+			document.getElementById(clickedColor.toLowerCase() + 1).className = "btn btn-danger ans"; 
+		}		
 }
 
 function showWord()
@@ -72,11 +84,12 @@ function showWord()
 	else 
 	{
 		//if the repeats was only four then go back to previous screen
-		if (repeats === 4)
+		if (repeats === trial)
 		{
 			turn = 0;
 			document.getElementById("p3intro").style.display = "block";
 			document.getElementById("p3test").style.display = "none";
+		
 		}	
 		//else show next page
 		else 
@@ -87,52 +100,74 @@ function showWord()
 			getReactionTimeToString();
 		}
 	}
-	if (repeats === 4)
+	if (repeats === trial)
 	{
+	document.getElementById("green1").onclick=function() { trialOnClick("GREEN"); };
+	document.getElementById("blue1").onclick=function() { trialOnClick("BLUE"); };
+	document.getElementById("red1").onclick=function() { trialOnClick("RED"); };
+	document.getElementById("yellow1").onclick=function() { trialOnClick("YELLOW"); };
+	
 
 	document.getElementById("green1").className = "btn btn-default ans";
 	document.getElementById("blue1").className = "btn btn-default ans";
 	document.getElementById("red1").className = "btn btn-default ans";
 	document.getElementById("yellow1").className = "btn btn-default ans";
 	var color;
-	if (atrributeView.innerHTML == "Meaning")
+	if (turn < trial - 1)
 	{
-		color = colorView.innerHTML;
-		switch (color) {
-			case "RED": 
-				document.getElementById("red1").className = "btn btn-success ans";
-				break;
-			case "GREEN": 
-				document.getElementById("green1").className = "btn btn-success ans";
-				break;
-			case "BLUE": 
-				document.getElementById("blue1").className = "btn btn-success ans";
-				break;
-			case "YELLOW": 
-				document.getElementById("yellow1").className = "btn btn-success ans";
-				break;
+		if (atrributeView.innerHTML == "Meaning")
+		{
+			color = colorView.innerHTML;
+			switch (color) {
+				case "RED": 
+					document.getElementById("red1").className = "btn btn-success ans";
+					break;
+				case "GREEN": 
+					document.getElementById("green1").className = "btn btn-success ans";
+					break;
+				case "BLUE": 
+					document.getElementById("blue1").className = "btn btn-success ans";
+					break;
+				case "YELLOW": 
+					document.getElementById("yellow1").className = "btn btn-success ans";
+					break;
+			}
+		}
+		else 
+		{		
+			color = colorView.style.color;
+			
+			switch (color.toUpperCase()) {
+				case "RED": 
+					document.getElementById("red1").className = "btn btn-success ans";
+					break;
+				case "GREEN": 
+					document.getElementById("green1").className = "btn btn-success ans";
+					break;
+				case "BLUE": 
+					document.getElementById("blue1").className = "btn btn-success ans";
+					break;
+				case "YELLOW": 
+					document.getElementById("yellow1").className = "btn btn-success ans";
+					break;
+			}
 		}
 	}
 	else 
-	{		
-		color = colorView.style.color;
-		
-		switch (color.toUpperCase()) {
-			case "RED": 
-				document.getElementById("red1").className = "btn btn-success ans";
-				break;
-			case "GREEN": 
-				document.getElementById("green1").className = "btn btn-success ans";
-				break;
-			case "BLUE": 
-				document.getElementById("blue1").className = "btn btn-success ans";
-				break;
-			case "YELLOW": 
-				document.getElementById("yellow1").className = "btn btn-success ans";
-				break;
-		}
+	{
+		document.getElementById("green1").className = "btn btn-default ans";
+		document.getElementById("blue1").className = "btn btn-default ans";
+		document.getElementById("red1").className = "btn btn-default ans";
+		document.getElementById("yellow1").className = "btn btn-default ans";
 	}
-	}
+}
+else {
+		document.getElementById("green1").onclick=function() { checkColor("GREEN"); };
+		document.getElementById("blue1").onclick=function() { checkColor("BLUE"); };
+		document.getElementById("red1").onclick=function() { checkColor("RED"); };
+		document.getElementById("yellow1").onclick=function() { checkColor("YELLOW"); };
+	}	
+	
 }
 
 
