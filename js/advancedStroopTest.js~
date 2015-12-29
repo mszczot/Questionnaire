@@ -203,10 +203,11 @@ function showWordA()
 	else 
 	{
 		//if the repeats was only four then go back to previous screen
-		if (repeats == trialsAdvanced)
+		if (repeats === trialsAdvanced)
 		{
 			document.getElementById("p5intro").style.display = "block";
 			document.getElementById("p5test").style.display = "none";
+			window.removeEventListener("keydown", checkKeyPressedTrial, true);
 		}	
 		//else show next page
 		else 

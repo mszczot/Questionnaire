@@ -193,6 +193,10 @@ function trialOnClickA(clickedColor)
 
 function showWordA()
 {
+	document.getElementById("green2").blur();
+	document.getElementById("blue2").blur();
+	document.getElementById("red2").blur();
+	document.getElementById("yellow2").blur();
 	boolOption = setBoolOption();
 	//first half of the items shown will be meaning
 	if (turn < repeats)
@@ -203,7 +207,7 @@ function showWordA()
 	else 
 	{
 		//if the repeats was only four then go back to previous screen
-		if (repeats == trialsAdvanced)
+		if (repeats === trialsAdvanced)
 		{
 			document.getElementById("p5intro").style.display = "block";
 			document.getElementById("p5test").style.display = "none";
