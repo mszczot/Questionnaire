@@ -33,7 +33,8 @@ var milliseconds = 0;
 
 var trialsa = 6;
 
-
+var previousColora;
+var previousTexta;
 
 //method to start the test
 function colorStroopTest(repeat, meaning)
@@ -280,6 +281,14 @@ function displayDetailsa(isMeaning)
 	if (Math.max.apply(null,timesTextShoweda) - Math.min.apply(null,timesTextShoweda) > 2){
 		//if yes display randomNumber with the min number
 		randomNumber = timesTextShoweda.indexOf(Math.min.apply(null,timesTextShoweda));
+	}	
+	if (colors[randomColor] === previousColora || colors[randomNumber] === previousTexta)
+	{
+		if (randomNumber < 3) {
+			randomNumber++;	
+		} else {
+			randomNumber--;		
+		}		
 	}
 	//increment the color showed in an array
 	timesColorShoweda[randomColor] = timesColorShoweda[randomColor] + 1;

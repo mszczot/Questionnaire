@@ -33,12 +33,12 @@ var milliseconds = 0;
 
 var trialsa = 6;
 
-
+var previousColora;
+var previousTexta;
 
 //method to start the test
 function colorStroopTest(repeat, meaning)
 {
-	console.log(repeat);
 	//sets the number of repeatsa and show the test view
 	repeatsa = repeat;
 	boolOption = meaning;
@@ -69,8 +69,6 @@ function resetColorOfButtona()
 
 function trialOnClicka(clickedColor)
 {
-	console.log(clickedColor);
-	console.log(colorViewa.style.color);
 		if (clickedColor.toLowerCase() === colorViewa.style.color)
 		{
 			document.getElementById("p3a" + clickedColor.toLowerCase() + 1).className = "btn btn-success ans"; 
@@ -87,7 +85,6 @@ function trialOnClicka(clickedColor)
 
 function showWorda()
 {
-	console.log(boolOption); 
 	//first half of the items shown will be meaning
 	if (turna < repeatsa)
 	{

@@ -25,17 +25,20 @@ var boolOption;
 
 var turn = 0; //number of turns
 
-var timer;
+var timerA;
+
+var trialsAdvanced = 6;
 
 var timeForText = 3000;
 
 var milliseconds = 0;
 
+var previousColorA;
+var previousTextA;
 
 //method to start the test
 function advancedStroopTest(repeat)
 {
-	window.addEventListener("keydown", checkKeyPressed, true);
 
 	timesColorShowed = [0,0,0,0];
 	timesAttributeShowed = [0,0];
@@ -49,56 +52,72 @@ function advancedStroopTest(repeat)
 	document.getElementById("yellow2").className = "btn btn-default ans";
 	document.getElementById("p5intro").style.display = "none";
 	document.getElementById("p5test").style.display = "block";
-	if (repeats === 4)
+	if (repeats === trialsAdvanced)
 	{
 		timeForText = 1000000;
+		window.addEventListener("keydown", checkKeyPressedTrial, true);
 	}
 	else 
 	{
 		timeForText = 3000;
+		window.addEventListener("keydown", checkKeyPressed, true);
 	}
 	showWordA();
 }
 
-
+function checkKeyPressedTrial(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		trialOnClickA("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		trialOnClickA("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		trialOnClickA("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	trialOnClickA("BLUE");
+    }
+}
  
 function checkKeyPressed(e) {
-	
-
     if (e.keyCode == 37)
     {
     	e.preventDefault();
 		checkColorA("YELLOW");    		
-		document.getElementById("yellow2").className = "btn btn-default.focus ans";
     }
     if (e.keyCode == 38)
     {
     	 e.preventDefault();
 		checkColorA("RED");    
-		document.getElementById("red2").className = "btn btn-default.focus ans";
     }
     if (e.keyCode == 39)
     {
     	 e.preventDefault();
 		checkColorA("GREEN");    
-		document.getElementById("green2").className = "btn btn-default.focus ans";
     }
     if (e.keyCode == 40)
     { 
     	e.preventDefault();
-		document.getElementById("blue2").className = "btn btn-default.focus ans"; 
    	checkColorA("BLUE");
     }
-    reset();
+    //reset();
 }
 
 function reset()
 {
-	document.getElementById("keys").focus();
-	document.getElementById("blue2").blur();
-	document.getElementById("green2").blur();
-	document.getElementById("red2").blur();
-	document.getElementById("yellow2").blur();
+	document.getElementById("blue2").className = "btn btn-default.blur ans";
+	document.getElementById("green2").className = "btn btn-default.blur ans";
+	document.getElementById("red2").className = "btn btn-default.blur ans";
+	document.getElementById("yellow2").className = "btn btn-default.blur ans";
 }
 
 function setBoolOption()
@@ -131,6 +150,47 @@ function setBoolOption()
 	return bool;
 }
 
+var redButtonA;
+
+function resetColorOfButtonA()
+{
+	redButtonA.className = "btn btn-default ans";
+}
+
+function trialOnClickA(clickedColor)
+{
+	if (boolOption)
+	{
+		if (clickedColor == p5colorView.innerHTML)
+		{
+			document.getElementById(clickedColor.toLowerCase() + 2).className = "btn btn-success ans"; 
+			clearTimeout(timerA);
+			setTimeout(showWordA, 100);		
+		}
+		else
+		{
+			redButtonA = document.getElementById(clickedColor.toLowerCase() + 2);
+			redButtonA.className = "btn btn-danger ans"; 
+			setTimeout(resetColorOfButtonA, 100);
+		}		
+	}
+	else 
+	{
+		if (clickedColor.toLowerCase() == p5colorView.style.color)
+		{
+			document.getElementById(clickedColor.toLowerCase() + 2).className = "btn btn-success ans"; 
+			clearTimeout(timerA);
+			setTimeout(showWordA, 100);	
+		}
+		else 
+		{
+			redButtonA = document.getElementById(clickedColor.toLowerCase() + 2);
+			redButtonA.className = "btn btn-danger ans"; 
+			setTimeout(resetColorOfButtonA, 100);
+		}
+	}	
+}
+
 function showWordA()
 {
 	boolOption = setBoolOption();
@@ -143,7 +203,7 @@ function showWordA()
 	else 
 	{
 		//if the repeats was only four then go back to previous screen
-		if (repeats == 4)
+		if (repeats == trialsAdvanced)
 		{
 			document.getElementById("p5intro").style.display = "block";
 			document.getElementById("p5test").style.display = "none";
@@ -151,19 +211,25 @@ function showWordA()
 		//else show next page
 		else 
 		{
-			console.log(correctAnswersAdvanced);
 			getAdvanceReactionTimeToString();			
 			nextPage();
-			
+			window.removeEventListener("keydown", checkKeyPressed, true);
 		}
 	}
-	if (repeats === 4)
+	if (repeats === trialsAdvanced)
 	{
+	document.getElementById("green2").onclick=function() { trialOnClickA("GREEN"); };
+	document.getElementById("blue2").onclick=function() { trialOnClickA("BLUE"); };
+	document.getElementById("red2").onclick=function() { trialOnClickA("RED"); };
+	document.getElementById("yellow2").onclick=function() { trialOnClickA("YELLOW"); };		
+		
 	document.getElementById("green2").className = "btn btn-default ans";
 	document.getElementById("blue2").className = "btn btn-default ans";
 	document.getElementById("red2").className = "btn btn-default ans";
 	document.getElementById("yellow2").className = "btn btn-default ans";
 	var color;
+	if (turn < trialsAdvanced - 1)
+	{
 	if (p5atrributeView.innerHTML == "Meaning")
 	{
 		color = p5colorView.innerHTML;
@@ -200,7 +266,22 @@ function showWordA()
 				break;
 		}
 	}
+	}
+	else 
+			{
+		document.getElementById("green2").className = "btn btn-default ans";
+		document.getElementById("blue2").className = "btn btn-default ans";
+		document.getElementById("red2").className = "btn btn-default ans";
+		document.getElementById("yellow2").className = "btn btn-default ans";
+	}
+}
+else {
+		document.getElementById("green2").onclick=function() { checkColorA("GREEN"); };
+		document.getElementById("blue2").onclick=function() { checkColorA("BLUE"); };
+		document.getElementById("red2").onclick=function() { checkColorA("RED"); };
+		document.getElementById("yellow2").onclick=function() { checkColorA("YELLOW"); };
 	}	
+	
 }
 
 function showHint()
@@ -220,15 +301,14 @@ function getAdvanceReactionTimeToString()
 function checkColorA(clickedColor) 
 {
 	
-	console.log(clickedColor);
 	//depending on the boolean if true then check meaning if false then check color
 	if (boolOption)
 	{
-		if (clickedColor == colorView.innerHTML)
+		if (clickedColor == p5colorView.innerHTML)
 		{
 			advancedStroopTestAnswersString += ",1";
 			correctAnswersAdvanced++;
-			clearTimeout(timer);
+			clearTimeout(timerA);
 			showWordA();		
 			
 		}
@@ -236,31 +316,30 @@ function checkColorA(clickedColor)
 		{
 			advancedStroopTestAnswersString += ",0";
 			wrongAnswersAdvanced++;
-			clearTimeout(timer);
+			clearTimeout(timerA);
 			showWordA();
 		}		
 	}
 	else 
 	{
-		if (clickedColor.toLowerCase() == colorView.style.color)
+		if (clickedColor.toLowerCase() == p5colorView.style.color)
 		{
 			advancedStroopTestAnswersString += ",1";
 			correctAnswersAdvanced++;	
-			clearTimeout(timer);
+			clearTimeout(timerA);
 			showWordA();
 		}
 		else 
 		{
 			advancedStroopTestAnswersString += ",0";
 			wrongAnswersAdvanced++;
-			clearTimeout(timer);
+			clearTimeout(timerA);
 			showWordA();
 		}
 	}
 	reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 	milliseconds = 0;
 	reactionTimeIndexAdvanced++;
-	console.log(correctAnswersAdvanced);
 }
 
 function showStartOfTest() 
@@ -314,6 +393,14 @@ function displayDetailsA(isMeaning)
 	if (Math.max.apply(null,timesTextShowed) - Math.min.apply(null,timesTextShowed) > 2){
 		//if yes display randomNumber with the min number
 		randomNumber = timesTextShowed.indexOf(Math.min.apply(null,timesTextShowed));
+	}	
+	if (colors[randomColor] === previousColorA || colors[randomNumber] === previousTextA)
+	{
+		if (randomNumber < 3) {
+			randomNumber++;	
+		} else {
+			randomNumber--;		
+		}		
 	}
 	//increment the color showed in an array
 	timesColorShowed[randomColor] = timesColorShowed[randomColor] + 1;
@@ -325,7 +412,7 @@ function displayDetailsA(isMeaning)
 		
 	//increment turn and create timeout to change the color in 3 seconds
 	turn++;
-	timer = setTimeout(tickA, 10);
+	timerA = setTimeout(tickA, 10);
 }
 
 function tickA()
@@ -337,11 +424,11 @@ function tickA()
 		reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 		reactionTimeIndexAdvanced++;
 		milliseconds = 0;
-		clearTimeout(timer);
+		clearTimeout(timerA);
 		showWordA();	
 	}
 	else
 	{
-		timer = setTimeout(tickA, 10);
+		timerA = setTimeout(tickA, 10);
 	}
 }
