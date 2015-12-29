@@ -11,33 +11,92 @@ var next = document.getElementById("next");
 
 function nextPage(){
 	if (nextPosition < questions.length) {
-		if (questions[position].id == "p2") //stroop test
+		if (questions[position].id == "q1")
 		{
-			showNextPage();
-  				  		
-			document.getElementById("p3test").style.display = "none";
+			var checked = $("#q1 :radio:checked");
+   	 	var groups = [];
+  		  $("#q1 :radio").each(function() {
+        	if (groups.indexOf(this.name) < 0) {
+            	groups.push(this.name);
+        		}
+    		});
+  			  if (groups.length == checked.length) {
+        			showNextPage();
+    			}
+    		else {
+        		alert("Please answer all questions");
+   		 }		
+		}
+		else if (questions[position].id === "p2") //stroop test
+		{
+			if ($("input[type='radio'][name='p2q1']:checked").val() != 'undefined')
+			{
+				if ($("input[type='radio'][name='p2q1']:checked").val() == 1)
+				{				
+					showNextPage();
+					document.getElementById("p3test").style.display = "none";
+					//uncomment this line after finishing development
+					next.style.display = "none";
+  				}
+  				else  
+  				{
+					var checked = $("#p2 :radio:checked");
+   	 			var groups = [];
+		  		  $("#p2 :radio").each(function() {
+      			  	if (groups.indexOf(this.name) < 0) {
+      	      		groups.push(this.name);
+      	  			}
+    				});
+  				  if (groups.length == checked.length) {
+        				showNextPage();
+        				document.getElementById("p3test").style.display = "none";
 //uncomment this line after finishing development
-			//next.style.display = "none";
+						next.style.display = "none";
+    				}
+    				else {
+        				alert("Please answer all questions");
+   				}				
+  				}
+  			} 	
+  			else {
+      		alert("Please answer all questions");
+   		}	
 		}
 		else if (questions[position].id == "p3") //n-back test
 		{
 			showNextPage();
 			
 			document.getElementById("p4test").style.display = "none";
-			//next.style.display = "none";
+			next.style.display = "none";
 		}
 		else if (questions[position].id == "p4") //advanced stroop test
 		{
 			showNextPage();
   				  		
 			document.getElementById("p5test").style.display = "none";
-			console.log("advanced stroop test");
 //uncomment this line after finishing development
-			//next.style.display = "none";
-		} else {
-			next.style.display = "block";
-			showNextPage();
-  		}	
+			next.style.display = "none";
+		}
+		else if (question[position].id == "p5")
+		{
+			next.style.display = "block";		
+		}
+		else if (question[position].id == "p6")
+		{
+			var checked = $("#p6 :radio:checked");
+   	 	var groups = [];
+  		  $("#p6 :radio").each(function() {
+        	if (groups.indexOf(this.name) < 0) {
+            	groups.push(this.name);
+        		}
+    		});
+  			  if (groups.length == checked.length) {
+        			showNextPage();
+    			}
+    		else {
+        		alert("Please answer all questions");
+   		 }				
+		}
   	} else {
   		progress_bar.setAttribute("style", "width:100%");
 		questions[position].style.display="none";		
