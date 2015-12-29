@@ -161,8 +161,6 @@ function trialOnClickA(clickedColor)
 {
 	if (boolOption)
 	{
-		console.log(boolOption);
-		console.log(clickedColor);
 		if (clickedColor == p5colorView.innerHTML)
 		{
 			document.getElementById(clickedColor.toLowerCase() + 2).className = "btn btn-success ans"; 
@@ -213,7 +211,6 @@ function showWordA()
 		//else show next page
 		else 
 		{
-			console.log(correctAnswersAdvanced);
 			getAdvanceReactionTimeToString();			
 			nextPage();
 			window.removeEventListener("keydown", checkKeyPressed, true);
@@ -304,7 +301,6 @@ function getAdvanceReactionTimeToString()
 function checkColorA(clickedColor) 
 {
 	
-	console.log(clickedColor);
 	//depending on the boolean if true then check meaning if false then check color
 	if (boolOption)
 	{
@@ -344,7 +340,6 @@ function checkColorA(clickedColor)
 	reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 	milliseconds = 0;
 	reactionTimeIndexAdvanced++;
-	console.log(correctAnswersAdvanced);
 }
 
 function showStartOfTest() 

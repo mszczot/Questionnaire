@@ -85,6 +85,7 @@ function nextPage(){
 		}
 		else if (questions[position].id == "p5")
 		{
+			showNextPage();
 			next.style.display = "block";		
 		}
 		else if (questions[position].id == "p6")

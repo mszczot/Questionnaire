@@ -75,6 +75,7 @@ function nextPage(){
 			
 			document.getElementById("p4test").style.display = "none";
 			next.style.display = "none";
+		}
 		else if (questions[position].id == "p4") //advanced stroop test
 		{
 			showNextPage();

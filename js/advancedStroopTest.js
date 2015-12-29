@@ -207,6 +207,7 @@ function showWordA()
 		{
 			document.getElementById("p5intro").style.display = "block";
 			document.getElementById("p5test").style.display = "none";
+			window.removeEventListener("keydown", checkKeyPressedTrial, true);
 		}	
 		//else show next page
 		else 
