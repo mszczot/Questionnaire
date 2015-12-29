@@ -31,13 +31,13 @@ var timeForText = 3000;
 
 var milliseconds = 0;
 
+var trialsa = 6;
 
 
 
 //method to start the test
 function colorStroopTest(repeat, meaning)
 {
-	console.log(repeat);
 	//sets the number of repeatsa and show the test view
 	repeatsa = repeat;
 	boolOption = meaning;
@@ -47,9 +47,9 @@ function colorStroopTest(repeat, meaning)
 	document.getElementById("p3ayellow1").className = "btn btn-default ans";
 	document.getElementById("p3aintro").style.display = "none";
 	document.getElementById("p3atest").style.display = "block";
-	if (repeatsa === 4)
+	if (repeatsa === trialsa)
 	{
-		timeForText = 10000;
+		timeForText = 1000000;
 	}
 	else 
 	{
@@ -59,9 +59,31 @@ function colorStroopTest(repeat, meaning)
 	
 }
 
+var redButtona;
+
+function resetColorOfButtona()
+{
+	redButtona.className = "btn btn-default ans";
+}
+
+function trialOnClicka(clickedColor)
+{
+		if (clickedColor.toLowerCase() === colorViewa.style.color)
+		{
+			document.getElementById("p3a" + clickedColor.toLowerCase() + 1).className = "btn btn-success ans"; 
+			clearTimeout(timer);
+			setTimeout(showWorda, 100);			
+		}
+		else
+		{
+			redButtona = document.getElementById("p3a" + clickedColor.toLowerCase() + 1);
+			redButtona.className = "btn btn-danger ans"; 
+			setTimeout(resetColorOfButtona, 100);
+		}		
+}
+
 function showWorda()
 {
-	console.log(boolOption); 
 	//first half of the items shown will be meaning
 	if (turna < repeatsa)
 	{
@@ -71,7 +93,7 @@ function showWorda()
 	else 
 	{
 		//if the repeatsa was only four then go back to previous screen
-		if (repeatsa === 4)
+		if (repeatsa === trialsa)
 		{
 			turna = 0;
 			document.getElementById("p3aintro").style.display = "block";
@@ -84,14 +106,20 @@ function showWorda()
 			getreactionTimeaToString();
 		}
 	}
-	if (repeatsa === 4)
+	if (repeatsa === trialsa)
 	{
+	document.getElementById("p3agreen1").onclick=function() { trialOnClicka("GREEN"); };
+	document.getElementById("p3ablue1").onclick=function() { trialOnClicka("BLUE"); };
+	document.getElementById("p3ared1").onclick=function() { trialOnClicka("RED"); };
+	document.getElementById("p3ayellow1").onclick=function() { trialOnClicka("YELLOW"); };
 
 	document.getElementById("p3agreen1").className = "btn btn-default ans";
 	document.getElementById("p3ablue1").className = "btn btn-default ans";
 	document.getElementById("p3ared1").className = "btn btn-default ans";
 	document.getElementById("p3ayellow1").className = "btn btn-default ans";
 	var color;
+	if (turna < trialsa - 1)
+	{
 	if (atrributeViewa.innerHTML == "Meaning")
 	{
 		color = colorViewa.innerHTML;
@@ -130,10 +158,24 @@ function showWorda()
 		}
 	}
 	}
+	else 
+			{
+		document.getElementById("p3agreen1").className = "btn btn-default ans";
+		document.getElementById("p3ablue1").className = "btn btn-default ans";
+		document.getElementById("p3ared1").className = "btn btn-default ans";
+		document.getElementById("p3ayellow1").className = "btn btn-default ans";
+	}
+}
+else {
+		document.getElementById("p3agreen1").onclick=function() { checkColora("GREEN"); };
+		document.getElementById("p3ablue1").onclick=function() { checkColora("BLUE"); };
+		document.getElementById("p3ared1").onclick=function() { checkColora("RED"); };
+		document.getElementById("p3ayellow1").onclick=function() { checkColora("YELLOW"); };
+	}	
 }
 
 
-function getreactionTimeaToStringa()
+function getreactionTimeaToString()
 {
 	for (i=0; i<reactionTimea.length;i++)
 	{

@@ -305,7 +305,7 @@ I agree to participate in the research study. I understand the purpose and natur
 				</div>
 				<div class="test_choice">
 				<div class="row">
-  					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="stroopTest(4, true);" type="button">Practice</button></div>
+  					<div class="col-md-1"><button id="btnPractice" class="btn btn-primary" onclick="stroopTest(6, true);" type="button">Practice</button></div>
  					<div class="col-md-1"></div>
   					<div class="col-md-1"><button id="btnStartTest" class="btn btn-primary" onclick="stroopTest(30, true);" type="button">Start Test</button></div>
 				</div>			

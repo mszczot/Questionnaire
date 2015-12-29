@@ -31,7 +31,6 @@ function nextPage(){
 			showNextPage();
   				  		
 			document.getElementById("p5test").style.display = "none";
-			console.log("advanced stroop test");
 //uncomment this line after finishing development
 			//next.style.display = "none";
 		} else {

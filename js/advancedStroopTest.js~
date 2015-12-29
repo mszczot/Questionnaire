@@ -51,7 +51,7 @@ function advancedStroopTest(repeat)
 	document.getElementById("p5test").style.display = "block";
 	if (repeats === 4)
 	{
-		timeForText = 10000;
+		timeForText = 1000000;
 	}
 	else 
 	{
@@ -59,6 +59,7 @@ function advancedStroopTest(repeat)
 	}
 	showWordA();
 }
+
 
  
 function checkKeyPressed(e) {
@@ -94,10 +95,7 @@ function checkKeyPressed(e) {
 function reset()
 {
 	document.getElementById("keys").focus();
-	document.getElementById("green2").removeClass("active");
-	document.getElementById("blue2").removeClass("active");
-	document.getElementById("red2").removeClass("active");
-	document.getElementById("yellow2").removeClass("active");
+	document.getElementById("blue2").blur();
 }
 
 function setBoolOption()
@@ -259,6 +257,7 @@ function checkColorA(clickedColor)
 	reactionTimeAdvancedStroop[reactionTimeIndexAdvanced] = milliseconds;
 	milliseconds = 0;
 	reactionTimeIndexAdvanced++;
+	console.log(correctAnswersAdvanced);
 }
 
 function showStartOfTest() 

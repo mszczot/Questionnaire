@@ -33,6 +33,8 @@ var timeForText = 3000;
 
 var milliseconds = 0;
 
+var previousColor;
+var previousText;
 
 //method to start the test
 function stroopTest(repeat, meaning)
@@ -55,7 +57,13 @@ function stroopTest(repeat, meaning)
 		timeForText = 3000;
 	}
 	showWord();
-	console.log(timeForText);
+}
+
+var redButton;
+
+function resetColorOfButton()
+{
+	redButton.className = "btn btn-default ans";
 }
 
 function trialOnClick(clickedColor)
@@ -69,7 +77,9 @@ function trialOnClick(clickedColor)
 		}
 		else
 		{
-			document.getElementById(clickedColor.toLowerCase() + 1).className = "btn btn-danger ans"; 
+			redButton = document.getElementById(clickedColor.toLowerCase() + 1);
+			redButton.className = "btn btn-danger ans"; 
+			setTimeout(resetColorOfButton, 100);
 		}		
 }
 
@@ -277,9 +287,20 @@ function displayDetails(isMeaning)
 		//if yes display randomNumber with the min number
 		randomNumber = timesTextShowed.indexOf(Math.min.apply(null,timesTextShowed));
 	}
+	//can't be the same as last turn
+	if (colors[randomColor] === previousColor || colors[randomNumber] === previousText)
+	{
+		if (randomNumber < 3) {
+			randomNumber++;	
+		} else {
+			randomNumber--;		
+		}		
+	}
 	//increment the color showed in an array
 	timesColorShowed[randomColor] = timesColorShowed[randomColor] + 1;
 	timesTextShowed[randomNumber] = timesTextShowed[randomNumber] +1;
+	previousColor = colors[randomColor];
+	previousText = colors[randomNumber];
 	
 	//display text and color
 	colorView.innerHTML = colors[randomNumber];

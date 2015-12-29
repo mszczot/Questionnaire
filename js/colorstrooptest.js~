@@ -1,29 +1,29 @@
 
-//repeats for stroop: 4 for practice and 100 for normal test
-var repeats = 0;
+//repeatsa for stroop: 4 for practice and 100 for normal test
+var repeatsa = 0;
 
 var colors = ["RED", "YELLOW", "BLUE", "GREEN"]; //colors to iteratet thru
-var timesColorShowed = [0,0,0,0]; //array that will hold number how many certain color was showed: red, yellow, blue, green
-var timesTextShowed = [0,0,0,0]; //array to hold how many times each color text was shown
+var timesColorShoweda = [0,0,0,0]; //array that will hold number how many certain color was showed: red, yellow, blue, green
+var timesTextShoweda = [0,0,0,0]; //array to hold how many times each color text was shown
 
 var colorAttribute = ["Meaning", "Colour"]; //array to choose between colour and meaning of the word
-var timesAttributeShowed = [0,0]; //array to hold number of times colour and meaning was shown
+var timesAttributeShoweda = [0,0]; //array to hold number of times colour and meaning was shown
 
-var colorView = document.getElementById("p3acolor_question"); //stroop test colour word
-var atrributeView = document.getElementById("p3acolor_attribute"); //advanced stroop test option
+var colorViewa = document.getElementById("p3acolor_question"); //stroop test colour word
+var atrributeViewa = document.getElementById("p3acolor_attribute"); //advanced stroop test option
 
-var reactionTimeIndex = 0;
+var reactionTimeaIndexa = 0;
 
 //next four variables needs to be stored in database
-var reactionTime = [];
-var reactionTimeString = "";
-var simpleStroopTestAnswersString = "";
-var correctAnswers = 0;
-var wrongAnswers = 0;
+var reactionTimea = [];
+var reactionTimeaString = "";
+var simpleStroopTestAnswersStringa = "";
+var correctAnswersa = 0;
+var wrongAnswersa = 0;
 
 var boolOption;
 
-var turn = 0; //number of turns
+var turna = 0; //number of turnas
 
 var timer;
 
@@ -31,6 +31,7 @@ var timeForText = 3000;
 
 var milliseconds = 0;
 
+var trialsa = 6;
 
 
 
@@ -38,8 +39,8 @@ var milliseconds = 0;
 function colorStroopTest(repeat, meaning)
 {
 	console.log(repeat);
-	//sets the number of repeats and show the test view
-	repeats = repeat;
+	//sets the number of repeatsa and show the test view
+	repeatsa = repeat;
 	boolOption = meaning;
 	document.getElementById("p3agreen1").className = "btn btn-default ans";
 	document.getElementById("p3ablue1").className = "btn btn-default ans";
@@ -47,9 +48,9 @@ function colorStroopTest(repeat, meaning)
 	document.getElementById("p3ayellow1").className = "btn btn-default ans";
 	document.getElementById("p3aintro").style.display = "none";
 	document.getElementById("p3atest").style.display = "block";
-	if (repeats === 4)
+	if (repeatsa === trialsa)
 	{
-		timeForText = 10000;
+		timeForText = 1000000;
 	}
 	else 
 	{
@@ -59,21 +60,46 @@ function colorStroopTest(repeat, meaning)
 	
 }
 
+var redButtona;
+
+function resetColorOfButtona()
+{
+	redButtona.className = "btn btn-default ans";
+}
+
+function trialOnClicka(clickedColor)
+{
+	console.log(clickedColor);
+	console.log(colorViewa.style.color);
+		if (clickedColor.toLowerCase() === colorViewa.style.color)
+		{
+			document.getElementById("p3a" + clickedColor.toLowerCase() + 1).className = "btn btn-success ans"; 
+			clearTimeout(timer);
+			setTimeout(showWorda, 100);			
+		}
+		else
+		{
+			redButtona = document.getElementById("p3a" + clickedColor.toLowerCase() + 1);
+			redButtona.className = "btn btn-danger ans"; 
+			setTimeout(resetColorOfButtona, 100);
+		}		
+}
+
 function showWorda()
 {
 	console.log(boolOption); 
 	//first half of the items shown will be meaning
-	if (turn < repeats)
+	if (turna < repeatsa)
 	{
 		displayDetailsa(boolOption);
 	}
 	//else get out of the test
 	else 
 	{
-		//if the repeats was only four then go back to previous screen
-		if (repeats === 4)
+		//if the repeatsa was only four then go back to previous screen
+		if (repeatsa === trialsa)
 		{
-			turn = 0;
+			turna = 0;
 			document.getElementById("p3aintro").style.display = "block";
 			document.getElementById("p3atest").style.display = "none";
 		}	
@@ -81,20 +107,26 @@ function showWorda()
 		else 
 		{
 			nextPage();
-			getReactionTimeToString();
+			getreactionTimeaToString();
 		}
 	}
-	if (repeats === 4)
+	if (repeatsa === trialsa)
 	{
+	document.getElementById("p3agreen1").onclick=function() { trialOnClicka("GREEN"); };
+	document.getElementById("p3ablue1").onclick=function() { trialOnClicka("BLUE"); };
+	document.getElementById("p3ared1").onclick=function() { trialOnClicka("RED"); };
+	document.getElementById("p3ayellow1").onclick=function() { trialOnClicka("YELLOW"); };
 
 	document.getElementById("p3agreen1").className = "btn btn-default ans";
 	document.getElementById("p3ablue1").className = "btn btn-default ans";
 	document.getElementById("p3ared1").className = "btn btn-default ans";
 	document.getElementById("p3ayellow1").className = "btn btn-default ans";
 	var color;
-	if (atrributeView.innerHTML == "Meaning")
+	if (turna < trialsa - 1)
 	{
-		color = colorView.innerHTML;
+	if (atrributeViewa.innerHTML == "Meaning")
+	{
+		color = colorViewa.innerHTML;
 		switch (color) {
 			case "RED": 
 				document.getElementById("p3ared1").className = "btn btn-success ans";
@@ -112,7 +144,7 @@ function showWorda()
 	}
 	else 
 	{		
-		color = colorView.style.color;
+		color = colorViewa.style.color;
 		
 		switch (color.toUpperCase()) {
 			case "RED": 
@@ -130,14 +162,28 @@ function showWorda()
 		}
 	}
 	}
+	else 
+			{
+		document.getElementById("p3agreen1").className = "btn btn-default ans";
+		document.getElementById("p3ablue1").className = "btn btn-default ans";
+		document.getElementById("p3ared1").className = "btn btn-default ans";
+		document.getElementById("p3ayellow1").className = "btn btn-default ans";
+	}
+}
+else {
+		document.getElementById("p3agreen1").onclick=function() { checkColora("GREEN"); };
+		document.getElementById("p3ablue1").onclick=function() { checkColora("BLUE"); };
+		document.getElementById("p3ared1").onclick=function() { checkColora("RED"); };
+		document.getElementById("p3ayellow1").onclick=function() { checkColora("YELLOW"); };
+	}	
 }
 
 
-function getReactionTimeToStringa()
+function getreactionTimeaToString()
 {
-	for (i=0; i<reactionTime.length;i++)
+	for (i=0; i<reactionTimea.length;i++)
 	{
-		reactionTimeString += "," + reactionTime[i];
+		reactionTimeaString += "," + reactionTimea[i];
 	}
 }
 
@@ -147,42 +193,42 @@ function checkColora(clickedColor)
 	//depending on the boolean if true then check meaning if false then check color
 	if (boolOption)
 	{
-		if (clickedColor == colorView.innerHTML)
+		if (clickedColor == colorViewa.innerHTML)
 		{
-			simpleStroopTestAnswersString += ",1";
-			correctAnswers++;
+			simpleStroopTestAnswersStringa += ",1";
+			correctAnswersa++;
 			clearTimeout(timer);
 			showWorda();		
 			
 		}
 		else
 		{
-			simpleStroopTestAnswersString += ",0";
-			wrongAnswers++;
+			simpleStroopTestAnswersStringa += ",0";
+			wrongAnswersa++;
 			clearTimeout(timer);
 			showWorda();
 		}		
 	}
 	else 
 	{
-		if (clickedColor.toLowerCase() == colorView.style.color)
+		if (clickedColor.toLowerCase() == colorViewa.style.color)
 		{
-			simpleStroopTestAnswersString += ",1";
-			correctAnswers++;	
+			simpleStroopTestAnswersStringa += ",1";
+			correctAnswersa++;	
 			clearTimeout(timer);
 			showWorda();
 		}
 		else 
 		{
-			simpleStroopTestAnswersString += ",0";
-			wrongAnswers++;
+			simpleStroopTestAnswersStringa += ",0";
+			wrongAnswersa++;
 			clearTimeout(timer);
 			showWorda();
 		}
 	}
-	reactionTime[reactionTimeIndex] = milliseconds;
+	reactionTimea[reactionTimeaIndexa] = milliseconds;
 	milliseconds = 0;
-	reactionTimeIndex++;
+	reactionTimeaIndexa++;
 }
 
 function showStartOfTesta() 
@@ -218,37 +264,37 @@ function displayDetailsa(isMeaning)
 		}
 	}
 	//check if the color picked was shown 25 times (this will need to change)
-	if (timesColorShowed[randomColor] == (repeats/4)+1) 
+	if (timesColorShoweda[randomColor] == (repeatsa/4)+1) 
 	{
 		//if yes then pick the color that was shown least number of times
-		randomColor = timesColorShowed.indexOf(Math.min.apply(null,timesColorShowed));
+		randomColor = timesColorShoweda.indexOf(Math.min.apply(null,timesColorShoweda));
 	} 
 	//check if the difference between max and min number of displayed times is greater then 2
-	if (Math.max.apply(null,timesColorShowed) - Math.min.apply(null,timesColorShowed) > 2){
+	if (Math.max.apply(null,timesColorShoweda) - Math.min.apply(null,timesColorShoweda) > 2){
 		//if yes display randomColor with the min number
-		randomColor = timesColorShowed.indexOf(Math.min.apply(null,timesColorShowed));
+		randomColor = timesColorShoweda.indexOf(Math.min.apply(null,timesColorShoweda));
 	}	
 	//make sure every text color is displayed equal number of times
-	if (timesTextShowed[randomNumber] == (repeats/4)+1) 
+	if (timesTextShoweda[randomNumber] == (repeatsa/4)+1) 
 	{
 		//if yes then pick the color text that was shown least number of times
-		randomNumber = timesTextShowed.indexOf(Math.min.apply(null,timesTextShowed));
+		randomNumber = timesTextShoweda.indexOf(Math.min.apply(null,timesTextShoweda));
 	} 
 	//check if the difference between max and min number of displayed times is greater then 2
-	if (Math.max.apply(null,timesTextShowed) - Math.min.apply(null,timesTextShowed) > 2){
+	if (Math.max.apply(null,timesTextShoweda) - Math.min.apply(null,timesTextShoweda) > 2){
 		//if yes display randomNumber with the min number
-		randomNumber = timesTextShowed.indexOf(Math.min.apply(null,timesTextShowed));
+		randomNumber = timesTextShoweda.indexOf(Math.min.apply(null,timesTextShoweda));
 	}
 	//increment the color showed in an array
-	timesColorShowed[randomColor] = timesColorShowed[randomColor] + 1;
-	timesTextShowed[randomNumber] = timesTextShowed[randomNumber] +1;
+	timesColorShoweda[randomColor] = timesColorShoweda[randomColor] + 1;
+	timesTextShoweda[randomNumber] = timesTextShoweda[randomNumber] +1;
 	
 	//display text and color
-	colorView.innerHTML = colors[randomNumber];
-	colorView.style.color = colors[randomColor];
+	colorViewa.innerHTML = colors[randomNumber];
+	colorViewa.style.color = colors[randomColor];
 		
-	//increment turn and create timeout to change the color in 3 seconds
-	turn++;
+	//increment turna and create timeout to change the color in 3 seconds
+	turna++;
 	timer = setTimeout(ticka, 10);
 }
 
@@ -257,9 +303,9 @@ function ticka()
 	milliseconds = milliseconds + 10;
 	if (milliseconds > timeForText)
 	{		
-		simpleStroopTestAnswersString += ",0";	
-		reactionTime[reactionTimeIndex] = milliseconds;
-		reactionTimeIndex++;
+		simpleStroopTestAnswersStringa += ",0";	
+		reactionTimea[reactionTimeaIndexa] = milliseconds;
+		reactionTimeaIndexa++;
 		milliseconds = 0;
 		clearTimeout(timer);
 		showWorda();	

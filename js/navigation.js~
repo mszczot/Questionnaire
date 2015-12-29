@@ -87,8 +87,6 @@ function vegetarianOption() {
 
 function showNextPage() {
 	
-	if ()
-	
   	questions[position].style.display="none";
 	questions[nextPosition].style.display="block";
   			
