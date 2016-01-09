@@ -51,10 +51,12 @@ function stroopTest(repeat, meaning)
 	if (repeats === trial)
 	{
 		timeForText = 1000000;
+		window.addEventListener("keydown", checkKeyPressedTriala, true);
 	}
 	else 
 	{
 		timeForText = 3000;
+		window.addEventListener("keydown", checkKeyPresseda, true);
 	}
 	showWord();
 }
@@ -68,7 +70,6 @@ function resetColorOfButton()
 
 function trialOnClick(clickedColor)
 {
-	console.log("Trialonclick");
 		if (clickedColor == colorView.innerHTML)
 		{
 			document.getElementById(clickedColor.toLowerCase() + 1).className = "btn btn-success ans"; 
@@ -81,6 +82,53 @@ function trialOnClick(clickedColor)
 			redButton.className = "btn btn-danger ans"; 
 			setTimeout(resetColorOfButton, 100);
 		}		
+}
+
+function checkKeyPressedTriala(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		trialOnClick("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		trialOnClick("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		trialOnClick("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	trialOnClick("BLUE");
+    }
+}
+
+function checkKeyPresseda(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		checkColor("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		checkColor("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		checkColor("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	checkColor("BLUE");
+    }
+    //reset();
 }
 
 function showWord()

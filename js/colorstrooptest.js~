@@ -51,14 +51,64 @@ function colorStroopTest(repeat, meaning)
 	if (repeatsa === trialsa)
 	{
 		timeForText = 1000000;
+		window.addEventListener("keydown", checkKeyPressedTrialA, true);
 	}
 	else 
 	{
+		window.addEventListener("keydown", checkKeyPressedA, true);
 		timeForText = 3000;
 	}
 	showWorda();
 	
 }
+
+function checkKeyPressedTrialA(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		trialOnClicka("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		trialOnClicka("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		trialOnClicka("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	trialOnClicka("BLUE");
+    }
+}
+ 
+function checkKeyPressedA(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		checkColora("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		checkColora("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		checkColora("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	checkColora("BLUE");
+    }
+    //reset();
+}
+
 
 var redButtona;
 
@@ -281,6 +331,14 @@ function displayDetailsa(isMeaning)
 	if (Math.max.apply(null,timesTextShoweda) - Math.min.apply(null,timesTextShoweda) > 2){
 		//if yes display randomNumber with the min number
 		randomNumber = timesTextShoweda.indexOf(Math.min.apply(null,timesTextShoweda));
+	}	
+	if (colors[randomColor] === previousColora || colors[randomNumber] === previousTexta)
+	{
+		if (randomNumber < 3) {
+			randomNumber++;	
+		} else {
+			randomNumber--;		
+		}		
 	}
 	//increment the color showed in an array
 	timesColorShoweda[randomColor] = timesColorShoweda[randomColor] + 1;

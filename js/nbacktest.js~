@@ -1,10 +1,10 @@
 var image = [];
-var displayedImages = [2,0,2,9,4,5,6,8,1,8,
-								2,6,1,6,3,5,7,5,6,9,
-								6,9,7,4,0,4,3,4,8,9,
-								1,9,8,4,8,4,8,6,7,6,
-								7,9,0,1,0,4,7,7,8,7,
-								5,9,5,4,0,3,0,4,8,4];
+var displayedImages = [0, 2, 3, 2, 7, 9 ,8, 9, 6, 5,
+								3, 5, 0, 1, 0, 6, 4, 9, 0, 9,
+								2, 6, 3, 6, 4, 1, 4, 5, 4, 9, 
+								7, 0, 7, 6, 1, 6, 8, 3, 8, 9, 
+								5, 9, 4, 7, 3, 7, 6, 0, 6, 1, 
+								9, 1, 7, 2, 7, 4, 8, 4, 1, 4];
 
 var imageHolder = document.getElementById("p4image");
 
@@ -24,14 +24,14 @@ var timeForPicture = 1000;
 
 var correct = "";
 
-var timer;
+var timerNback;
 
 function showImage()
 {
 	if (currentTurn < turns)
 	{
 		//set timeout for 0.5s to call a method pause
-		timer = setTimeout(tickNBack, 10);
+		timerNback = setTimeout(tickNBack, 10);
 		//get random number
 		//var randomNumber = Math.floor(Math.random()*image.length);
 		//display image 
@@ -100,7 +100,7 @@ function checkImage()
 		correctAnswers++;
 		correct = true;
 		milliseconds = 0;
-		clearTimeout(timer);
+		clearTimeout(timerNback);
 		pauseBetweenImages();
 	}
 	else 
@@ -110,7 +110,7 @@ function checkImage()
 		wrongAnswers++;
 		correct = false;
 		milliseconds = 0;
-		clearTimeout(timer);
+		clearTimeout(timerNback);
 		pauseBetweenImages();
 	}	
 }
@@ -121,12 +121,12 @@ function tickNBack()
 	if (milliseconds > timeForPicture)
 	{		
 		milliseconds = 0;
-		clearTimeout(timer);
+		clearTimeout(timerNback);
 		pauseBetweenImages();	
 	}
 	else
 	{
-		timer = setTimeout(tickNBack, 10);
+		timerNback = setTimeout(tickNBack, 10);
 	}
 }
 

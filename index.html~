@@ -35,7 +35,7 @@
 			<div class="question" id="q0">
 				<div>
 				Dear Participant,<br><br>Nyssa Gaba and Alicja Janowska, two final year MA (Hons) Psychology and Business students at the University of Edinburgh, designed this study.
-				<br><br>We hope to study the links between executive functions and healthy choices. In particular, we’re trying to understand the relationship between human cognition and eating habits.
+				<br><br>We are trying to understand the relationship between human cognition and eating habits.
 				<br><br>Please allow approximately 40 minutes to complete this study. We also ask that you avoid environmental distractions to make sure your results are the best of your ability.
 				<br><br>By completing this survey you indicate that you understand the following:<br>
 <ul>
@@ -300,7 +300,7 @@ I agree to participate in the research study. I understand the purpose and natur
 				Click the button that matches the meaning of the word. 
 				Try not to pay attention to the colour, but just the meaning.<br><br>
 				For example, if you are presented with the following <span style="color:red">BLUE</span>, you should
-				select red.<br><br>
+				select blue.<br><br>
 				Click “Practice” to have a few practice sessions (where the correct answer is highlighted in green), otherwise click "Start Test" to begin<br><br>
 				</div>
 				<div class="test_choice">
@@ -317,24 +317,20 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div align="center" id="p3color_attribute"></div>
 				<br>
 				<div align="center" id="color_question"></div>
-				<div class="row">
-  					<div class="col-md-3"></div>
-
- 					<div class="col-md-1"><button id="red1" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="blue1" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE</button></div>
-
-  					<div class="col-md-4"></div>
-				</div>		
-				<div class="row"><br></div>
-				<div class="row">
-  					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="green1" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="yellow1" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW</button></div>
-
-  					<div class="col-md-4"></div>
-				</div>						
+			<div>
+  					<table class="keys">
+					<tr>
+						<td></td>
+						<td><button id="red1" class="btn btn-default ans" onclick="checkColora('RED')" type="button">RED<br>&#x25B2</button></td>
+						<td></td>					
+					</tr>				
+					<tr>
+						<td><button id="yellow1" class="btn btn-default ans" onclick="checkColora('YELLOW')" type="button">YELLOW<br>&#x25C0</button></td>
+						<td><button id="blue1" class="btn btn-default ans" onclick="checkColora('BLUE')" type="button">BLUE<br>&#x25BC</button></td>
+						<td><button id="green1" class="btn btn-default ans" onclick="checkColora('GREEN')" type="button">GREEN<br>&#x25B6</button></td>					
+					</tr>			
+				</table>
+				</div>							
 			</div>
 			<div id="stroopTestResult">
 				<div id="simpleStroopCorrectAnswers"></div>
@@ -377,23 +373,19 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div align="center" id="p3acolor_attribute"></div>
 				<br>
 				<div align="center" id="p3acolor_question"></div>
-				<div class="row">
-  					<div class="col-md-3"></div>
-
- 					<div class="col-md-1"><button id="p3ared1" class="btn btn-default ans" onclick="checkColora('RED')" type="button">RED</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="p3ablue1" class="btn btn-default ans" onclick="checkColora('BLUE')" type="button">BLUE</button></div>
-
-  					<div class="col-md-4"></div>
-				</div>		
-				<div class="row"><br></div>
-				<div class="row">
-  					<div class="col-md-3"></div>
- 					<div class="col-md-1"><button id="p3agreen1" class="btn btn-default ans" onclick="checkColora('GREEN')" type="button">GREEN</button></div>
-  					<div class="col-md-2"></div> 					
-  					<div class="col-md-1"><button id="p3ayellow1" class="btn btn-default ans" onclick="checkColora('YELLOW')" type="button">YELLOW</button></div>
-
-  					<div class="col-md-4"></div>
+			<div>
+  					<table class="keys">
+					<tr>
+						<td></td>
+						<td><button id="p3ared1" class="btn btn-default ans" onclick="checkColora('RED')" type="button">RED<br>&#x25B2</button></td>
+						<td></td>					
+					</tr>				
+					<tr>
+						<td><button id="p3ayellow1" class="btn btn-default ans" onclick="checkColora('YELLOW')" type="button">YELLOW<br>&#x25C0</button></td>
+						<td><button id="p3ablue1" class="btn btn-default ans" onclick="checkColora('BLUE')" type="button">BLUE<br>&#x25BC</button></td>
+						<td><button id="p3agreen1" class="btn btn-default ans" onclick="checkColora('GREEN')" type="button">GREEN<br>&#x25B6</button></td>					
+					</tr>			
+				</table>
 				</div>						
 			</div>
 		</div>
@@ -456,7 +448,7 @@ I agree to participate in the research study. I understand the purpose and natur
 				<br>
 				<div align="center" id="p5color_attribute"></div>
 				<div align="center" id="p5color_question"></div>
-				<table id="keys">
+				<table class="keys">
 					<tr>
 						<td></td>
 						<td><button id="red2" class="btn btn-default ans" onclick="checkColorA('RED')" type="button">RED<br>&#x25B2</button></td>

@@ -24,20 +24,15 @@ var timeForPicture = 1000;
 
 var correct = "";
 
-var timer;
+var timerNback;
 
 function showImage()
 {
 	if (currentTurn < turns)
 	{
-		//set timeout for 0.5s to call a method pause
-		timer = setTimeout(tickNBack, 10);
-		//get random number
-		//var randomNumber = Math.floor(Math.random()*image.length);
+		timerNback = setTimeout(tickNBack, 10);
 		//display image 
 		imageHolder.innerHTML = "<img src=./images/" + displayedImages[currentTurn] + ".png onclick='checkImage()'>";
-		//store the value of the displayed image
-		//displayedImages[currentTurn] = randomNumber;
 	}
 	else 
 	{
@@ -93,14 +88,14 @@ function changeView()
 
 function checkImage()
 {
-	if (displayedImages[currentTurn] == displayedImages[currentTurn - nback])
+	if (displayedImages[currentTurn] === displayedImages[currentTurn - nback])
 	{
 		nBackAnswers += ",1";
 		nBackReactionTime += "," + milliseconds;
 		correctAnswers++;
 		correct = true;
 		milliseconds = 0;
-		clearTimeout(timer);
+		clearTimeout(timerNback);
 		pauseBetweenImages();
 	}
 	else 
@@ -110,7 +105,7 @@ function checkImage()
 		wrongAnswers++;
 		correct = false;
 		milliseconds = 0;
-		clearTimeout(timer);
+		clearTimeout(timerNback);
 		pauseBetweenImages();
 	}	
 }
@@ -121,12 +116,12 @@ function tickNBack()
 	if (milliseconds > timeForPicture)
 	{		
 		milliseconds = 0;
-		clearTimeout(timer);
+		clearTimeout(timerNback);
 		pauseBetweenImages();	
 	}
 	else
 	{
-		timer = setTimeout(tickNBack, 10);
+		timerNback = setTimeout(tickNBack, 10);
 	}
 }
 

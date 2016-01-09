@@ -117,13 +117,13 @@ table td, table th {
 	width: 150px;
 }
 
-table#keys {
+table.keys {
 	border-collapse: collapse; 
 	margin-left: auto; 
 	margin-right: auto;
 	border-bottom: 1px solid white !important;
 }
 
-table#keys td{
+table.keys td{
 	border:none;
 }

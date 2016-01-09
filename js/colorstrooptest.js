@@ -51,14 +51,64 @@ function colorStroopTest(repeat, meaning)
 	if (repeatsa === trialsa)
 	{
 		timeForText = 1000000;
+		window.addEventListener("keydown", checkKeyPressedTrialA, true);
 	}
 	else 
 	{
+		window.addEventListener("keydown", checkKeyPressedA, true);
 		timeForText = 3000;
 	}
 	showWorda();
 	
 }
+
+function checkKeyPressedTrialA(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		trialOnClicka("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		trialOnClicka("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		trialOnClicka("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	trialOnClicka("BLUE");
+    }
+}
+ 
+function checkKeyPressedA(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		checkColora("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		checkColora("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		checkColora("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	checkColora("BLUE");
+    }
+    //reset();
+}
+
 
 var redButtona;
 
@@ -99,12 +149,14 @@ function showWorda()
 			turna = 0;
 			document.getElementById("p3aintro").style.display = "block";
 			document.getElementById("p3atest").style.display = "none";
+			window.removeEventListener("keydown", checkKeyPressedTrialA, true);
 		}	
 		//else show next page
 		else 
 		{
 			nextPage();
 			getreactionTimeaToString();
+			window.removeEventListener("keydown", checkKeyPressedA, true);
 		}
 	}
 	if (repeatsa === trialsa)

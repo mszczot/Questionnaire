@@ -51,10 +51,12 @@ function stroopTest(repeat, meaning)
 	if (repeats === trial)
 	{
 		timeForText = 1000000;
+		window.addEventListener("keydown", checkKeyPressedTriala, true);
 	}
 	else 
 	{
 		timeForText = 3000;
+		window.addEventListener("keydown", checkKeyPresseda, true);
 	}
 	showWord();
 }
@@ -82,6 +84,53 @@ function trialOnClick(clickedColor)
 		}		
 }
 
+function checkKeyPressedTriala(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		trialOnClick("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		trialOnClick("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		trialOnClick("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	trialOnClick("BLUE");
+    }
+}
+
+function checkKeyPresseda(e) {
+    if (e.keyCode == 37)
+    {
+    	e.preventDefault();
+		checkColor("YELLOW");    		
+    }
+    if (e.keyCode == 38)
+    {
+    	 e.preventDefault();
+		checkColor("RED");    
+    }
+    if (e.keyCode == 39)
+    {
+    	 e.preventDefault();
+		checkColor("GREEN");    
+    }
+    if (e.keyCode == 40)
+    { 
+    	e.preventDefault();
+   	checkColor("BLUE");
+    }
+    //reset();
+}
+
 function showWord()
 {
 	//first half of the items shown will be meaning
@@ -98,13 +147,14 @@ function showWord()
 			turn = 0;
 			document.getElementById("p3intro").style.display = "block";
 			document.getElementById("p3test").style.display = "none";
-		
+			window.removeEventListener("keydown", checkKeyPressedTriala, true);
 		}	
 		//else show next page
 		else 
 		{
 			document.getElementById("simpleStroopCorrectAnswers").innerHTML = correctAnswers;
 			document.getElementById("simpleStroopWrongAnswers").innerHTML = wrongAnswers;
+			window.removeEventListener("keydown", checkKeyPresseda, true);
 			nextPage();
 			getReactionTimeToString();
 		}
