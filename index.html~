@@ -2544,6 +2544,7 @@ Choose one of the following answers<br><br>
 			</div>
 		</div>
 	</div>
+	<div>
 	<div id="preload-01"></div>
 	<div id="preload-02"></div>
 	<div id="preload-03"></div>
@@ -2556,16 +2557,17 @@ Choose one of the following answers<br><br>
 	<div id="preload-10"></div>
 	<div id="preload-11"></div>
 	<div id="preload-12"></div>
-		<script
+	</div>
+		<script>
 			function isNumber(evt) {
 				evt = (evt) ? evt : window.event;
-    				var charCode = (evt.which) ? evt.which : evt.keyCode;
-    				if charCode > 31 && (charCode < 48 || charCode > 57) {
-        				return false;
-    				}
-    				return true;
+    			var charCode = (evt.which) ? evt.which : evt.keyCode;
+    			if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        			return false;
+    			}
+    			return true;
 			}
-		 $('#p6').find('table th:nth-child(3), table th:nth-child(4), table th:nth-child(5), table th:nth-child(6), table th:nth-child(7), table th:nth-child(8), table th:nth-child(9), table th:nth-child(10), table th:nth-child(11)').addClass('borderselection');		
+			 $('#p6').find('table th:nth-child(3), table th:nth-child(4), table th:nth-child(5), table th:nth-child(6), table th:nth-child(7), table th:nth-child(8), table th:nth-child(9), table th:nth-child(10), table th:nth-child(11)').addClass('borderselection');		
 			 $('#p6').find('table td:nth-child(3), table td:nth-child(4), table td:nth-child(5), table td:nth-child(6), table td:nth-child(7), table td:nth-child(8), table td:nth-child(9), table td:nth-child(10), table td:nth-child(11)').addClass('selection');
 			 $('#p6').find('table th:nth-child(3), table th:nth-child(4), table th:nth-child(5), table th:nth-child(6), table th:nth-child(7), table th:nth-child(8), table th:nth-child(9), table th:nth-child(10), table th:nth-child(11)').addClass('selection');
 			 $('#p2').find('table td:nth-child(3),	table td:nth-child(4), table td:nth-child(5)').addClass('sel');
