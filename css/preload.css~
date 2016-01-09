@@ -1,1 +1,12 @@
-#preload-01 { background: url(http://szczocik.ddns.net/images/01.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/0.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/1.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/2.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/3.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/4.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/5.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/6.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/7.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/8.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/9.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/tick.png) no-repeat -9999px -9999px; }
+#preload-01 { background: url(http://szczocik.ddns.net/images/wrong.jpg) no-repeat -9999px -9999px; }
