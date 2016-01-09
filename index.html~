@@ -321,13 +321,13 @@ I agree to participate in the research study. I understand the purpose and natur
   					<table class="keys">
 					<tr>
 						<td></td>
-						<td><button id="red1" class="btn btn-default ans" onclick="checkColora('RED')" type="button">RED<br>&#x25B2</button></td>
+						<td><button id="red1" class="btn btn-default ans" onclick="checkColor('RED')" type="button">RED<br>&#x25B2</button></td>
 						<td></td>					
 					</tr>				
 					<tr>
-						<td><button id="yellow1" class="btn btn-default ans" onclick="checkColora('YELLOW')" type="button">YELLOW<br>&#x25C0</button></td>
-						<td><button id="blue1" class="btn btn-default ans" onclick="checkColora('BLUE')" type="button">BLUE<br>&#x25BC</button></td>
-						<td><button id="green1" class="btn btn-default ans" onclick="checkColora('GREEN')" type="button">GREEN<br>&#x25B6</button></td>					
+						<td><button id="yellow1" class="btn btn-default ans" onclick="checkColor('YELLOW')" type="button">YELLOW<br>&#x25C0</button></td>
+						<td><button id="blue1" class="btn btn-default ans" onclick="checkColor('BLUE')" type="button">BLUE<br>&#x25BC</button></td>
+						<td><button id="green1" class="btn btn-default ans" onclick="checkColor('GREEN')" type="button">GREEN<br>&#x25B6</button></td>					
 					</tr>			
 				</table>
 				</div>							
