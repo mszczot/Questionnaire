@@ -9,6 +9,7 @@ var next = document.getElementById("next");
 
 function goTo(place)
 {
+	document.getElementById("q0").style.display = "none";
 	document.getElementById(place).style.display = "block";
 }
 

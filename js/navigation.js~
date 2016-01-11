@@ -9,7 +9,7 @@ var next = document.getElementById("next");
 
 function goTo(place)
 {
-	document.getElementById(place).style.display = block;
+	document.getElementById(place).style.display = "block";
 }
 
 function nextPage(){
