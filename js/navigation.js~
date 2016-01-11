@@ -7,7 +7,10 @@ var aria_valuenow = 1;
 var vegetarianQuestions = document.getElementById("vegetarians");
 var next = document.getElementById("next");
 
-
+function goTo(place)
+{
+	document.getElementById(place).style.display = block;
+}
 
 function nextPage(){
 	if (nextPosition < questions.length) {
@@ -75,6 +78,7 @@ function nextPage(){
 			
 			document.getElementById("p4test").style.display = "none";
 			next.style.display = "none";
+		}
 		else if (questions[position].id == "p4") //advanced stroop test
 		{
 			showNextPage();

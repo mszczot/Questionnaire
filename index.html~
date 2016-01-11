@@ -97,19 +97,21 @@ I agree to participate in the research study. I understand the purpose and natur
 				<div class="question_body">What is your race?</div>
 				<div class="question_answers" id="p1q3">
 					<form>
-						<input type="radio" name="p1q3" value="1"/> White/Caucasian
+						<input type="radio" name="p1q3" value="1"/> White
 						<br>
-						<input type="radio" name="p1q3" value="2" /> African American	
+						<input type="radio" name="p1q3" value="2" /> Mixed/Multiple Ethnics groups	
 						<br>
-						<input type="radio" name="p1q3" value="3" /> Hispanic	
+						<input type="radio" name="p1q3" value="3" /> Asian	
 						<br>
-						<input type="radio" name="p1q3" value="4" /> Asian	
+						<input type="radio" name="p1q3" value="4" /> Black/African/Caribbean	
 						<br>
-						<input type="radio" name="p1q3" value="5" /> Native American	
+						<input type="radio" name="p1q3" value="5" /> Hispanic	
 						<br>
-						<input type="radio" name="p1q3" value="6" /> Pacific Islander	
+						<input type="radio" name="p1q3" value="6" /> Native American
 						<br>
-						<input type="radio" name="p1q3" value="7" /> Other					
+						<input type="radio" name="p1q3" value="7" /> Pacific Islander
+						<br>
+						<input type="radio" name="p1q3" value="8" /> Other					
 					</form>	
 				</div>
 				<br>
@@ -347,17 +349,10 @@ I agree to participate in the research study. I understand the purpose and natur
 <!-- Stroop test: two options, practice and normal -->
 			<div id="p3aintro">
 			<!--small intro to the test with two buttons -->
-				<div class="question_body">The next section will consist of a task.<br><br>
+				<div class="question_body">Well done on the first task!!!<br><br>
 
-				In this task, you will be presented with a series of colour words (<span style="color:blue">blue</span>,<span style="color:#e5e600"> yellow</span>, <span style="color:green">green</span>, <span style="color:red">red</span>). These words will appear in different colors, 
-				sometimes matching the word (e.g., <span style="color:blue">BLUE</span>), and sometimes not matching 
-				the word (e.g., <span style="color:red">BLUE</span>). <br><br>
-				Your job is would be to indicate, as quickly and accurately as possible, 
-				the colour in which the word is <b>written</b>, whether or not that matches the word itself. 
-				Click the button that matches the colour of the word. Try not to pay attention to the word, 
-				but just the colour.<br><br>
-				For example, if you are presented with the following <span style="color:red">BLUE</span>, you should
-				select <u><b>red</b></u>.<br><br>
+				The next section is the same task but now select the word's <b>COLOUR</b>. <br><br>
+				For example, if you are presented with the following <span style="color:red"><b>BLUE</b></span>, you should select <span style="color:red"><b>RED</b></span>.<br><br>
 				Click “Practice” to have a few practice sessions (where the correct answer is highlighted in green), otherwise click "Start Test" to begin<br><br>
 				</div>
 				<div class="test_choice">
@@ -467,7 +462,7 @@ I agree to participate in the research study. I understand the purpose and natur
 			</div>
 			
 <!-- page 6 -->
-
+<div class="persist-area">
 			<div class="question" id="p6">
 <!-- first table -->
 				<div class="question_body">Based on your diet last year, please select…<br><br>
@@ -478,6 +473,7 @@ PLEASE SELECT A CHOICE ON EVERY LINE<br>
 				</div>
 				<div class="question_answers">
 <table>
+<thead class="persist-header">
 <tr>
 	<th class="desc"></th>
 	<th class="break"></th>
@@ -491,6 +487,7 @@ PLEASE SELECT A CHOICE ON EVERY LINE<br>
 	<th class="selection">4-5 per day</th>
 	<th class="selection">6+ per day</th>
 </tr>
+</thead>
 <!-- question 16 -->
 <tr>
 	<td>Beef: roast, steak, mince, stew, or casserole</td>
@@ -730,6 +727,7 @@ PLEASE SELECT A CHOICE ON EVERY LINE<br>
 	<td><input type="radio" name="p6q17" value="9"/></td>
 </tr>
 </table>
+			
 				</div>
 				<br><br>
 <!-- second table -->	
@@ -2483,7 +2481,7 @@ PLEASE SELECT A CHOICE ON EVERY LINE <br>
 					</form>	
 				</div>
 				<br>				
-			</div>			
+			</div>		
 
 			<div class="question" id="p7">
 <!-- excercise questions -->
@@ -2578,5 +2576,6 @@ Choose one of the following answers<br><br>
 		<script type= "text/javascript" src = "js/colorstrooptest.js"></script>
 		<script type= "text/javascript" src = "js/advancedStroopTest.js"></script>
 		<script type= "text/javascript" src = "js/nbacktest.js"></script>
+		<script type="text/javascript" src="js/table_floating_header.js"></script>
 	</body>
 </html>

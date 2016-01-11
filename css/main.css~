@@ -54,11 +54,28 @@
 	margin-right: 2px;
 }
 
+table.floating_header th {
+	background-color: lightgrey;
+	position:fixed; 
+	top:0px; 
+	margin:auto; 
+}
+
 .sel {
 	text-align: center;
 	align-content: center;
 	margin-left: 2px;
 	margin-right: 2px;
+}
+
+tbody tr:hover {
+    background-color: #EEEEEE;
+}
+
+.floatingHeader {
+	position: fixed;
+	top: 0;
+	visibility: hidden;
 }
 
 .borderselection {
@@ -117,13 +134,13 @@ table td, table th {
 	width: 150px;
 }
 
-table#keys {
+table.keys {
 	border-collapse: collapse; 
 	margin-left: auto; 
 	margin-right: auto;
 	border-bottom: 1px solid white !important;
 }
 
-table#keys td{
+table.keys td{
 	border:none;
 }

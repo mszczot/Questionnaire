@@ -7,7 +7,10 @@ var aria_valuenow = 1;
 var vegetarianQuestions = document.getElementById("vegetarians");
 var next = document.getElementById("next");
 
-
+function goTo(place)
+{
+	document.getElementById(place).style.display = "block";
+}
 
 function nextPage(){
 	if (nextPosition < questions.length) {

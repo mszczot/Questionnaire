@@ -54,6 +54,13 @@
 	margin-right: 2px;
 }
 
+table.floating_header th {
+	background-color: lightgrey;
+	position:fixed; 
+	top:0px; 
+	margin:auto; 
+}
+
 .sel {
 	text-align: center;
 	align-content: center;
@@ -61,11 +68,25 @@
 	margin-right: 2px;
 }
 
+tbody tr:hover {
+    background-color: #EEEEEE;
+}
+
+.floatingHeader {
+	position: fixed;
+	top: 0;
+	visibility: hidden;
+}
+
 .borderselection {
 	border-left: 1px solid #d3d3d3;
 	border-right: 1px solid #d3d3d3;
 	padding-left: 3px;
 	padding-right: 3px;
+}
+
+.persist-header {
+	background-color: white;
 }
 
 .border {
