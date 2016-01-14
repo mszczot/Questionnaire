@@ -11,16 +11,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT id FROM answers";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM answers";
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "Number of questionnaire completed: " . $row["id"]. "<br>";
-    }
-} else {
-    echo "0 results";
+if ($result=mysqli_query($conn,$sql))
+{
+
+	$num_rows = mysqli_num_rows($result);
+	echo "Number of questionnaires completed: $num_rows <br><br>";
+}
+
+$sql1 = "SELECT p1q1, COUNT(*) as no FROM answers GROUP BY p1q1";
+
+if ($result1=mysqli_query($conn,$sql1))
+{
+	while($row = $result1->fetch_assoc()) {
+		echo $row['p1q1']. " " .$row['no']. "<br>";
+	}
 }
 $conn->close();
 ?>
