@@ -156,16 +156,16 @@ var	excercise1 = document.getElementById("excercise1").value;
 var 	excercise2 = document.getElementById("excercise2").value;
 var 	excercise3 = document.getElementById("excercise3").value;
 var	excercise4 = $("input[type='radio'][name='excercise4']:checked").val();
-console.log(p2q6);
+
     $.ajax({
       type: "POST",
       url: "php/send.php",
       data: {p1q1: p1q1, p1q2: p1q2, p1q3: p1q3, p1q4: p1q4, p1q5: p1q5, p1q6: p1q6, p1q7: p1q7, p2q1: p2q1, p2q2: p2q2,
       		p2q3: p2q3, p2q4: p2q4, p2q5: p2q5, p2q6: p2q6,
-      		reactionTimeStringSimpleStroop: reactionTimeStringSimpleStroop, 
+      		reactionTimeStringSimpleStroop: reactionTimeStringSimpleStroop,
       		SimpleStroop: SimpleStroop,
-      		reactionTimeStringSimpleStroopa: reactionTimeStringSimpleStroop, 
-      		SimpleStroopa: SimpleStroop,
+      		reactionTimeStringSimpleStroopa: reactionTimeStringSimpleStroopa,
+      		SimpleStroopa: SimpleStroopa,
       		NBackAns: NBackAns,
       		NBackReaction: NBackReaction,
       		reactionTimeStringAdvancedStroop: reactionTimeStringAdvancedStroop,
@@ -306,8 +306,8 @@ excercise2: excercise2,
 excercise3: excercise3,
 excercise4: excercise4
 },
-		
-      		
+
+
         success: function() {
           window.location.replace("http://szczocik.ddns.net/thankyou.html");
         },
